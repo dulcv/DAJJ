@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # DAJJ
+=======
+# proyectoCIMA
+>>>>>>> master
 
 ## Build Setup
 
