@@ -1,14 +1,16 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  // Desactiva SSR y usa modo estático
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+
+  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // Encabezados globales
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - proyectoCIMA',
-    title: 'proyectoCIMA',
+    titleTemplate: '%s - CIMA',
+    title: 'CIMA',
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,7 +20,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'
+      }
+    ]
   },
 
   // Estilos globales
@@ -32,8 +40,8 @@ export default {
 
   // Módulos para desarrollo y build
   buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/eslint-module'
   ],
 
   // Módulos Nuxt
@@ -46,6 +54,8 @@ export default {
 
   // Configuración de Vuetify
   vuetify: {
+    defaultAssets: false, // para no cargar Roboto por defecto
+    treeShake: true,
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
