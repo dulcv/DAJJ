@@ -1,5 +1,5 @@
 <template>
-<v-app>
+ <v-app>
     <!-- Carrusel -->
     <ImageCarousel />
 
@@ -57,10 +57,10 @@
     </v-container>
     <Footer/>
   </v-app>
-
 </template>
 
 <script>
+import 'swiper/swiper-bundle.css'
 import ImageCarousel from '~/components/ImageCarousel.vue'
 import Footer from '~/components/Footer.vue'
 export default {
@@ -68,7 +68,7 @@ export default {
     ImageCarousel,
     Footer
   },
-  data() {
+  data () {
     return {
       aliados: [
         {
@@ -114,4 +114,3 @@ h1, h2 {
   color: #2e7d32;
 }
 </style>
-
