@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    <TheNavbar />
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -89,7 +90,12 @@
 </template>
 
 <script>
+import TheNavbar from '~/components/TheNavbar.vue'
+
 export default {
+  components: {
+    TheNavbar
+  },
   data () {
     return {
       clipped: false,
