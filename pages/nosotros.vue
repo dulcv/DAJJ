@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Componente del Navbar -->
     <Navbar />
     <v-container>
       <!-- Misión y Visión -->
@@ -27,7 +28,7 @@
               <v-list dense>
                 <v-list-item v-for="(punto, i) in visionPuntos" :key="i">
                   <v-list-item-icon>
-                    <v-icon color="green">mdi-</v-icon>
+                    <v-icon color="green">mdi-check</v-icon>
                   </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title>{{ punto }}</v-list-item-title>
