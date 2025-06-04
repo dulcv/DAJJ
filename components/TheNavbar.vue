@@ -82,10 +82,11 @@ export default {
     rgba(111, 156, 166, 0.45) 0%,
     rgba(245, 245, 245, 0.18) 81%
   );
-  border-bottom: px solid #ffffff;
+  border-bottom: 1px solid #ccc;
 
   backdrop-filter: blur(4px);
 }
+
 .logo {
   color: #035928;
   font-size: 2rem;
