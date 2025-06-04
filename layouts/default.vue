@@ -6,23 +6,19 @@
         <Nuxt />
       </v-container>
     </v-main>
-
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 
 import TheNavbar from '~/components/TheNavbar.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    TheNavbar
+    TheNavbar,
+    Footer
   },
   data () {
     return {

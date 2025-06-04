@@ -58,18 +58,19 @@
 </template>
 
 <script>
+
 export default {
-  data() {
+  data () {
     return {
       navItems: [
-        { text: "Nosotros", link: "/index" },
-        { text: "Iniciativa", link: "/iniciativas" },
-        { text: "Recursos", link: "/recursos" },
-        { text: "Transparencia", link: "/transparencia" },
-      ],
-    };
-  },
-};
+        { text: 'Nosotros', link: '/index' },
+        { text: 'Iniciativa', link: '/iniciativas' },
+        { text: 'Recursos', link: '/recursos' },
+        { text: 'Transparencia', link: '/transparencia' }
+      ]
+    }
+  }
+}
 </script>
 <style scoped>
 * {
@@ -81,7 +82,7 @@ export default {
     rgba(111, 156, 166, 0.45) 0%,
     rgba(245, 245, 245, 0.18) 81%
   );
-  border-bottom: 1px solid #ccc;
+  border-bottom: px solid #ffffff;
 
   backdrop-filter: blur(4px);
 }

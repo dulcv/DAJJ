@@ -55,18 +55,15 @@
         </v-col>
       </v-row>
     </v-container>
-    <Footer/>
   </v-app>
 </template>
 
 <script>
 import 'swiper/swiper-bundle.css'
 import ImageCarousel from '~/components/ImageCarousel.vue'
-import Footer from '~/components/Footer.vue'
 export default {
   components: {
-    ImageCarousel,
-    Footer
+    ImageCarousel
   },
   data () {
     return {
