@@ -46,8 +46,13 @@
   gap: 16px;
 }
 .footer-section {
-  border-top: 1px solid #ccc;
-  background: linear-gradient(to right, #f5fafa, #e8f0ed);
-  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(
+    to top,
+    rgba(111, 156, 166, 0.45) 0%,
+    rgba(245, 245, 245, 0.18) 81%
+  );
+  border-bottom: 1px solid #ccc;
+
+  backdrop-filter: blur(4px);
 }
 </style>

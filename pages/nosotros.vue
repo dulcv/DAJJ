@@ -1,8 +1,5 @@
 <template>
   <div>
-
-    <!-- Componente del Navbar -->
-    <Navbar />
     <v-container>
       <!-- Misión y Visión -->
       <v-row>
@@ -81,7 +78,6 @@
 </template>
 
 <script setup>
-import Navbar from '@/components/Navbar.vue'
 
 const valores = [
   { icono: 'mdi-lightbulb-on-outline', texto: 'Innovación' },
