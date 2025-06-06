@@ -1,7 +1,7 @@
 <template>
  <v-app>
     <!-- Carrusel -->
-    <ImageCarousel />
+    <CarouselComponent/>
 
     <!-- Sobre CIMA -->
     <v-container class="my-12">
@@ -61,10 +61,10 @@
 
 <script>
 import 'swiper/swiper-bundle.css'
-import ImageCarousel from '~/components/ImageCarousel.vue'
+import CarouselComponent from '~/components/CarouselComponent.vue';
 export default {
   components: {
-    ImageCarousel
+    CarouselComponent
   },
   data () {
     return {
