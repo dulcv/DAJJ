@@ -5,8 +5,8 @@
       <v-img src="/cima-logo.jpj" contain height="40" width="40" class="mr-2" />
       <span class="logo">CIMA A. C.</span>
     </v-toolbar-title>
-       <v-spacer />
-     <!-- Navegación -->
+    <v-spacer />
+      <!-- Navegación -->
     <v-btn
       v-for="item in navItems"
       :key="item.text"
@@ -63,8 +63,9 @@ export default {
   data () {
     return {
       navItems: [
-        { text: 'Nosotros', link: '/index' },
-        { text: 'Iniciativa', link: '/iniciativas' },
+        { text: 'Inicio', link: '/' },
+        { text: 'Nosotros', link: '/nosotros' },
+        { text: 'iniciativas', link: '/iniciativas' },
         { text: 'Recursos', link: '/recursos' },
         { text: 'Transparencia', link: '/transparencia' }
       ]
@@ -84,7 +85,7 @@ export default {
   );
   border-bottom: 1px solid #ccc;
 
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(5px);
 }
 
 .logo {
@@ -94,5 +95,20 @@ export default {
 
 .btn-nav {
   margin: 0.3rem;
+}
+
+.btn-nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color:#A65224;
+  transition: width 0.3s;
+}
+
+.btn-nav:hover::after{
+  width: 100%;
 }
 </style>
