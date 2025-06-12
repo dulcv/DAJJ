@@ -6,14 +6,14 @@
         <v-col cols="12" md="6">
           <v-card class="pa-1">
             <v-img src="img/participacion.jpg" height="200px"></v-img>
-            <v-card-title 
+            <v-card-title
              class="text-h4 font-weight-bold"
              :style="{ color: '#035928',  fontFamily: 'Poppins, sans-serif'}" >Misión</v-card-title>
             <v-card-text   :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '3' }">
               Articular talento y recursos de los sectores social, público y privado para diseñar
               e implementar proyectos que atiendan los retos ambientales, sociales y económicos de Atzitzintla
               y la región Ciudad Serdán, complementando la acción gubernamental y promoviendo bienestar colectivo.
-              
+
             </v-card-text>
           </v-card>
         </v-col>
