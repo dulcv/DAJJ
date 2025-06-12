@@ -4,29 +4,33 @@
       <!-- Misión y Visión -->
       <v-row>
         <v-col cols="12" md="6">
-          <v-card class="pa-3">
-            <v-img src="/image.jpg" height="200px"></v-img>
-            <v-card-title>Misión</v-card-title>
-            <v-card-text>
+          <v-card class="pa-1">
+            <v-img src="img/participacion.jpg" height="200px"></v-img>
+            <v-card-title 
+             class="text-h4 font-weight-bold"
+             :style="{ color: '#035928',  fontFamily: 'Poppins, sans-serif'}" >Misión</v-card-title>
+            <v-card-text   :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '3' }">
               Articular talento y recursos de los sectores social, público y privado para diseñar
               e implementar proyectos que atiendan los retos ambientales, sociales y económicos de Atzitzintla
               y la región Ciudad Serdán, complementando la acción gubernamental y promoviendo bienestar colectivo.
+              
             </v-card-text>
           </v-card>
         </v-col>
 
         <v-col cols="12" md="6">
-          <v-card class="pa-3">
-            <v-img src="/image.jpg" height="200px"></v-img>
-            <v-card-title>Visión</v-card-title>
+          <v-card class="pa-1">
+            <v-img src="img/crecer.jpg" height="200px"></v-img>
+            <v-card-title  class="text-h4 font-weight-bold"
+            :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }">Visión</v-card-title>
             <v-card-text>
-              <p class="font-weight-bold mb-2">
+              <p class="mb-2"  :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '1.8' }" >
                 Para 2030, CIMA A.C. se consolidará como referente regional por:
               </p>
               <v-list dense>
-                <v-list-item v-for="(punto, i) in visionPuntos" :key="i">
+                <v-list-item  :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '1.8' }" v-for="(punto, i) in visionPuntos" :key="i">
                   <v-list-item-icon>
-                    <v-icon color="green">mdi-check</v-icon>
+                    <v-icon color="#1CA63F">mdi-check</v-icon>
                   </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title>{{ punto }}</v-list-item-title>
@@ -41,7 +45,7 @@
       <!-- Valores -->
       <v-row class="my-10">
         <v-col cols="12">
-          <h2 class="text-center">Nuestros Valores</h2>
+          <h2 class="text-center"  >Nuestros Valores</h2>
         </v-col>
         <v-col
           v-for="(valor, i) in valores"
@@ -50,9 +54,10 @@
           md="4"
           class="text-center"
         >
-          <v-card class="pa-4">
-            <v-icon size="48" color="primary">{{ valor.icono }}</v-icon>
-            <p class="mt-2">{{ valor.texto }}</p>
+          <v-card class="pa-7 rounded-xl"
+           style="border: 1px solid #6F9CA6;">
+            <v-icon :color="valor.color" size="100" >{{ valor.icono }}</v-icon>
+            <p class="mt-2 text-h6 font-weight-bold" :style="{ color: valor.color }">{{ valor.texto }}</p>
           </v-card>
         </v-col>
       </v-row>
@@ -73,6 +78,35 @@
           </v-list>
         </v-col>
       </v-row>
+
+       <!-- Equipo -->
+    <v-container class="my-12 text-center">
+      <h2  class="text-center">Equipo</h2>
+      <p class="text-body-1 mb-6" :style="{ textAlign: 'justify', lineHeight: '2'  }">
+        Nuestro equipo está compuesto por profesionales multidisciplinarios comprometidos con la misión de CIMA.
+        Contamos con expertos en desarrollo social, tecnología, educación y políticas públicas.
+      </p>
+      <v-row>
+    <v-col
+      v-for="(miembro, index) in miembros"
+      :key="index"
+      cols="12"
+      sm="6"
+      md="4"
+      class="text-center"
+    >
+      <v-img
+        :src="miembro.imagen"
+        aspect-ratio="1"
+        class="rounded-lg elevation-2"
+      ></v-img>
+      <h3 class="mt-4 font-weight-bold text-h5" :style="{ color: '#A65224' }">{{ miembro.titulo }}</h3>
+      <p  :style="{lineHeight: '2'}" class="text-body-2">{{ miembro.descripcion }}</p>
+    </v-col>
+  </v-row>
+
+    </v-container>
+
     </v-container>
   </div>
 </template>
@@ -80,12 +114,12 @@
 <script setup>
 
 const valores = [
-  { icono: 'mdi-lightbulb-on-outline', texto: 'Innovación' },
-  { icono: 'mdi-hand-heart', texto: 'Solidaridad' },
-  { icono: 'mdi-leaf', texto: 'Sostenibilidad' },
-  { icono: 'mdi-account-group', texto: 'Juventud' },
-  { icono: 'mdi-shield-check', texto: 'Transparencia' },
-  { icono: 'mdi-account-voice', texto: 'Inclusión' }
+  { icono: 'mdi-lightbulb-on-outline', texto: 'Innovación', color: '#005977'},
+  { icono: 'mdi-hand-heart', texto: 'Solidaridad', color: '#e3c77b' },
+  { icono: 'mdi-leaf', texto: 'Sostenibilidad', color: 'green' },
+  { icono: 'mdi-account-group', texto: 'Juventud', color: '#6F9CA6' },
+  { icono: 'mdi-shield-check', texto: 'Transparencia', color: '#A65224' },
+  { icono: 'mdi-account-voice', texto: 'Inclusión', color: '#ff7c00' }
 ]
 
 const visionPuntos = [
@@ -108,11 +142,49 @@ const odsList = [
   'ODS 16: Paz, Justicia e Instituciones Sólidas',
   'ODS 17: Alianzas para Lograr los Objetivos'
 ]
+
+const miembros = [
+  {
+    imagen: '/img/equipo1.jpg',
+    titulo: 'Presidente',
+    descripcion: 'Responsable de la representación legal y liderazgo estratégico de la organización.'
+  },
+  {
+    imagen: '/img/equipo2.jpg',
+    titulo: 'Secretario',
+    descripcion: 'Encargado de la documentación, actas y comunicaciones institucionales.'
+  },
+  {
+    imagen: '/img/equipo3.jpg',
+    titulo: 'Tesorero',
+    descripcion: 'Administra los recursos financieros y la rendición de cuentas.'
+  },
+  {
+    imagen: '/img/equipo4.jpg',
+    titulo: 'Director de Operaciones',
+    descripcion: 'Coordina la ejecución de proyectos y el equipo de trabajo en campo.'
+  },
+  {
+    imagen: '/img/equipo5.jpg',
+    titulo: 'Director de Comunicación',
+    descripcion: 'Gestiona la identidad institucional, redes sociales y vínculos con medios.'
+  },
+  {
+    imagen: '/img/equipo6.jpg',
+    titulo: 'Director de Finanzas',
+    descripcion: 'Diseña estrategias de sostenibilidad financiera y control presupuestal.'
+  }
+];
+
 </script>
 
 <style scoped>
 h2 {
   font-weight: bold;
   margin-bottom: 1rem;
+  font-family: Poppins;
+  color: #035928;
+  font-size: 30px;
 }
+
 </style>

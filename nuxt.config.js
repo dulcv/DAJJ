@@ -34,7 +34,7 @@ export default {
   },
 
   // Estilos globales
-  css: [],
+  css: [ '@mdi/font/css/materialdesignicons.min.css'],
 
   // Plugins (vacío por ahora)
   plugins: [],
