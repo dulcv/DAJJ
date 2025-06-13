@@ -66,7 +66,6 @@
               <p class="answer-text">{{ item.respuesta }}</p>
               <v-btn
                 v-if="item.link"
-                color="#1CA63F"
                 text
                 small
                 :href="item.link"
@@ -104,37 +103,14 @@ export default {
     return {
       faqs: [
         {
-          pregunta: "¿Dónde están ubicados?",
-          respuesta: "Nuestro centro principal está en Av. Principal #123, Ciudad. También tenemos puntos de atención en varios sectores.",
-          link: "/ubicacion"
+          pregunta: "¿Qué tipo de proyectos desarrolla CIMA A.C.?",
+          respuesta: "Desarrollamos proyectos enfocados en la conservación del medio ambiente, educación, salud, desarrollo económico local y fortalecimiento comunitario. Ejemplos incluyen reforestación en el Parque Nacional Pico de Orizaba, orientación vocacional y cursos de programación para jóvenes.",
         },
         {
-          pregunta: "Rescaté un perro, ¿a dónde lo llevo?",
-          respuesta: "Puedes traerlo a nuestro centro de rescate de 9am a 5pm. Si necesitas ayuda con el transporte, contáctanos para coordinar."
+          pregunta: "¿Quiénes forman parte del equipo de CIMA A.C.?",
+          respuesta: ""
         },
-        {
-          pregunta: "Quiero adoptar, ¿cuál es el proceso?",
-          respuesta: "1) Llena el formulario en línea, 2) Agenda entrevista, 3) Visita de evaluación, 4) Firma de contrato. Todo en aproximadamente 1 semana.",
-          link: "/adopcion"
-        },
-        {
-          pregunta: "¿Cómo puedo dar en adopción a mi perro?",
-          respuesta: "Debes agendar una cita para evaluación. Requerimos historial médico y motivo de entrega."
-        },
-        {
-          pregunta: "¿Ofrecen servicios veterinarios?",
-          respuesta: "Sí, tenemos clínica con servicios básicos. Atendemos priorizando animales rescatados."
-        },
-        {
-          pregunta: "¿Cómo reportar maltrato animal?",
-          respuesta: "Puedes hacerlo mediante nuestro formulario confidencial o llamando al 555-1234.",
-          link: "/denuncias"
-        },
-        {
-          pregunta: "¿Qué donativos necesitan?",
-          respuesta: "Alimento, medicinas, cobijas, juguetes y donaciones monetarias. Todo es bienvenido.",
-          link: "/donaciones"
-        }
+
       ]
     }
   },
@@ -150,14 +126,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 :root {
-  --color-neutral: #6F9CA6;   /* Azul verdoso */
-  --color-primary: #035928;   /* Verde oscuro */
-  --color-secondary: #1CA63F; /* Verde vibrante */
-  --color-light: #F2E0BD;     /* Beige claro */
-  --color-accent: #A65224;    /* Terracota */
-  --font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-neutral: #555555;
+  --color-primary: #035928;
+  --color-secondary: #1CA63F;
+  --color-light: #F2E0BD;
+  --color-accent: #A65224;
+  --font-family: 'Poppins',  sans-serif;
 }
 
 .faq-section {
@@ -172,33 +148,29 @@ export default {
 }
 
 .section-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  text-align: center;
-  margin-bottom: 8px;
-  letter-spacing: 0.04em;
-  font-family: var(--font-family);
+  font-size: 3rem;
+      font-weight: 800;
+      color: #035928;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      font-family: 'Poppins', sans-serif;
 }
 
-.section-title span {
-  color: var(--color-secondary);
-}
 
 .section-subtitle {
-  color: var(--color-neutral);
-  font-size: 1.1rem;
+  color: #555555;
+  font-size: 1.15rem;
   max-width: 600px;
   margin: 0 auto 36px;
   text-align: center;
   font-weight: 400;
   line-height: 1.5;
-  font-family: var(--font-family);
+   font-family: 'Poppins', sans-serif;
 }
 
 .divider {
-  width: 72px !important;
-  height: 3px !important;
+  width: 72rem !important;
+  height: 50px !important;
   margin: 0 auto 36px !important;
   border-radius: 2px;
   background: var(--color-accent);
@@ -226,28 +198,28 @@ export default {
   background-color: transparent;
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--color-primary);
+  color: #035928;
   padding-left: 32px !important;
   padding-right: 32px !important;
   min-height: 56px;
   border-bottom: 1px solid #e0e0e0;
   user-select: none;
   transition: color 0.3s ease;
-  font-family: var(--font-family);
+  font-family: 'Poppins', sans-serif;
 }
 
 .question:hover {
-  color: var(--color-secondary);
+  color:#1CA63F;
 }
 
 .v-expansion-panel-header__icon .v-icon {
-  color: var(--color-neutral) !important;
+  color:#555555 !important;
   font-size: 1.3rem;
   transition: color 0.3s ease;
 }
 
 .v-expansion-panel-header--active .v-expansion-panel-header__icon .v-icon {
-  color: var(--color-accent) !important;
+  color:#A65224 !important;
 }
 
 .answer {
@@ -257,11 +229,11 @@ export default {
   padding-bottom: 24px !important;
   font-size: 1rem;
   font-weight: 400;
-  color: #444;
+  color: #555555 ;
   line-height: 1.6;
-  border-left: 4px solid var(--color-accent);
+  border-left: 4px solid #A65224;
   user-select: text;
-  font-family: var(--font-family);
+  font-family:'Poppins', sans-serif;
 }
 
 .answer-text {
@@ -270,21 +242,21 @@ export default {
 
 .more-btn {
   font-weight: 600;
-  color: var(--color-secondary);
+  color: #1CA63F;
   transition: color 0.3s ease;
   margin-top: 12px !important;
   text-transform: none;
-  font-family: var(--font-family);
+  font-family: 'Poppins', sans-serif;
 }
 
 .more-btn:hover {
-  color: var(--color-accent);
+  color: #A65224;
   text-decoration: underline;
   transform: translateX(4px);
 }
 
 .cta-btn {
-  background: var(--color-accent);
+  background: #A65224;
   box-shadow: 0 6px 16px rgba(166, 82, 36, 0.3) !important;
   font-weight: 700;
   font-size: 1.2rem;
@@ -293,11 +265,11 @@ export default {
   border-radius: 24px !important;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   text-transform: none;
-  font-family: var(--font-family);
+  font-family: 'Poppins', sans-serif;
 }
 
 .cta-btn:hover {
-  background: var(--color-secondary);
+  background: #1CA63F;
   box-shadow: 0 10px 26px rgba(28, 166, 63, 0.45) !important;
   transform: translateY(-3px);
 }

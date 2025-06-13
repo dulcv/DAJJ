@@ -1,294 +1,228 @@
 <template>
   <v-app>
     <CarouselComponent />
-
-    <!-- Sobre CIMA -->
-    <section class="custom-section">
+    <section class="hero-section">
       <v-container>
-        <v-row align="center" justify="center" class="flex-column-reverse flex-md-row">
-          <v-col cols="12" md="6" class="pr-md-6">
-            <div class="tag">QUIÉNES SOMOS</div>
-            <h1>Sobre <span>CIMA</span></h1>
-            <p>
-              CIMA es una organización comprometida con el desarrollo sostenible y la innovación social.
-              Trabajamos para crear soluciones efectivas a los desafíos más urgentes de nuestra sociedad...
+        <v-row align="center" justify="center" class="hero-row">
+          <v-col cols="12" md="6" class="hero-text">
+            <h1>Somos CIMA</h1>
+            <p class="description">
+              En CIMA fusionamos creatividad y compromiso para construir
+              soluciones sostenibles a los desafíos más urgentes de nuestra
+              sociedad.
             </p>
-            <v-btn color="#6F9CA6" large rounded elevation="0" class="mr-4 mb-2" to ="/nosotros">
-              Más Información
-              <v-icon right>mdi-plus</v-icon>
-            </v-btn>
+            <div class="actions">
+              <v-btn color="accent" large rounded class="btn-primary" to="/nosotros">
+                Conoce más <v-icon right>mdi-arrow-right</v-icon>
+              </v-btn>
+            </div>
           </v-col>
-
-          <v-col cols="12" md="6" class="text-center pl-md-6 mb-6 mb-md-0">
+          <v-col cols="12" md="6" class="hero-image-wrapper">
             <v-hover v-slot="{ hover }">
-              <div class="img-wrapper" :class="{ 'hovered': hover }">
-                <v-img src="/cima-logo.jpg" max-height="300" contain class="img-content"></v-img>
-                <div class="img-border"></div>
+              <div class="image-container" :class="{ hovered: hover }">
+                <div class="image-bg"></div>
+                <v-img
+                  src="/cima-logo.jpg"
+                  contain
+                  class="main-image"
+                  alt="Logo CIMA"
+                />
+                <div class="image-border"></div>
               </div>
             </v-hover>
           </v-col>
         </v-row>
       </v-container>
     </section>
-
-    <!-- Aliados estratégicos -->
-    <section class="custom-section light-bg">
-      <v-container>
-        <div class="section-header">
-          <h2>Nuestros <span>Aliados</span></h2>
-          <v-divider color="accent" :thickness="2" class="divider" width="80px"></v-divider>
-          <p>Colaboramos con organizaciones líderes para maximizar nuestro impacto social y ambiental</p>
-        </div>
-
-        <v-row class="justify-center">
-          <v-col cols="12" sm="6" md="4" lg="3" v-for="(aliado, i) in aliados" :key="i">
-            <v-hover v-slot="{ hover }">
-              <v-card :elevation="hover ? 12 : 4" :class="{ 'hover-card': hover }">
-                <div :style="{ backgroundColor: hover ? 'light' : 'white' }" class="card-img-container">
-                  <v-img :src="aliado.img" contain height="200px" :class="{ 'img-zoom': hover }"></v-img>
-                </div>
-                <v-card-text class="text-center pa-4">
-                  <p :class="{ 'text-primary': hover }">{{ aliado.texto }}</p>
-                  <v-expand-transition>
-                    <div v-if="hover" class="mt-3">
-                      <v-btn small outlined color="accent" class="action-btn">
-                        Ver colaboración
-                        <v-icon right small>mdi-arrow-right</v-icon>
-                      </v-btn>
-                    </div>
-                  </v-expand-transition>
-                </v-card-text>
-              </v-card>
-            </v-hover>
-          </v-col>
-        </v-row>
-
-        <div class="text-center mt-8">
-          <v-btn color="secondary" dark large rounded class="px-6 cta-btn" elevation="0">
-            ¿Quieres ser nuestro aliado?
-            <v-icon right>mdi-handshake-outline</v-icon>
-          </v-btn>
-        </div>
-      </v-container>
-    </section>
-
-    <!-- Últimas Iniciativas -->
-    <section class="custom-section">
-      <v-container>
-        <div class="section-header">
-          <h2>Últimas Iniciativas</h2>
-        </div>
-        <v-row dense>
-          <v-col cols="12" md="4" v-for="(iniciativa, i) in iniciativas" :key="i">
-            <v-card class="initiative-card">
-              <v-img :src="iniciativa.img" height="200px" cover gradient="to top, rgba(0,0,0,0.6), rgba(0,0,0,0)">
-                <v-card-title class="white--text">{{ iniciativa.titulo }}</v-card-title>
-              </v-img>
-              <v-card-actions class="justify-end">
-                <v-btn color="secondary" class="white--text" text :to="iniciativa.link">
-                  Ver más
-                  <v-icon right>mdi-plus</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
-    <Preguntas/>
+    <Aliados />
+    <Iniciativa />
+    <Preguntas />
   </v-app>
 </template>
 
 <script>
 import CarouselComponent from "~/components/CarouselComponent.vue";
+import Iniciativa from "~/components/iniciativa.vue";
+import Aliados from "~/components/aliados.vue";
 import Preguntas from "~/components/preguntas.vue";
 
 export default {
-  components: { CarouselComponent,Preguntas },
-  data() {
-    return {
-      aliados: [
-        {
-          img: "/img/campañadental.jpg",
-          texto: "Colaboramos con organizaciones líderes en tecnología para impactar positivamente a la comunidad."
-        },
-        {
-          img: "/img/campañaref.jpg",
-          texto: "Nuestros aliados académicos fundamentan nuestras iniciativas en investigación científica."
-        },
-        {
-          img: "/img/equipocima.jpg",
-          texto: "Las alianzas con el sector público permiten escalar soluciones sostenibles."
-        },
-        {
-          img: "/img/",
-          texto: "Las alianzas con el sector público permiten escalar soluciones sostenibles."
-        }
-      ],
-      iniciativas: [
-        {
-          img: "/img/educacion-digital.png",
-          titulo: "Educación Digital",
-          link: "/iniciativas"
-        },
-        {
-          img: "/img/sostentabilidad-ambiental.png",
-          titulo: "Sostenibilidad Ambiental",
-          link: "/iniciativas"
-        },
-        {
-          img: "/img/inovacion social.png",
-          titulo: "Innovación Social",
-          link: "/iniciativas"
-        }
-      ]
-    };
-  }
+  components: {
+    CarouselComponent,
+    Iniciativa,
+    Aliados,
+    Preguntas,
+  },
 };
 </script>
 
-<style scoped>
-/* Variables y estilos base */
-:root {
-  --primary: #035928;
-  --secondary: #1CA63F;
-  --accent: #A65224;
-  --light: #F2E0BD;
-  --neutral: #6F9CA6;
-}
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-.custom-section {
-  padding: 80px 0;
-  position: relative;
-}
+$primary: #035928;
+$secondary: #1CA63F;
+$accent: #A65224;
+$light-bg: #ffffff;
+$text-dark: #2a2a2a;
+$text-muted: #555555;
 
-.light-bg {
-  background-color: #f9f9f9;
-}
-
-/* Estilos compartidos */
-.section-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.section-header h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.section-header h2 span {
-  color: var(--secondary);
-}
-
-.section-header p {
-  max-width: 600px;
-  margin: 16px auto 0;
-  color: #555;
-}
-
-.divider {
-  border-radius: 2px;
-  margin: 0 auto;
-}
-
-.tag {
-  display: inline-block;
-  background-color: var(--secondary);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-/* Sobre CIMA */
-.img-wrapper {
-  position: relative;
-  padding: 20px;
-  transition: all 0.4s ease;
-}
-
-.img-content {
-  position: relative;
-  z-index: 2;
-  transition: transform 0.4s ease;
-}
-
-.img-border {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-section {
   width: 100%;
-  height: 100%;
-  border: 3px solid var(--accent);
-  border-radius: 16px;
-  transform: rotate(3deg);
-  z-index: 1;
-  transition: all 0.4s ease;
-}
+  padding: 40px 0;
+  background-color: $light-bg;
+  font-family: 'Poppins', sans-serif;
 
-.hovered .img-content {
-  transform: scale(1.05);
-}
-
-.hovered .img-border {
-  transform: rotate(-2deg);
-  border-color: var(--secondary);
-}
-
-/* Aliados */
-.hover-card {
-  transform: translateY(-8px);
-  border: 1px solid var(--accent) !important;
-  border-radius: 12px !important;
-}
-
-.card-img-container {
-  padding: 30px 20px 20px;
-  transition: background-color ease;
-}
-
-.img-zoom {
-  filter: grayscale(0%) !important;
-  opacity: 1 !important;
-  transform: scale(1.05);
-}
-
-
-/* Iniciativas */
-.initiative-card {
-  transition: all 0.3s;
-  border-radius: 8px !important;
-}
-
-.initiative-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
-
-/* Responsive */
-@media (max-width: 960px) {
-  .custom-section {
-    padding: 60px 0;
+  .hero-row {
+    align-items: center;
   }
 
-  .section-header h2 {
-    font-size: 1.75rem;
+  .hero-text {
+    padding-right: 3rem;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: $primary;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .description {
+    font-size: 1.15rem;
+      color: $text-muted;
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    .actions {
+      .btn-primary {
+        background-color: $accent !important;
+        color: white !important;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 14px 32px !important;
+        border-radius: 28px !important;
+        box-shadow: 0 6px 16px rgba($accent, 0.4);
+         font-family: 'Poppins', sans-serif;
+
+        &:hover {
+          background-color: $secondary !important;
+          box-shadow: 0 8px 20px rgba($secondary, 0.5);
+          transform: translateY(-3px);
+          transition: all 0.3s ease;
+        }
+
+        v-icon {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  .hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-left: 2rem;
+
+    .image-container {
+      position: relative;
+      width: 400px;
+      max-width: 90%;
+
+      .image-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($secondary, 0.1);
+        border-radius: 24px;
+        filter: blur(12px);
+        z-index: 0;
+        transition: background 0.3s ease;
+      }
+
+      .main-image {
+        position: relative;
+        border-radius: 24px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        z-index: 2;
+      }
+
+      .image-border {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        width: calc(100% - 32px);
+        height: calc(100% - 32px);
+        border: 4px solid $accent;
+        border-radius: 20px;
+        transform: rotate(4deg);
+        z-index: 1;
+        transition: all 0.35s ease;
+      }
+
+      &.hovered {
+        .main-image {
+          transform: scale(1.07) rotate(1.5deg);
+          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+        }
+
+        .image-border {
+          transform: rotate(-2deg);
+          border-color: $secondary;
+        }
+
+        .image-bg {
+          background: rgba($secondary, 0.2);
+          filter: blur(16px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-section {
+    padding: 64px 20px;
+
+    .hero-text {
+      padding-right: 0;
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+
+      .description {
+        max-width: 100%;
+      }
+    }
+
+    .hero-image-wrapper {
+      padding-left: 0;
+      margin-top: 40px;
+    }
   }
 }
 
 @media (max-width: 600px) {
-  .section-header h2 {
-    font-size: 1.5rem;
-  }
+  .hero-section {
+    padding: 48px 16px;
 
-  .custom-section {
-    padding: 40px 0;
+    .hero-text {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .description {
+        font-size: 1.1rem;
+      }
+    }
   }
 }
 </style>
