@@ -547,7 +547,6 @@ section {
       color: $text-muted;
       border-left: 3px solid $accent;
       font-family: 'Poppins',sans-serif;
-      font-size: 1.2rem;
     }
 
     .more-btn {

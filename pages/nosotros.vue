@@ -7,13 +7,15 @@
           <v-card class="pa-1">
             <v-img src="img/participacion.jpg" height="200px"></v-img>
             <v-card-title
-             class="text-h4 font-weight-bold"
-             :style="{ color: '#035928',  fontFamily: 'Poppins, sans-serif'}" >Misión</v-card-title>
-            <v-card-text   :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '3' }">
-              Articular talento y recursos de los sectores social, público y privado para diseñar
-              e implementar proyectos que atiendan los retos ambientales, sociales y económicos de Atzitzintla
-              y la región Ciudad Serdán, complementando la acción gubernamental y promoviendo bienestar colectivo.
-
+              class="text-h4 font-weight-bold"
+              :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }"
+            >
+               {{ $t('nosotros.mision.titulo') }}
+            </v-card-title>
+            <v-card-text
+              :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '3' }"
+            >
+              {{ $t('nosotros.mision.texto') }}
             </v-card-text>
           </v-card>
         </v-col>
@@ -21,14 +23,21 @@
         <v-col cols="12" md="6">
           <v-card class="pa-1">
             <v-img src="img/crecer.jpg" height="200px"></v-img>
-            <v-card-title  class="text-h4 font-weight-bold"
-            :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }">Visión</v-card-title>
+            <v-card-title
+              class="text-h4 font-weight-bold"
+              :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }"
+            >
+             {{ $t('nosotros.vision.titulo') }}
+            </v-card-title>
             <v-card-text>
-              <p class="mb-2"  :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '1.8' }" >
-                Para 2030, CIMA A.C. se consolidará como referente regional por:
+              <p
+                class="mb-2"
+                :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '1.8' }"
+              >
+                  {{ $t('nosotros.vision.descripcion') }}
               </p>
               <v-list dense>
-                <v-list-item  :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '1.8' }" v-for="(punto, i) in visionPuntos" :key="i">
+                <v-list-item v-for="(punto, i) in visionPuntos" :key="i">
                   <v-list-item-icon>
                     <v-icon color="#1CA63F">mdi-check</v-icon>
                   </v-list-item-icon>
@@ -45,7 +54,7 @@
       <!-- Valores -->
       <v-row class="my-10">
         <v-col cols="12">
-          <h2 class="text-center"  >Nuestros Valores</h2>
+          <h2 class="text-center">  {{ $t('nosotros.valores.titulo') }}</h2>
         </v-col>
         <v-col
           v-for="(valor, i) in valores"
@@ -54,10 +63,11 @@
           md="4"
           class="text-center"
         >
-          <v-card class="pa-7 rounded-xl"
-           style="border: 1px solid #6F9CA6;">
-            <v-icon :color="valor.color" size="100" >{{ valor.icono }}</v-icon>
-            <p class="mt-2 text-h6 font-weight-bold" :style="{ color: valor.color }">{{ valor.texto }}</p>
+          <v-card class="pa-7 rounded-xl" style="border: 1px solid #6F9CA6;">
+            <v-icon :color="valor.color" size="100">{{ valor.icono }}</v-icon>
+            <p class="mt-2 text-h6 font-weight-bold" :style="{ color: valor.color }">
+              {{ valor.texto }}
+            </p>
           </v-card>
         </v-col>
       </v-row>
@@ -65,7 +75,7 @@
       <!-- Agenda 2030 -->
       <v-row>
         <v-col cols="12">
-          <h2 class="text-center">Nuestro Aporte a la Agenda 2030</h2>
+          <h2 class="text-center">Agenda 2030</h2>
           <v-list>
             <v-list-item v-for="(ods, i) in odsList" :key="i">
               <v-list-item-icon>
@@ -79,48 +89,46 @@
         </v-col>
       </v-row>
 
-       <!-- Equipo -->
-    <v-container class="my-12 text-center">
-      <h2  class="text-center">Equipo</h2>
-      <p class="text-body-1 mb-6" :style="{ textAlign: 'justify', lineHeight: '2'  }">
-        Nuestro equipo está compuesto por profesionales multidisciplinarios comprometidos con la misión de CIMA.
-        Contamos con expertos en desarrollo social, tecnología, educación y políticas públicas.
-      </p>
-      <v-row>
-    <v-col
-      v-for="(miembro, index) in miembros"
-      :key="index"
-      cols="12"
-      sm="6"
-      md="4"
-      class="text-center"
-    >
-      <v-img
-        :src="miembro.imagen"
-        aspect-ratio="1"
-        class="rounded-lg elevation-2"
-      ></v-img>
-      <h3 class="mt-4 font-weight-bold text-h5" :style="{ color: '#A65224' }">{{ miembro.titulo }}</h3>
-      <p  :style="{lineHeight: '2'}" class="text-body-2">{{ miembro.descripcion }}</p>
-    </v-col>
-  </v-row>
-
-    </v-container>
-
+      <!-- Equipo -->
+      <v-container class="my-12 text-center">
+        <h2 class="text-center"> {{ $t('nosotros.equipo.titulo') }}</h2>
+        <p class="text-body-1 mb-6" :style="{ textAlign: 'justify', lineHeight: '2' }">
+           {{ $t('nosotros.equipo.descripcion') }}
+        </p>
+        <v-row>
+          <v-col
+            v-for="(miembro, index) in miembros"
+            :key="index"
+            cols="12"
+            sm="6"
+            md="4"
+            class="text-center"
+          >
+            <v-img
+              :src="miembro.imagen"
+              aspect-ratio="1"
+              class="rounded-lg elevation-2"
+            ></v-img>
+            <h3 class="mt-4 font-weight-bold text-h5" :style="{ color: '#A65224' }">
+              {{ miembro.titulo }}
+            </h3>
+            <p :style="{ lineHeight: '2' }" class="text-body-2">{{ miembro.descripcion }}</p>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-container>
   </div>
 </template>
 
 <script setup>
-
 const valores = [
-  { icono: 'mdi-lightbulb-on-outline', texto: 'Innovación', color: '#005977'},
+  { icono: 'mdi-lightbulb-on-outline', texto: 'Innovación', color: '#005977' },
   { icono: 'mdi-hand-heart', texto: 'Solidaridad', color: '#e3c77b' },
   { icono: 'mdi-leaf', texto: 'Sostenibilidad', color: 'green' },
   { icono: 'mdi-account-group', texto: 'Juventud', color: '#6F9CA6' },
   { icono: 'mdi-shield-check', texto: 'Transparencia', color: '#A65224' },
   { icono: 'mdi-account-voice', texto: 'Inclusión', color: '#ff7c00' }
-]
+];
 
 const visionPuntos = [
   'Conservar y restaurar el entorno del Parque Nacional Pico de Orizaba.',
@@ -129,7 +137,7 @@ const visionPuntos = [
   'Impulsar el desarrollo económico local y solidario que genere empleo digno.',
   'Canalizar la fuerza y el liderazgo de las juventudes como motor de transformación.',
   'Ejercer buena gobernanza y transparencia en las finanzas, inspirando confianza entre donantes y aliados.'
-]
+];
 
 const odsList = [
   'ODS 3: Salud y Bienestar',
@@ -141,7 +149,7 @@ const odsList = [
   'ODS 15: Vida de Ecosistemas Terrestres',
   'ODS 16: Paz, Justicia e Instituciones Sólidas',
   'ODS 17: Alianzas para Lograr los Objetivos'
-]
+];
 
 const miembros = [
   {
@@ -186,5 +194,4 @@ h2 {
   color: #035928;
   font-size: 30px;
 }
-
 </style>
