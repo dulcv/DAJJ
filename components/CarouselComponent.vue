@@ -16,16 +16,16 @@
           </div>
         </div>
 
-        <!-- 3) Controles (prev, next, pagination) -->
-        <!-- Flechas a los lados -->
+        <!-- Paginación abajo -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- 3) Controles (prev, next, pagination) -->
+      <!-- Flechas a los lados -->
       <div class="swiper-button-prev slider-arrow">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </div>
       <div class="swiper-button-next slider-arrow">
         <ion-icon name="arrow-forward-outline"></ion-icon>
-      </div>
-      <!-- Paginación abajo -->
-        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -80,7 +80,7 @@ export default {
         "/img/campañaref.jpg",
         "/img/campañadental.jpg",
         "/img/jornada.jpg",
-        "/img/reforestacion.jpg"
+        "/img/reforestacion.jpg",
       ],
       swiperInstance: null,
     };
@@ -226,13 +226,17 @@ body {
    1) #tranding: padding vertical
    ------------------------------------- */
 #tranding {
-  padding: 2rem 0;
+  padding: 2rem 2rem;
+  margin: left 1rem;
   background-color: var(--bg);
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 1440px) {
   #tranding {
-    padding: 5rem 0;
+    padding: 2rem 0;
+
   }
 }
 
@@ -240,17 +244,18 @@ body {
    2) .tranding-slider: altura y padding
    ------------------------------------- */
 #tranding .tranding-slider {
-  height: 40rem;
+  height: 30rem;
   padding: 2rem 0;
   position: relative;
+  margin: 0 5rem;
 }
 
 @media (max-width: 500px) {
   #tranding .tranding-slider {
-    height: 45rem;
+    height: 28rem;
+    margin: 0 2rem;
   }
 }
-
 
 /* -------------------------------------
    3) Cada .tranding-slide (ancho fijo)
@@ -342,11 +347,10 @@ body {
   justify-content: center;
 } */
 
-
 /* -------------------------------------
    8) Flecha “Next” (posición responsiva)
    ------------------------------------- */
- /* .tranding-slider-control .swiper-button-next {
+/* .tranding-slider-control .swiper-button-next {
   left: 58% !important;
   transform: translateX(-58%) !important;
 }
@@ -417,11 +421,11 @@ body {
   background: var(--primary);
 }  */
 
-  /* Flechas a los lados */
+/* Flechas a los lados */
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
-  top: 50%;
+  top: 20%;
   z-index: 10;
   transform: translateY(-50%);
   background: var(--white);
@@ -456,7 +460,7 @@ body {
 /* === Posicionamiento general de flechas === */
 .swiper-button-next,
 .swiper-button-prev {
-  top: 50%;
+  top: 10%;
   width: 4rem;
   height: 4rem;
   background: var(--white);
@@ -501,6 +505,7 @@ body {
   .swiper-button-prev {
     width: 3rem;
     height: 3rem;
+    top:5%;
   }
 
   .swiper-button-next ion-icon,
@@ -509,13 +514,8 @@ body {
   }
 
   .tranding-slider .swiper-wrapper {
-  padding-left: 2rem;
-  padding-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
-
-
-
-}
-
-
 </style>
