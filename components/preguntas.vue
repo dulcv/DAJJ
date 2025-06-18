@@ -2,7 +2,7 @@
   <v-container class="faq-section py-8" style="max-width: 1000px;">
     <!-- Encabezado con decoración -->
     <div class="text-center mb-8">
-      <h1 class="section-title">Preguntas <span>Frecuentes</span></h1>
+      <h1 class="section-title">  {{ $t('cPreguntas.titulo') }} <span>{{ $t('cPreguntas.titulo2') }}</span></h1>
       <v-divider
         color="#A65224"
         :thickness="2"
@@ -10,7 +10,7 @@
         width="80px"
       ></v-divider>
       <p class="section-subtitle">
-        Encuentra respuestas rápidas a las preguntas más comunes sobre nuestro trabajo
+        {{ $t('cPreguntas.descripcion') }}
       </p>
     </div>
 
@@ -28,10 +28,10 @@
               expand-icon="mdi-plus"
               collapse-icon="mdi-minus"
             >
-              <span class="question-text">{{ item.pregunta }}</span>
+              <span class="question-text">{{ $t(item.pregunta) }}</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content class="answer px-6 pb-4">
-              <p class="answer-text">{{ item.respuesta }}</p>
+              <p class="answer-text">{{ $t(item.respuesta) }}</p>
               <v-btn
                 v-if="item.link"
                 color="#1CA63F"
@@ -40,7 +40,7 @@
                 :href="item.link"
                 class="mt-2 more-btn"
               >
-                Más información
+                  {{ $t('cPreguntas.masInformacion') }}
                 <v-icon right small>mdi-arrow-right</v-icon>
               </v-btn>
             </v-expansion-panel-content>
@@ -60,10 +60,10 @@
               expand-icon="mdi-plus"
               collapse-icon="mdi-minus"
             >
-              <span class="question-text">{{ item.pregunta }}</span>
+              <span class="question-text">{{ $t(item.pregunta) }}</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content class="answer px-6 pb-4">
-              <p class="answer-text">{{ item.respuesta }}</p>
+              <p class="answer-text">{{ $t(item.respuesta) }}</p>
               <v-btn
                 v-if="item.link"
                 color="#1CA63F"
@@ -103,39 +103,40 @@ export default {
   data() {
     return {
       faqs: [
-        {
-          pregunta: "¿Dónde están ubicados?",
-          respuesta: "Nuestro centro principal está en Av. Principal #123, Ciudad. También tenemos puntos de atención en varios sectores.",
-          link: "/ubicacion"
-        },
-        {
-          pregunta: "Rescaté un perro, ¿a dónde lo llevo?",
-          respuesta: "Puedes traerlo a nuestro centro de rescate de 9am a 5pm. Si necesitas ayuda con el transporte, contáctanos para coordinar."
-        },
-        {
-          pregunta: "Quiero adoptar, ¿cuál es el proceso?",
-          respuesta: "1) Llena el formulario en línea, 2) Agenda entrevista, 3) Visita de evaluación, 4) Firma de contrato. Todo en aproximadamente 1 semana.",
-          link: "/adopcion"
-        },
-        {
-          pregunta: "¿Cómo puedo dar en adopción a mi perro?",
-          respuesta: "Debes agendar una cita para evaluación. Requerimos historial médico y motivo de entrega."
-        },
-        {
-          pregunta: "¿Ofrecen servicios veterinarios?",
-          respuesta: "Sí, tenemos clínica con servicios básicos. Atendemos priorizando animales rescatados."
-        },
-        {
-          pregunta: "¿Cómo reportar maltrato animal?",
-          respuesta: "Puedes hacerlo mediante nuestro formulario confidencial o llamando al 555-1234.",
-          link: "/denuncias"
-        },
-        {
-          pregunta: "¿Qué donativos necesitan?",
-          respuesta: "Alimento, medicinas, cobijas, juguetes y donaciones monetarias. Todo es bienvenido.",
-          link: "/donaciones"
-        }
-      ]
+  {
+    pregunta: 'cPreguntas.faqs.ubicacion.pregunta',
+    respuesta: 'cPreguntas.faqs.ubicacion.respuesta',
+    link: '/ubicacion'
+  },
+  {
+    pregunta: 'cPreguntas.faqs.rescate.pregunta',
+    respuesta: 'cPreguntas.faqs.rescate.respuesta'
+  },
+  {
+    pregunta: 'cPreguntas.faqs.adopcion.pregunta',
+    respuesta: 'cPreguntas.faqs.adopcion.respuesta',
+    link: '/adopcion'
+  },
+  {
+    pregunta: 'cPreguntas.faqs.entregar.pregunta',
+    respuesta: 'cPreguntas.faqs.entregar.respuesta'
+  },
+  {
+    pregunta: 'cPreguntas.faqs.veterinario.pregunta',
+    respuesta: 'cPreguntas.faqs.veterinario.respuesta'
+  },
+  {
+    pregunta: 'cPreguntas.faqs.maltrato.pregunta',
+    respuesta: 'cPreguntas.faqs.maltrato.respuesta',
+    link: '/denuncias'
+  },
+  {
+    pregunta: 'cPreguntas.faqs.donativos.pregunta',
+    respuesta: 'cPreguntas.faqs.donativos.respuesta',
+    link: '/donaciones'
+  }
+]
+
     }
   },
   computed: {

@@ -42,7 +42,7 @@
                     <v-icon color="#1CA63F">mdi-check</v-icon>
                   </v-list-item-icon>
                   <v-list-item-content>
-                    <v-list-item-title>{{ punto }}</v-list-item-title>
+                    <v-list-item-title>  {{ $t(punto) }}</v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -66,7 +66,7 @@
           <v-card class="pa-7 rounded-xl" style="border: 1px solid #6F9CA6;">
             <v-icon :color="valor.color" size="100">{{ valor.icono }}</v-icon>
             <p class="mt-2 text-h6 font-weight-bold" :style="{ color: valor.color }">
-              {{ valor.texto }}
+             {{ $t(valor.texto) }}
             </p>
           </v-card>
         </v-col>
@@ -82,7 +82,7 @@
                 <v-icon color="green">mdi-plus-circle</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title>{{ ods }}</v-list-item-title>
+                <v-list-item-title>{{ $t(ods) }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -110,9 +110,9 @@
               class="rounded-lg elevation-2"
             ></v-img>
             <h3 class="mt-4 font-weight-bold text-h5" :style="{ color: '#A65224' }">
-              {{ miembro.titulo }}
+            {{ $t(miembro.titulo) }}
             </h3>
-            <p :style="{ lineHeight: '2' }" class="text-body-2">{{ miembro.descripcion }}</p>
+            <p :style="{ lineHeight: '2' }" class="text-body-2">{{ $t(miembro.descripcion) }}</p>
           </v-col>
         </v-row>
       </v-container>
@@ -122,67 +122,69 @@
 
 <script setup>
 const valores = [
-  { icono: 'mdi-lightbulb-on-outline', texto: 'Innovación', color: '#005977' },
-  { icono: 'mdi-hand-heart', texto: 'Solidaridad', color: '#e3c77b' },
-  { icono: 'mdi-leaf', texto: 'Sostenibilidad', color: 'green' },
-  { icono: 'mdi-account-group', texto: 'Juventud', color: '#6F9CA6' },
-  { icono: 'mdi-shield-check', texto: 'Transparencia', color: '#A65224' },
-  { icono: 'mdi-account-voice', texto: 'Inclusión', color: '#ff7c00' }
+  { icono: 'mdi-lightbulb-on-outline', texto: 'nosotros.valores.innovacion', color: '#005977' },
+  { icono: 'mdi-hand-heart', texto: 'nosotros.valores.solidaridad', color: '#e3c77b' },
+  { icono: 'mdi-leaf', texto: 'nosotros.valores.sostenibilidad', color: 'green' },
+  { icono: 'mdi-account-group', texto: 'nosotros.valores.juventud', color: '#6F9CA6' },
+  { icono: 'mdi-shield-check', texto: 'nosotros.valores.transparencia', color: '#A65224' },
+  { icono: 'mdi-account-voice', texto: 'nosotros.valores.inclusion', color: '#ff7c00' }
 ];
 
+
 const visionPuntos = [
-  'Conservar y restaurar el entorno del Parque Nacional Pico de Orizaba.',
-  'Garantizar servicios básicos y reducir marginación y rezago social.',
-  'Elevar la calidad de la educación y la salud.',
-  'Impulsar el desarrollo económico local y solidario que genere empleo digno.',
-  'Canalizar la fuerza y el liderazgo de las juventudes como motor de transformación.',
-  'Ejercer buena gobernanza y transparencia en las finanzas, inspirando confianza entre donantes y aliados.'
+  'nosotros.vision.punto1',
+  'nosotros.vision.punto2',
+  'nosotros.vision.punto3',
+  'nosotros.vision.punto4',
+  'nosotros.vision.punto5',
+  'nosotros.vision.punto6'
 ];
 
 const odsList = [
-  'ODS 3: Salud y Bienestar',
-  'ODS 4: Educación de Calidad',
-  'ODS 8: Trabajo Decente y Crecimiento Económico',
-  'ODS 10: Reducción de las Desigualdades',
-  'ODS 11: Ciudades y Comunidades Sostenibles',
-  'ODS 13: Acción por el Clima',
-  'ODS 15: Vida de Ecosistemas Terrestres',
-  'ODS 16: Paz, Justicia e Instituciones Sólidas',
-  'ODS 17: Alianzas para Lograr los Objetivos'
+  'nosotros.ods.punto1',
+  'nosotros.ods.punto2',
+  'nosotros.ods.punto3',
+  'nosotros.ods.punto4',
+  'nosotros.ods.punto5',
+  'nosotros.ods.punto6',
+  'nosotros.ods.punto7',
+  'nosotros.ods.punto8',
+  'nosotros.ods.punto9'
 ];
 
 const miembros = [
   {
     imagen: '/img/equipo1.jpg',
-    titulo: 'Presidente',
-    descripcion: 'Responsable de la representación legal y liderazgo estratégico de la organización.'
+    titulo: 'nosotros.miembros.presidente.titulo',
+    descripcion: 'nosotros.miembros.presidente.descripcion'
   },
   {
-    imagen: '/img/equipo2.jpg',
-    titulo: 'Secretario',
-    descripcion: 'Encargado de la documentación, actas y comunicaciones institucionales.'
+    imagen: '/img/campañadental.jpg',
+    titulo: 'nosotros.miembros.secretario.titulo',
+    descripcion: 'nosotros.miembros.secretario.descripcion'
   },
   {
     imagen: '/img/equipo3.jpg',
-    titulo: 'Tesorero',
-    descripcion: 'Administra los recursos financieros y la rendición de cuentas.'
+    titulo: 'nosotros.miembros.tesorero.titulo',
+    descripcion: 'nosotros.miembros.tesorero.descripcion'
   },
   {
     imagen: '/img/equipo4.jpg',
-    titulo: 'Director de Operaciones',
-    descripcion: 'Coordina la ejecución de proyectos y el equipo de trabajo en campo.'
+    titulo: 'nosotros.miembros.operaciones.titulo',
+    descripcion: 'nosotros.miembros.operaciones.descripcion'
   },
   {
     imagen: '/img/equipo5.jpg',
-    titulo: 'Director de Comunicación',
-    descripcion: 'Gestiona la identidad institucional, redes sociales y vínculos con medios.'
+    titulo: 'nosotros.miembros.comunicacion.titulo',
+    descripcion: 'nosotros.miembros.comunicacion.descripcion'
   },
   {
     imagen: '/img/equipo6.jpg',
-    titulo: 'Director de Finanzas',
-    descripcion: 'Diseña estrategias de sostenibilidad financiera y control presupuestal.'
+    titulo: 'nosotros.miembros.finanzas.titulo',
+    descripcion: 'nosotros.miembros.finanzas.descripcion'
   }
 ];
+
 
 </script>
 

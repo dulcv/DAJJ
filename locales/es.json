@@ -15,26 +15,58 @@
   "vision": {
     "titulo": "Visión",
     "descripcion": "Aspiramos a ser un referente de transformación comunitaria, inclusiva y sostenible.",
-    "lista": [
-      "Conservar y restaurar el entorno del Parque Nacional Pico de Orizaba.",
-      "Garantizar servicios básicos y reducir marginación y rezago social.",
-      "Elevar la calidad de la educación y la salud.",
-      "Impulsar el desarrollo económico local y solidario que genere empleo digno.",
-      "Canalizar la fuerza y el liderazgo de las juventudes como motor de transformación.",
-      "Ejercer buena gobernanza y transparencia en las finanzas, inspirando confianza entre donantes y aliados."
-    ]
+    "punto1": "Conservar y restaurar el entorno del Parque Nacional Pico de Orizaba.",
+    "punto2": "Garantizar servicios básicos y reducir marginación y rezago social.",
+    "punto3": "Elevar la calidad de la educación y la salud.",
+    "punto4": "Impulsar el desarrollo económico local y solidario que genere empleo digno.",
+    "punto5": "Canalizar la fuerza y el liderazgo de las juventudes como motor de transformación.",
+    "punto6": "Ejercer buena gobernanza y transparencia en las finanzas, inspirando confianza entre donantes y aliados."
   },
   "valores": {
-    "titulo": "Valores",
-    "lista": [
-      "Innovación",
-      "Solidaridad",
-      "Sostenibilidad",
-      "Juventud",
-      "Transparencia",
-      "Inclusión"
-    ]
+    "titulo":"Values",
+    "innovacion": "Innovación",
+    "solidaridad": "Solidaridad",
+    "sostenibilidad": "Sostenibilidad",
+    "juventud": "Juventud",
+    "transparencia": "Transparencia",
+    "inclusion": "Inclusión"
   },
+  "ods": {
+  "titulo": "Agenda 2030",
+  "punto1": "ODS 3: Salud y Bienestar",
+  "punto2": "ODS 4: Educación de Calidad",
+  "punto3": "ODS 8: Trabajo Decente y Crecimiento Económico",
+  "punto4": "ODS 10: Reducción de las Desigualdades",
+  "punto5": "ODS 11: Ciudades y Comunidades Sostenibles",
+  "punto6": "ODS 13: Acción por el Clima",
+  "punto7": "ODS 15: Vida de Ecosistemas Terrestres",
+  "punto8": "ODS 16: Paz, Justicia e Instituciones Sólidas",
+  "punto9": "ODS 17: Alianzas para Lograr los Objetivos"
+}, "miembros": {
+    "presidente": {
+      "titulo": "Presidente",
+      "descripcion": "Responsable de la representación legal y liderazgo estratégico de la organización."
+    },
+    "secretario": {
+      "titulo": "Secretario",
+      "descripcion": "Encargado de la documentación, actas y comunicaciones institucionales."
+    },
+    "tesorero": {
+      "titulo": "Tesorero",
+      "descripcion": "Administra los recursos financieros y la rendición de cuentas."
+    },
+    "operaciones": {
+      "titulo": "Director de Operaciones",
+      "descripcion": "Coordina la ejecución de proyectos y el equipo de trabajo en campo."
+    },
+    "comunicacion": {
+      "titulo": "Director de Comunicación",
+      "descripcion": "Gestiona la identidad institucional, redes sociales y vínculos con medios."
+    },
+    "finanzas": {
+      "titulo": "Director de Finanzas",
+      "descripcion": "Diseña estrategias de sostenibilidad financiera y control presupuestal."
+    }},
   "equipo": {
     "titulo": "Equipo",
     "descripcion": "Nuestro equipo está conformado por personas comprometidas con el bienestar comunitario, la justicia social y la protección ambiental.",
@@ -69,17 +101,16 @@
 "index":{
   "quienesSomos": {
     "titulo": "Sobre CIMA",
-    "descripcion": "CIMA es una organización comprometida con el desarrollo sostenible y la innovación social. Trabajamos para crear soluciones efectivas a los desafíos más urgentes de nuestra sociedad.",
-    "boton": "Más Información"
+    "descripcion": "En CIMA fusionamos creatividad y compromiso para construir soluciones sostenibles a los desafíos más urgentes de nuestra sociedad.",
+    "boton": "Conoce más"
   },
   "aliados": {
     "titulo": "Nuestros Aliados",
     "descripcion": "Colaboramos con organizaciones líderes para maximizar nuestro impacto social y ambiental",
     "lista": [
-      "Colaboramos con organizaciones líderes en tecnología para impactar positivamente a la comunidad.",
-      "Nuestros aliados académicos fundamentan nuestras iniciativas en investigación científica.",
-      "Las alianzas con el sector público permiten escalar soluciones sostenibles.",
-      "Las alianzas con el sector público permiten escalar soluciones sostenibles."
+      "Colaboración con líderes tecnológicos",
+        "Aliados académicos para investigación",
+        "Alianzas con el sector público"
     ],
     "boton": "¿Quieres ser nuestro aliado?"
   },
@@ -104,39 +135,28 @@
 },
   "cPreguntas": {
     "titulo": "Preguntas",
-    "titulo2": "frecuentes",
-    "descripcion": "Aquí respondemos tus dudas más comunes.",
+    "titulo2": "Frecuentes",
+    "descripcion": "Encuentra respuestas rápidas a las preguntas más comunes sobre nuestro trabajo",
     "masInformacion": "Más información",
-    "faqs": {
-      "ubicacion": {
-        "pregunta": "¿Dónde están ubicados?",
-        "respuesta": "Nuestro centro principal está en Av. Principal #123, Ciudad. También tenemos puntos de atención en varios sectores."
+    "faqsLeft": [
+      {
+        "pregunta": "¿Qué tipo de proyectos desarrolla CIMA A.C.?",
+        "respuesta": "Desarrollamos proyectos enfocados en la conservación del medio ambiente, educación, salud, desarrollo económico local y fortalecimiento comunitario."
       },
-      "rescate": {
-        "pregunta": "Rescaté un perro, ¿a dónde lo llevo?",
-        "respuesta": "Puedes traerlo a nuestro centro de rescate de 9am a 5pm. Si necesitas ayuda con el transporte, contáctanos para coordinar."
-      },
-      "adopcion": {
-        "pregunta": "Quiero adoptar, ¿cuál es el proceso?",
-        "respuesta": "1) Llena el formulario en línea, 2) Agenda entrevista, 3) Visita de evaluación, 4) Firma de contrato. Todo en aproximadamente 1 semana."
-      },
-      "entregar": {
-        "pregunta": "¿Cómo puedo dar en adopción a mi perro?",
-        "respuesta": "Debes agendar una cita para evaluación. Requerimos historial médico y motivo de entrega."
-      },
-      "veterinario": {
-        "pregunta": "¿Ofrecen servicios veterinarios?",
-        "respuesta": "Sí, tenemos clínica con servicios básicos. Atendemos priorizando animales rescatados."
-      },
-      "maltrato": {
-        "pregunta": "¿Cómo reportar maltrato animal?",
-        "respuesta": "Puedes hacerlo mediante nuestro formulario confidencial o llamando al 555-1234."
-      },
-      "donativos": {
-        "pregunta": "¿Qué donativos necesitan?",
-        "respuesta": "Alimento, medicinas, cobijas, juguetes y donaciones monetarias. Todo es bienvenido."
+      {
+        "pregunta": "¿Quiénes forman parte del equipo de CIMA A.C.?",
+        "respuesta": "Nuestro equipo está compuesto por profesionales multidisciplinarios comprometidos con el desarrollo social."
       }
-    }
+    ],
+    "faqsRight": [
+      {
+        "pregunta": "¿Cómo puedo participar como voluntario?",
+        "respuesta": "Puedes contactarnos a través de nuestro formulario de voluntariado o asistir a nuestras jornadas de reclutamiento."
+      },
+      {
+        "pregunta": "¿Reciben donaciones?",
+        "respuesta": "Sí, aceptamos donaciones tanto en especie como monetarias para apoyar nuestros proyectos."
+      }
+    ]
   }
-
 }
