@@ -9583,10 +9583,15 @@ vuetify-loader@^1.7.3:
     file-loader "^6.2.0"
     loader-utils "^2.0.0"
 
-vuetify@^2.5.5, vuetify@^2.6:
+vuetify@^2.6:
   version "2.7.2"
   resolved "https://registry.npmjs.org/vuetify/-/vuetify-2.7.2.tgz"
   integrity sha512-qr04ww7uzAPQbpk751x4fSdjsJ+zREzjQ/rBlcQGuWS6MIMFMXcXcwvp4+/tnGsULZxPMWfQ0kmZmg5Yc/XzgQ==
+
+vuetify@^3.8.10:
+  version "3.8.10"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.8.10.tgz#73a33f900a9ad483e6c73b9b5a05851988e3e513"
+  integrity sha512-3BETdCGh3eB1cV5+dA+L5CYi62Q/Jb09H512GImeYzMHd2R+LntO0F5pNCqVB4KoxymQ4Jej3Q0J6AYmf0KD8w==
 
 vuex@^3.6.2:
   version "3.6.2"
