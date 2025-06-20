@@ -7,6 +7,7 @@
     "transparencia": "Transparencia",
     "donar": "Donar"
   },
+  
   "nosotros": {
   "mision": {
     "titulo": "Misión",
@@ -23,7 +24,7 @@
     "punto6": "Ejercer buena gobernanza y transparencia en las finanzas, inspirando confianza entre donantes y aliados."
   },
   "valores": {
-    "titulo":"Values",
+    "titulo":"Valores",
     "innovacion": "Innovación",
     "solidaridad": "Solidaridad",
     "sostenibilidad": "Sostenibilidad",
@@ -31,18 +32,27 @@
     "transparencia": "Transparencia",
     "inclusion": "Inclusión"
   },
-  "ods": {
-  "titulo": "Agenda 2030",
-  "punto1": "ODS 3: Salud y Bienestar",
-  "punto2": "ODS 4: Educación de Calidad",
-  "punto3": "ODS 8: Trabajo Decente y Crecimiento Económico",
-  "punto4": "ODS 10: Reducción de las Desigualdades",
-  "punto5": "ODS 11: Ciudades y Comunidades Sostenibles",
-  "punto6": "ODS 13: Acción por el Clima",
-  "punto7": "ODS 15: Vida de Ecosistemas Terrestres",
-  "punto8": "ODS 16: Paz, Justicia e Instituciones Sólidas",
-  "punto9": "ODS 17: Alianzas para Lograr los Objetivos"
-}, "miembros": {
+   "ods": {
+      "titulo": "Agenda 2030",
+      "punto1": "ODS 3: Salud y Bienestar",
+      "descripcion1": "Garantizar una vida sana y promover el bienestar para todos en todas las edades.",
+      "punto2": "ODS 4: Educación de Calidad",
+      "descripcion2": "Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida.",
+      "punto3": "ODS 8: Trabajo Decente y Crecimiento Económico",
+      "descripcion3": "Promover el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo y el trabajo decente para todos.",
+      "punto4": "ODS 10: Reducción de las Desigualdades",
+      "descripcion4": "Reducir la desigualdad en y entre los países.",
+      "punto5": "ODS 11: Ciudades y Comunidades Sostenibles",
+      "descripcion5": "Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.",
+      "punto6": "ODS 13: Acción por el Clima",
+      "descripcion6": "Adoptar medidas urgentes para combatir el cambio climático y sus efectos.",
+      "punto7": "ODS 15: Vida de Ecosistemas Terrestres",
+      "descripcion7": "Gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras y frenar la pérdida de biodiversidad.",
+      "punto8": "ODS 16: Paz, Justicia e Instituciones Sólidas",
+      "descripcion8": "Promover sociedades justas, pacíficas e inclusivas.",
+      "punto9": "ODS 17: Alianzas para Lograr los Objetivos",
+      "descripcion9": "Revitalizar la Alianza Mundial para el Desarrollo Sostenible y fortalecer los medios de implementación."
+    }, "miembros": {
     "presidente": {
       "titulo": "Presidente",
       "descripcion": "Responsable de la representación legal y liderazgo estratégico de la organización."

@@ -30,17 +30,26 @@
     "transparencia": "Transparency",
     "inclusion": "Inclusion"
   },  
-   "ods": {
-      "titulo": "Agenda 2030",
+    "ods": {
+      "titulo": "2030 Agenda",
       "punto1": "SDG 3: Good Health and Well-being",
+      "descripcion1": "Ensure healthy lives and promote well-being for all at all ages.",
       "punto2": "SDG 4: Quality Education",
+      "descripcion2": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.",
       "punto3": "SDG 8: Decent Work and Economic Growth",
+      "descripcion3": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all.",
       "punto4": "SDG 10: Reduced Inequalities",
+      "descripcion4": "Reduce inequality within and among countries.",
       "punto5": "SDG 11: Sustainable Cities and Communities",
+      "descripcion5": "Make cities and human settlements inclusive, safe, resilient and sustainable.",
       "punto6": "SDG 13: Climate Action",
+      "descripcion6": "Take urgent action to combat climate change and its impacts.",
       "punto7": "SDG 15: Life on Land",
+      "descripcion7": "Sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss.",
       "punto8": "SDG 16: Peace, Justice and Strong Institutions",
-      "punto9": "SDG 17: Partnerships for the Goals"
+      "descripcion8": "Promote peaceful and inclusive societies for sustainable development.",
+      "punto9": "SDG 17: Partnerships for the Goals",
+      "descripcion9": "Strengthen the means of implementation and revitalize the global partnership for sustainable development."
     },"miembros": {
     "presidente": {
       "titulo": "President",
