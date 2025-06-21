@@ -1,10 +1,7 @@
 <template>
   <div>
     <v-app-bar flat class="gradient-navbar" app height="96px">
-      <v-app-bar-nav-icon
-        class="d-md-none"
-        @click="drawer = !drawer"
-      />
+      <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
 
       <!-- LOGO -->
       <v-toolbar-title class="d-flex align-center" style="height: 100%">
@@ -21,23 +18,22 @@
       <v-spacer class="d-none d-md-flex" />
 
       <!-- Navegación -->
-      <div class="d-none d-md-flex">
-        <v-btn
-          v-for="item in navItems"
-          :key="item.text"
-          :to="item.link"
-          text
-          class="text-capitalize font-weight-bold btn-nav"
-          :class="{ 'active-link': currentRoute === item.link }"
-        >
-          {{ item.text }}
-        </v-btn>
-      </div>
+       <div class="d-none d-md-flex">
+<nuxt-link
+        v-for="item in navItems"
+        :key="item.text"
+        :to="item.link"
+        class="custom-nav-link btn-nav"
+        :class="{ 'active-link': $route.path === item.link }"
+      >
+        {{ item.text }}
+      </nuxt-link>
+       </div>
 
       <!-- Botón Donar -->
       <v-btn
         color="#035928"
-        class="ml-2 white--text rounded-pill btn-nav d-none d-md-inline-flex"
+        class="ml-2 white--text rounded-pill btn-nav d-none d-md-inline-flex btn-primary"
         elevation="1"
       >
         Donar
@@ -73,33 +69,31 @@
       </v-btn>
     </v-app-bar>
 
-    <!-- Menú móvil -->
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      temporary
-      class="d-md-none"
-    >
-      <v-list>
-        <v-list-item
-          v-for="item in navItems"
-          :key="item.text"
-          :to="item.link"
-          @click="drawer = false"
-          link
-        >
-          <v-list-item-title>{{ item.text }}</v-list-item-title>
-        </v-list-item>
+  <!-- Menú móvil -->
+<v-navigation-drawer v-model="drawer" app temporary class="d-md-none">
+  <v-list>
+    <!-- Enlaces con subrayado y activo -->
+    <v-list-item v-for="item in navItems" :key="item.text" class="pa-0">
+      <nuxt-link
+        :to="item.link"
+        class="custom-nav-link btn-nav px-4 py-2 d-inline-block w-100"
+        :class="{ 'active-link': $route.path === item.link }"
+        @click.native="drawer = false"
+      >
+        {{ item.text }}
+      </nuxt-link>
+    </v-list-item>
 
-        <v-divider class="my-2" />
+    <v-divider class="my-2" />
 
-        <v-list-item>
-          <v-btn block color="#035928" class="white--text" @click="donate">
-            Donar
-          </v-btn>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+    <!-- Botón Donar -->
+    <v-list-item>
+      <v-btn block color="#035928" class="white--text" @click="donate">
+        Donar
+      </v-btn>
+    </v-list-item>
+  </v-list>
+</v-navigation-drawer>
   </div>
 </template>
 
@@ -109,31 +103,31 @@ export default {
     return {
       drawer: false,
       navItems: [
-        { text: 'Inicio', link: '/' },
-        { text: 'Nosotros', link: '/nosotros' },
-        { text: 'Iniciativas', link: '/iniciativas' },
-        { text: 'Recursos', link: '/recursos' },
-        { text: 'Transparencia', link: '/transparencia' }
-      ]
-    }
+        { text: "Inicio", link: "/" },
+        { text: "Nosotros", link: "/nosotros" },
+        { text: "Iniciativas", link: "/iniciativas" },
+        { text: "Recursos", link: "/recursos" },
+        { text: "Transparencia", link: "/transparencia" },
+      ],
+    };
   },
   computed: {
     currentRoute() {
-      return this.$route.path
-    }
+      return this.$route.path;
+    },
   },
   methods: {
     changeLanguage(lang) {
       // Aquí puedes usar i18n o lo que prefieras
-      console.log(`Idioma cambiado a ${lang}`)
+      console.log(`Idioma cambiado a ${lang}`);
     },
     donate() {
       // Acción al hacer clic en "Donar"
-      console.log('Ir a página de donaciones')
-      this.$router.push('/donar') // ajusta según tu ruta real
-    }
-  }
-}
+      console.log("Ir a página de donaciones");
+      this.$router.push("/donar"); // ajusta según tu ruta real
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -150,28 +144,44 @@ export default {
   backdrop-filter: blur(5px);
 }
 
-
 .logo {
   color: #035928;
   font-size: 2rem;
 }
 
-.btn-nav {
-  margin: 0.3rem;
+.custom-nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #035928;
+  font-weight: bold;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
 }
 
-.btn-nav::after {
-  content: "";
+.custom-nav-link::after {
+  content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 0.2rem;
   left: 0;
   width: 0%;
-  height: 2px;
-  background-color:#A65224;
-  transition: width 0.3s;
+  height: 3px;
+  background-color: #A65224;
+  transition: width 0.3s ease ;
 }
 
-.btn-nav:hover::after{
+.custom-nav-link:hover::after {
   width: 100%;
 }
+
+
+.custom-nav-link.active-link::after {
+  width: 100%;
+}
+.btn-primary{
+  transition: all 0.3s ease;
+
+  }
+
+
 </style>

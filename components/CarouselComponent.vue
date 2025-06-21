@@ -15,18 +15,17 @@
             </div>
           </div>
         </div>
-
-        <!-- Paginación abajo -->
-        <div class="swiper-pagination"></div>
+        <!-- Paginación abajo
+        <div class="swiper-pagination"></div>-->
       </div>
-      <!-- 3) Controles (prev, next, pagination) -->
-      <!-- Flechas a los lados -->
+      <!---- 3) Controles (prev, next, pagination)
+      -- Flechas a los lados
       <div class="swiper-button-prev slider-arrow">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </div>
       <div class="swiper-button-next slider-arrow">
         <ion-icon name="arrow-forward-outline"></ion-icon>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -55,14 +54,14 @@ export default {
       ],
       script: [
         // 5) Ionicons (para las flechas)
-        {
-          type: "module",
-          src: "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js",
-        },
-        {
-          nomodule: "",
-          src: "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js",
-        },
+        //{
+        //  type: "module",
+        //  src: "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js",
+        //},
+        //{
+        // nomodule: "",
+        //  src: "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js",
+        //},
         // 6) Swiper JS desde CDN
         {
           src: "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js",
@@ -81,6 +80,7 @@ export default {
         "/img/campañadental.jpg",
         "/img/jornada.jpg",
         "/img/reforestacion.jpg",
+
       ],
       swiperInstance: null,
     };
@@ -101,20 +101,19 @@ export default {
         centeredSlides: true,
         loop: true,
         slidesPerView: "auto",
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
+      coverflowEffect: {
+  rotate: 0,
+  stretch: 18.5,
+  depth: 80,
+  modifier: 2.5,
         },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+
+        //Para qeu se reproduzcan solitas las imagenes
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
         },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+
       });
     },
   },
@@ -204,7 +203,9 @@ body {
   max-width: 124rem;
   padding: 0 1rem;
   margin: 0 auto;
+
 }
+
 
 /* -------------------------------------
    Títulos de sección
@@ -226,17 +227,14 @@ body {
    1) #tranding: padding vertical
    ------------------------------------- */
 #tranding {
-  padding: 2rem 2rem;
-  margin: left 1rem;
+  padding: 4rem 5rem;
   background-color: var(--bg);
-  justify-content: center;
-  align-items: center;
+
 }
 
 @media (max-width: 1440px) {
   #tranding {
     padding: 2rem 0;
-
   }
 }
 
@@ -247,13 +245,16 @@ body {
   height: 30rem;
   padding: 2rem 0;
   position: relative;
-  margin: 0 5rem;
+
 }
 
 @media (max-width: 500px) {
+  .container {
+  padding: 0 2rem;
+}
   #tranding .tranding-slider {
     height: 28rem;
-    margin: 0 2rem;
+    margin: 0;
   }
 }
 
@@ -265,6 +266,7 @@ body {
   width: 20rem;
   height: 24rem;
   position: relative;
+
 }
 
 @media (max-width: 500px) {
@@ -282,11 +284,13 @@ body {
    4) .tranding-slide-img img
    se movio para hacer las img mas chicas
    ------------------------------------- */
+
 .tranding-slide .tranding-slide-img img {
   width: 20rem;
   height: 24rem;
   border-radius: 1.5rem;
   object-fit: cover;
+
 }
 
 /* -------------------------------------
@@ -330,7 +334,7 @@ body {
    6) Ocultamos sombras laterales
    para el efecto coverflow (opcional)
    ------------------------------------- */
-.swiper-slide-shadow-left,
+/*.swiper-slide-shadow-left,
 .swiper-slide-shadow-right {
   display: none;
 }
@@ -422,10 +426,10 @@ body {
 }  */
 
 /* Flechas a los lados */
-.swiper-button-prev,
+/*.swiper-button-prev,
 .swiper-button-next {
   position: absolute;
-  top: 20%;
+  top: 50%;
   z-index: 10;
   transform: translateY(-50%);
   background: var(--white);
@@ -457,10 +461,10 @@ body {
   color: #222224;
 }
 
-/* === Posicionamiento general de flechas === */
+=== Posicionamiento general de flechas ===
 .swiper-button-next,
 .swiper-button-prev {
-  top: 10%;
+  top: 50%;
   width: 4rem;
   height: 4rem;
   background: var(--white);
@@ -475,14 +479,14 @@ body {
   content: "";
 }
 
-/* Icono dentro de la flecha */
+/* Icono dentro de la flecha
 .swiper-button-next ion-icon,
 .swiper-button-prev ion-icon {
   font-size: 2rem;
   color: #222224;
 }
 
-/* === Posiciones en pantallas grandes === */
+/* === Posiciones en pantallas grandes ===
 .swiper-button-prev {
   left: 1rem;
 }
@@ -492,20 +496,20 @@ body {
 }
 
 /* === Responsivo para pantallas pequeñas === */
-@media (max-width: 768px) {
-  .swiper-button-prev {
-    left: 0.5rem;
+/*@media (max-width: 768px) {
+  /*.swiper-button-prev {
+    left: 0.3rem;
   }
 
   .swiper-button-next {
-    right: 0.5rem;
+    right: 0.3rem;
   }
 
   .swiper-button-next,
   .swiper-button-prev {
     width: 3rem;
     height: 3rem;
-    top:5%;
+    top:35%;
   }
 
   .swiper-button-next ion-icon,
@@ -513,9 +517,11 @@ body {
     font-size: 1.8rem;
   }
 
+
   .tranding-slider .swiper-wrapper {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
+  */
 </style>
