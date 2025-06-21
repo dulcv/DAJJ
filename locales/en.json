@@ -15,25 +15,66 @@
   "vision": {
     "titulo": "Vision",
     "descripcion": "We aspire to be a benchmark of inclusive and sustainable community transformation.",
-    "lista": [
-      "Preserve and restore the environment of the Pico de Orizaba National Park.",
-      "Ensure basic services and reduce marginalization and social lag.",
-      "Improve the quality of education and health.",
-      "Promote local and solidarity-based economic development that generates decent jobs.",
-      "Channel the strength and leadership of youth as a driver of transformation.",
-      "Exercise good governance and financial transparency, inspiring trust among donors and allies."
-    ]
+    "punto1": "Conserve and restore the environment of the Pico de Orizaba National Park.",
+    "punto2": "Guarantee basic services and reduce marginalization and social lag.",
+    "punto3": "Improve the quality of education and healthcare.",
+    "punto4": "Promote local and solidarity-based economic development that creates decent jobs.",
+    "punto5": "Channel the strength and leadership of youth as a driving force for transformation.",
+    "punto6": "Exercise good governance and financial transparency, inspiring trust among donors and partners."
   },
   "valores": {
-    "titulo": "Values",
-    "lista": [
-      "Innovation",
-      "Solidarity",
-      "Sustainability",
-      "Youth",
-      "Transparency",
-      "Inclusion"
-    ]
+    "innovacion": "Innovation",
+    "solidaridad": "Solidarity",
+    "sostenibilidad": "Sustainability",
+    "juventud": "Youth",
+    "transparencia": "Transparency",
+    "inclusion": "Inclusion"
+  },  
+    "ods": {
+      "titulo": "2030 Agenda",
+      "punto1": "SDG 3: Good Health and Well-being",
+      "descripcion1": "Ensure healthy lives and promote well-being for all at all ages.",
+      "punto2": "SDG 4: Quality Education",
+      "descripcion2": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.",
+      "punto3": "SDG 8: Decent Work and Economic Growth",
+      "descripcion3": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all.",
+      "punto4": "SDG 10: Reduced Inequalities",
+      "descripcion4": "Reduce inequality within and among countries.",
+      "punto5": "SDG 11: Sustainable Cities and Communities",
+      "descripcion5": "Make cities and human settlements inclusive, safe, resilient and sustainable.",
+      "punto6": "SDG 13: Climate Action",
+      "descripcion6": "Take urgent action to combat climate change and its impacts.",
+      "punto7": "SDG 15: Life on Land",
+      "descripcion7": "Sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss.",
+      "punto8": "SDG 16: Peace, Justice and Strong Institutions",
+      "descripcion8": "Promote peaceful and inclusive societies for sustainable development.",
+      "punto9": "SDG 17: Partnerships for the Goals",
+      "descripcion9": "Strengthen the means of implementation and revitalize the global partnership for sustainable development."
+    },"miembros": {
+    "presidente": {
+      "titulo": "President",
+      "descripcion": "Responsible for the legal representation and strategic leadership of the organization."
+    },
+    "secretario": {
+      "titulo": "Secretary",
+      "descripcion": "In charge of documentation, meeting minutes, and institutional communications."
+    },
+    "tesorero": {
+      "titulo": "Treasurer",
+      "descripcion": "Manages financial resources and accountability."
+    },
+    "operaciones": {
+      "titulo": "Operations Director",
+      "descripcion": "Coordinates project execution and the fieldwork team."
+    },
+    "comunicacion": {
+      "titulo": "Communications Director",
+      "descripcion": "Manages institutional identity, social media, and media relations."
+    },
+    "finanzas": {
+      "titulo": "Finance Director",
+      "descripcion": "Designs financial sustainability strategies and budget control."
+    }
   },
   "equipo": {
     "titulo": "Team",
@@ -65,8 +106,13 @@
       }
     ]
   }
+<<<<<<< HEAD
 },
   "index": {
+=======
+}, 
+ "index": {
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
     "quienesSomos": {
       "titulo": "We Are CIMA",
       "descripcion": "At CIMA, we blend creativity and commitment to build sustainable solutions for society's most urgent challenges.",

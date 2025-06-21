@@ -7,6 +7,7 @@
     "transparencia": "Transparencia",
     "donar": "Donar"
   },
+  
   "nosotros": {
   "mision": {
     "titulo": "Misión",
@@ -15,26 +16,67 @@
   "vision": {
     "titulo": "Visión",
     "descripcion": "Aspiramos a ser un referente de transformación comunitaria, inclusiva y sostenible.",
-    "lista": [
-      "Conservar y restaurar el entorno del Parque Nacional Pico de Orizaba.",
-      "Garantizar servicios básicos y reducir marginación y rezago social.",
-      "Elevar la calidad de la educación y la salud.",
-      "Impulsar el desarrollo económico local y solidario que genere empleo digno.",
-      "Canalizar la fuerza y el liderazgo de las juventudes como motor de transformación.",
-      "Ejercer buena gobernanza y transparencia en las finanzas, inspirando confianza entre donantes y aliados."
-    ]
+    "punto1": "Conservar y restaurar el entorno del Parque Nacional Pico de Orizaba.",
+    "punto2": "Garantizar servicios básicos y reducir marginación y rezago social.",
+    "punto3": "Elevar la calidad de la educación y la salud.",
+    "punto4": "Impulsar el desarrollo económico local y solidario que genere empleo digno.",
+    "punto5": "Canalizar la fuerza y el liderazgo de las juventudes como motor de transformación.",
+    "punto6": "Ejercer buena gobernanza y transparencia en las finanzas, inspirando confianza entre donantes y aliados."
   },
   "valores": {
-    "titulo": "Valores",
-    "lista": [
-      "Innovación",
-      "Solidaridad",
-      "Sostenibilidad",
-      "Juventud",
-      "Transparencia",
-      "Inclusión"
-    ]
+    "titulo":"Valores",
+    "innovacion": "Innovación",
+    "solidaridad": "Solidaridad",
+    "sostenibilidad": "Sostenibilidad",
+    "juventud": "Juventud",
+    "transparencia": "Transparencia",
+    "inclusion": "Inclusión"
   },
+   "ods": {
+      "titulo": "Agenda 2030",
+      "punto1": "ODS 3: Salud y Bienestar",
+      "descripcion1": "Garantizar una vida sana y promover el bienestar para todos en todas las edades.",
+      "punto2": "ODS 4: Educación de Calidad",
+      "descripcion2": "Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida.",
+      "punto3": "ODS 8: Trabajo Decente y Crecimiento Económico",
+      "descripcion3": "Promover el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo y el trabajo decente para todos.",
+      "punto4": "ODS 10: Reducción de las Desigualdades",
+      "descripcion4": "Reducir la desigualdad en y entre los países.",
+      "punto5": "ODS 11: Ciudades y Comunidades Sostenibles",
+      "descripcion5": "Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.",
+      "punto6": "ODS 13: Acción por el Clima",
+      "descripcion6": "Adoptar medidas urgentes para combatir el cambio climático y sus efectos.",
+      "punto7": "ODS 15: Vida de Ecosistemas Terrestres",
+      "descripcion7": "Gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras y frenar la pérdida de biodiversidad.",
+      "punto8": "ODS 16: Paz, Justicia e Instituciones Sólidas",
+      "descripcion8": "Promover sociedades justas, pacíficas e inclusivas.",
+      "punto9": "ODS 17: Alianzas para Lograr los Objetivos",
+      "descripcion9": "Revitalizar la Alianza Mundial para el Desarrollo Sostenible y fortalecer los medios de implementación."
+    }, "miembros": {
+    "presidente": {
+      "titulo": "Presidente",
+      "descripcion": "Responsable de la representación legal y liderazgo estratégico de la organización."
+    },
+    "secretario": {
+      "titulo": "Secretario",
+      "descripcion": "Encargado de la documentación, actas y comunicaciones institucionales."
+    },
+    "tesorero": {
+      "titulo": "Tesorero",
+      "descripcion": "Administra los recursos financieros y la rendición de cuentas."
+    },
+    "operaciones": {
+      "titulo": "Director de Operaciones",
+      "descripcion": "Coordina la ejecución de proyectos y el equipo de trabajo en campo."
+    },
+    "comunicacion": {
+      "titulo": "Director de Comunicación",
+      "descripcion": "Gestiona la identidad institucional, redes sociales y vínculos con medios."
+    },
+    "finanzas": {
+      "titulo": "Director de Finanzas",
+      "descripcion": "Diseña estrategias de sostenibilidad financiera y control presupuestal."
+    }},
   "equipo": {
     "titulo": "Equipo",
     "descripcion": "Nuestro equipo está conformado por personas comprometidas con el bienestar comunitario, la justicia social y la protección ambiental.",
@@ -127,4 +169,8 @@
       }
     ]
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5

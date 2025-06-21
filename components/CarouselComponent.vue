@@ -15,17 +15,30 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         <!-- Paginación abajo
         <div class="swiper-pagination"></div>-->
       </div>
       <!---- 3) Controles (prev, next, pagination)
       -- Flechas a los lados
+=======
+
+        <!-- Paginación abajo -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- 3) Controles (prev, next, pagination) -->
+      <!-- Flechas a los lados -->
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
       <div class="swiper-button-prev slider-arrow">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </div>
       <div class="swiper-button-next slider-arrow">
         <ion-icon name="arrow-forward-outline"></ion-icon>
+<<<<<<< HEAD
       </div> -->
+=======
+      </div>
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
     </div>
   </section>
 </template>
@@ -80,7 +93,10 @@ export default {
         "/img/campañadental.jpg",
         "/img/jornada.jpg",
         "/img/reforestacion.jpg",
+<<<<<<< HEAD
 
+=======
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
       ],
       swiperInstance: null,
     };
@@ -227,14 +243,26 @@ body {
    1) #tranding: padding vertical
    ------------------------------------- */
 #tranding {
+<<<<<<< HEAD
   padding: 4rem 5rem;
   background-color: var(--bg);
 
+=======
+  padding: 2rem 2rem;
+  margin: left 1rem;
+  background-color: var(--bg);
+  justify-content: center;
+  align-items: center;
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
 }
 
 @media (max-width: 1440px) {
   #tranding {
     padding: 2rem 0;
+<<<<<<< HEAD
+=======
+
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   }
 }
 
@@ -245,7 +273,11 @@ body {
   height: 30rem;
   padding: 2rem 0;
   position: relative;
+<<<<<<< HEAD
 
+=======
+  margin: 0 5rem;
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
 }
 
 @media (max-width: 500px) {
@@ -254,7 +286,11 @@ body {
 }
   #tranding .tranding-slider {
     height: 28rem;
+<<<<<<< HEAD
     margin: 0;
+=======
+    margin: 0 2rem;
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   }
 }
 
@@ -426,10 +462,14 @@ body {
 }  */
 
 /* Flechas a los lados */
+<<<<<<< HEAD
 /*.swiper-button-prev,
+=======
+.swiper-button-prev,
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
 .swiper-button-next {
   position: absolute;
-  top: 50%;
+  top: 20%;
   z-index: 10;
   transform: translateY(-50%);
   background: var(--white);
@@ -464,7 +504,7 @@ body {
 === Posicionamiento general de flechas ===
 .swiper-button-next,
 .swiper-button-prev {
-  top: 50%;
+  top: 10%;
   width: 4rem;
   height: 4rem;
   background: var(--white);
@@ -509,7 +549,11 @@ body {
   .swiper-button-prev {
     width: 3rem;
     height: 3rem;
+<<<<<<< HEAD
     top:35%;
+=======
+    top:5%;
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   }
 
   .swiper-button-next ion-icon,
@@ -523,5 +567,9 @@ body {
     padding-right: 2rem;
   }
 }
+<<<<<<< HEAD
   */
 </style>
+=======
+</style>
+>>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
