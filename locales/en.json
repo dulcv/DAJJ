@@ -65,78 +65,66 @@
       }
     ]
   }
-}, 
-"index":{
-  "quienesSomos": {
-    "titulo": "About CIMA",
-    "descripcion": "CIMA is an organization committed to sustainable development and social innovation. We work to create effective solutions to the most urgent challenges of our society.",
-    "boton": "More Information"
-  },
-  "aliados": {
-    "titulo": "Our Partners",
-    "descripcion": "We collaborate with leading organizations to maximize our social and environmental impact",
-    "lista": [
-      "We collaborate with leading technology organizations to positively impact the community.",
-      "Our academic partners base our initiatives on scientific research.",
-      "Partnerships with the public sector allow scaling sustainable solutions.",
-      "Partnerships with the public sector allow scaling sustainable solutions."
-    ],
-    "boton": "Do you want to be our partner?"
-  },
-  "iniciativas": {
-    "titulo": "Latest Initiatives",
-    "lista": [
-      {
-        "titulo": "Digital Education",
-        "link": "/iniciativas"
-      },
-      {
-        "titulo": "Environmental Sustainability",
-        "link": "/iniciativas"
-      },
-      {
-        "titulo": "Social Innovation",
-        "link": "/iniciativas"
-      }
-    ],
-    "verMas": "See more"
-  }
 },
+  "index": {
+    "quienesSomos": {
+      "titulo": "We Are CIMA",
+      "descripcion": "At CIMA, we blend creativity and commitment to build sustainable solutions for society's most urgent challenges.",
+      "boton": "Learn More"
+    },
+    "aliados": {
+      "titulo": "Our Partners",
+      "descripcion": "We collaborate with leading organizations to maximize our impact",
+      "lista": [
+        "Collaboration with technology leaders",
+        "Academic allies for research",
+         "Aliances with the public sector"
+        ],
+         "boton": "Want to be our partner?"
+    },
+    "iniciativas": {
+      "titulo": "Latest Initiatives",
+      "verMas": "See More",
+      "lista": [
+        {
+          "titulo": "Digital Education",
+          "link": "/initiatives"
+        },
+        {
+          "titulo": "Sustainability",
+          "link": "/initiatives"
+        },
+        {
+          "titulo": "Social Innovation",
+          "link": "/initiatives"
+        }
+      ]
+    }
+  },
   "cPreguntas": {
     "titulo": "Frequently",
     "titulo2": "Asked Questions",
-    "descripcion": "Here we answer your most common questions.",
-    "masInformacion": "More information",
-    "faqs": {
-      "ubicacion": {
-        "pregunta": "Where are you located?",
-        "respuesta": "Our main center is located at Av. Principal #123, City. We also have service points in several areas."
+    "descripcion": "Find quick answers to the most common questions about our work",
+    "masInformacion": "More info",
+    "faqsLeft": [
+      {
+        "pregunta": "What types of projects does CIMA A.C. develop?",
+        "respuesta": "We develop projects focused on environmental conservation, education, health, local economic development, and community strengthening."
       },
-      "rescate": {
-        "pregunta": "I rescued a dog, where should I take it?",
-        "respuesta": "You can bring it to our rescue center from 9am to 5pm. If you need transportation assistance, contact us to coordinate."
-      },
-      "adopcion": {
-        "pregunta": "I want to adopt, what is the process?",
-        "respuesta": "1) Fill out the online form, 2) Schedule an interview, 3) Home visit, 4) Sign the adoption contract. The process takes around one week."
-      },
-      "entregar": {
-        "pregunta": "How can I put my dog up for adoption?",
-        "respuesta": "You need to schedule an evaluation appointment. We require medical history and the reason for surrender."
-      },
-      "veterinario": {
-        "pregunta": "Do you offer veterinary services?",
-        "respuesta": "Yes, we have a clinic that provides basic veterinary services, primarily for rescued animals."
-      },
-      "maltrato": {
-        "pregunta": "How can I report animal abuse?",
-        "respuesta": "You can report it through our confidential form or by calling 555-1234."
-      },
-      "donativos": {
-        "pregunta": "What kind of donations do you need?",
-        "respuesta": "Food, medicine, blankets, toys, and monetary donations. Everything is welcome."
+      {
+        "pregunta": "Who is part of the CIMA A.C. team?",
+        "respuesta": "Our team is made up of multidisciplinary professionals committed to social development."
       }
-    }
+    ],
+    "faqsRight": [
+      {
+        "pregunta": "How can I participate as a volunteer?",
+        "respuesta": "You can contact us through our volunteer form or attend our recruitment events."
+      },
+      {
+        "pregunta": "Do you accept donations?",
+        "respuesta": "Yes, we accept donations both in-kind and monetary to support our projects."
+      }
+    ]
   }
-
 }
