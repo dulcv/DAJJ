@@ -119,7 +119,7 @@ export default {
   methods: {
     changeLanguage(lang) {
       // Aquí puedes usar i18n o lo que prefieras
-      console.log(`Idioma cambiado a ${lang}`);
+      // console.log(Idioma cambiado a $t{lang});
     },
     donate() {
       // Acción al hacer clic en "Donar"

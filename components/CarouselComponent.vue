@@ -88,7 +88,7 @@ export default {
 
   methods: {
     initSwiper() {
-      // 8) Espera a que Swiper esté definido en window
+      // 😎 Espera a que Swiper esté definido en window
       if (typeof window.Swiper === "undefined") {
         setTimeout(this.initSwiper, 100);
         return;
@@ -352,7 +352,7 @@ body {
 } */
 
 /* -------------------------------------
-   8) Flecha “Next” (posición responsiva)
+   😎 Flecha “Next” (posición responsiva)
    ------------------------------------- */
 /* .tranding-slider-control .swiper-button-next {
   left: 58% !important;

@@ -2,65 +2,73 @@
   <div>
     <v-container>
       <!-- Misión y Visión -->
-      <template>
-  <v-row :align="stretch">
-    <v-col cols="12" md="6">
-     <v-card
-  ref="card1"
-  class="pa-1 hover-zoom"
-  style="display: flex; flex-direction: column; height: 100%;"
->
-
-        <v-img src="img/participacion.jpg" height="200px"></v-img>
-        <v-card-title
-          class="text-h4 font-weight-bold"
-          :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }"
-        >
-          {{ $t('nosotros.mision.titulo') }}
-        </v-card-title>
-        <v-card-text
-          :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '1.8' }"
-        >
-          {{ $t('nosotros.mision.texto') }}
-        </v-card-text>
-      </v-card>
-    </v-col>
-
-    <v-col cols="12" md="6">
-      <v-card
-        ref="card2"
-        class="pa-1 hover-zoom"
-        :style="{ display: 'flex', flexDirection: 'column' }"
-      >
-        <v-img src="img/crecer.jpg" height="200px"></v-img>
-        <v-card-title
-          class="text-h4 font-weight-bold"
-          :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }"
-        >
-          {{ $t('nosotros.vision.titulo') }}
-        </v-card-title>
-        <v-card-text>
-          <p
-            class="mb-2"
-            :style="{ fontFamily: 'Poppins, sans-serif', textAlign: 'justify', lineHeight: '1.8' }"
-          >
-            {{ $t('nosotros.vision.descripcion') }}
+<template>
+  <!-- Misión -->
+  <section class="hero-section mb-12">
+    <v-container>
+      <v-row :align="center" justify="center">
+        <v-col cols="12" md="6" class="hero-text">
+          <h1 class="text-h3 font-weight-bold" :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }">
+            {{ $t('nosotros.mision.titulo') }}
+          </h1>
+          <p style="font-family: Poppins, sans-serif; text-align: justify; line-height: 1.8;">
+            {{ $t('nosotros.mision.texto') }}
           </p>
-          <v-list dense>
-            <v-list-item v-for="(punto, i) in visionPuntos" :key="i">
-              <v-list-item-icon>
-                <v-icon color="#1CA63F">mdi-check</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title> {{ $t(punto) }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row >
+        </v-col>
+
+        <v-col cols="12" md="6" class="pa-5">
+          <v-hover v-slot="{ hover }">
+            <transition name="fade-slide" mode="out-in">
+              <v-img
+                key="mision"
+                src="/img/crecer.jpg"
+                alt="Imagen Misión"
+                height="300"
+                contain
+                class="rounded-lx shadow-lg transition-slow"
+                :class="{ 'hover-scale': hover }"
+              />
+            </transition>
+          </v-hover>
+        </v-col>
+      </v-row>
+    </v-container>
+  </section>
+
+  <!-- Visión -->
+  <section class="hero-section mt-12">
+    <v-container>
+      <v-row :align="center" justify="center">
+        <v-col cols="12" md="6" class="pa-5">
+          <v-hover v-slot="{ hover }">
+            <transition name="fade-slide" mode="out-in">
+              <v-img
+                key="vision"
+                src="/img/participacion.jpg"
+                alt="Imagen Visión"
+                height="300"
+                contain
+                class="rounded-lx shadow-lg transition-slow"
+                :class="{ 'hover-scale': hover }"
+              />
+            </transition>
+          </v-hover>
+        </v-col>
+
+        <v-col cols="12" md="6" class="hero-text">
+          <h1 class="text-h3 font-weight-bold" :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }">
+            {{ $t('nosotros.vision.titulo') }}
+          </h1>
+          <div style="font-family: Poppins, sans-serif; text-align: justify; line-height: 1.8;">
+            <p class="mb-2">{{ $t('nosotros.vision.descripcion') }}</p>
+            <p>{{ $t('nosotros.vision.puntos') }}</p>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </section>
 </template>
+
 
 
       <!-- Valores -->
@@ -85,50 +93,49 @@
       </v-row>
 
       <!-- Agenda 2030 -->
-       <v-container class="my-12">
-    <h2 class="text-center">{{ $t('nosotros.ods.titulo') }}</h2>
+      <v-container class="my-12">
+        <h2 class="text-center">{{ $t('nosotros.ods.titulo') }}</h2>
+        <v-row>
+          <v-col
+            v-for="(ods, i) in odsList"
+            :key="i"
+            cols="12"
+            sm="6"
+            md="4"
+            class="d-flex flex-column"
+          >
+            <v-card class="pa-3 hover-shadow" @click="toggleItem(i)">
+              <div class="d-flex align-center">
+                <v-icon color="green" left>
+                  {{ activeIndex === i ? 'mdi-minus-circle-outline' : 'mdi-plus-circle-outline' }}
+                </v-icon>
+                <span :style="{ fontFamily: 'Poppins, sans-serif', marginLeft: '8px' }">
+                  {{ $t(ods.titulo) }}
+                </span>
+              </div>
 
-    <v-row>
-      <v-col
-        v-for="(ods, i) in odsList"
-        :key="i"
-        cols="12"
-        sm="6"
-        md="4"
-        class="d-flex flex-column"
-      >
-        <v-card class="pa-3 hover-shadow" @click="toggleItem(i)">
-          <div class="d-flex align-center">
-            <v-icon color="green" left>
-              {{ activeIndex === i ? 'mdi-minus-circle-outline' : 'mdi-plus-circle-outline' }}
-            </v-icon>
-            <span :style="{ fontFamily: 'Poppins, sans-serif', marginLeft: '8px' }">
-              {{ $t(ods.titulo) }}
-            </span>
-          </div>
-
-          <v-expand-transition>
-            <div
-              v-if="activeIndex === i"
-              class="mt-2"
-              :style="{ fontFamily: 'Poppins, sans-serif', lineHeight: '1.8', textAlign: 'justify' }"
-            >
-              {{ $t(ods.descripcion) }}
-            </div>
-          </v-expand-transition>
-        </v-card>
-      </v-col>
-    </v-row>
+              <v-expand-transition>
+                <div
+                  v-if="activeIndex === i"
+                  class="mt-2"
+                  :style="{ fontFamily: 'Poppins, sans-serif', lineHeight: '1.8', textAlign: 'justify' }"
+                >
+                  {{ $t(ods.descripcion) }}
+                </div>
+              </v-expand-transition>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
 
       <!-- Equipo -->
-      <v-container class="my-12 text-center ">
-        <h2 class="text-center"> {{ $t('nosotros.equipo.titulo') }}</h2>
+      <v-container class="my-12 text-center">
+        <h2 class="text-center">{{ $t('nosotros.equipo.titulo') }}</h2>
         <p class="text-body-1 mb-6" :style="{ textAlign: 'justify', lineHeight: '2' }">
           {{ $t('nosotros.equipo.descripcion') }}
         </p>
         <v-row class="my-20" style="row-gap: 25px;">
-          <v-col 
+          <v-col
             v-for="(miembro, index) in miembros"
             :key="index"
             cols="12"
@@ -144,7 +151,9 @@
             <h3 class="mt-4 font-weight-bold text-h5" :style="{ color: '#A65224' }">
               {{ $t(miembro.titulo) }}
             </h3>
-            <p :style="{ lineHeight: '2' }" class="text-body-2">{{ $t(miembro.descripcion) }}</p>
+            <p :style="{ lineHeight: '2' }" class="text-body-2">
+              {{ $t(miembro.descripcion) }}
+            </p>
           </v-col>
         </v-row>
       </v-container>
@@ -153,41 +162,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, nextTick } from '@nuxtjs/composition-api'
+import { ref } from 'vue'
 
-// Refs para las tarjetas
-const card1 = ref(null)
-const card2 = ref(null)
-
-// Función para igualar alturas
-function igualarAlturas() {
-  nextTick(() => {
-    setTimeout(() => {
-      if (card1.value && card2.value) {
-        card1.value.style.height = 'auto'
-        card2.value.style.height = 'auto'
-
-        const altura1 = card1.value.offsetHeight
-        const altura2 = card2.value.offsetHeight
-        const alturaMax = Math.max(altura1, altura2)
-
-        card1.value.style.height = `${alturaMax}px`
-        card2.value.style.height = `${alturaMax}px`
-      }
-    }, 100) // da tiempo a que las imágenes carguen
-  })
+const activeIndex = ref(null)
+const toggleItem = (index) => {
+  activeIndex.value = activeIndex.value === index ? null : index
 }
-
-// Ejecutar en mounted y resize
-onMounted(() => {
-  igualarAlturas()
-  window.addEventListener('resize', igualarAlturas)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', igualarAlturas)
-})
-
 
 // Valores
 const valores = [
@@ -197,16 +177,6 @@ const valores = [
   { icono: 'mdi-account-group', texto: 'nosotros.valores.juventud', color: '#6F9CA6' },
   { icono: 'mdi-shield-check', texto: 'nosotros.valores.transparencia', color: '#A65224' },
   { icono: 'mdi-account-voice', texto: 'nosotros.valores.inclusion', color: '#ff7c00' }
-]
-
-// Visión
-const visionPuntos = [
-  'nosotros.vision.punto1',
-  'nosotros.vision.punto2',
-  'nosotros.vision.punto3',
-  'nosotros.vision.punto4',
-  'nosotros.vision.punto5',
-  'nosotros.vision.punto6'
 ]
 
 // ODS
@@ -221,11 +191,6 @@ const odsList = [
   { titulo: 'nosotros.ods.punto8', descripcion: 'nosotros.ods.descripcion8' },
   { titulo: 'nosotros.ods.punto9', descripcion: 'nosotros.ods.descripcion9' }
 ]
-
-const activeIndex = ref(null)
-function toggleItem(index) {
-  activeIndex.value = activeIndex.value === index ? null : index
-}
 
 // Miembros del equipo
 const miembros = [
@@ -262,8 +227,6 @@ const miembros = [
 ]
 </script>
 
-
-
 <style scoped>
 h2 {
   font-weight: bold;
@@ -272,6 +235,20 @@ h2 {
   color: #035928;
   font-size: 3rem;
 }
+
+.igual-altura {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.img-pequeña {
+  height: 10px !important;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
 
 .hover-zoom {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -287,4 +264,51 @@ h2 {
 .hover-shadow:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Animación de entrada */
+.fade-slide-enter-active {
+  transition: all 0.6s ease;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-slide-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover */
+.transition-slow {
+  transition: transform 0.4s ease-in-out;
+}
+.hover-scale {
+  transform: scale(1.05);
+}
+
+/* Redondeado y sombra */
+.rounded-circle {
+  border-radius: 999px;
+}
+.shadow-lg {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #035928;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+
+    @media (max-width: 960px) {
+      font-size: 2rem;
+    }
+  }
 </style>
