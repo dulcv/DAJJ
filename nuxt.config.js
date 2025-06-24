@@ -47,7 +47,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/composition-api/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -55,7 +54,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/i18n'],
-    
+
+
+
   i18n: {
     locales: [
       { code: 'es', name: 'Español', iso: 'es-MX', file: 'es.json' },

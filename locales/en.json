@@ -29,7 +29,7 @@
     "juventud": "Youth",
     "transparencia": "Transparency",
     "inclusion": "Inclusion"
-  },  
+  },
     "ods": {
       "titulo": "2030 Agenda",
       "punto1": "SDG 3: Good Health and Well-being",
@@ -167,5 +167,6 @@
       }
     ]
   }
+  }
 }
-}
+
