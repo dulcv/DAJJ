@@ -202,11 +202,7 @@
     "@babel/template" "^7.27.2"
     "@babel/types" "^7.27.6"
 
-<<<<<<< HEAD
 "@babel/parser@^7.14.9", "@babel/parser@^7.23.5", "@babel/parser@^7.27.2", "@babel/parser@^7.27.4", "@babel/parser@^7.27.5", "@babel/parser@^7.9.6":
-=======
-"@babel/parser@^7.18.10", "@babel/parser@^7.23.5", "@babel/parser@^7.27.2", "@babel/parser@^7.27.4", "@babel/parser@^7.27.5", "@babel/parser@^7.9.6":
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   version "7.27.5"
   resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.27.5.tgz"
   integrity sha512-OsQd175SxWkGlzbny8J3K8TnnDD0N3lrIUtB92xwyRpzaenGZhxDvxN/JgU00U3CDZNj9tPuDJ5H0WS4Nt3vKg==
@@ -863,11 +859,7 @@
     "@babel/parser" "^7.27.2"
     "@babel/types" "^7.27.1"
 
-<<<<<<< HEAD
 "@babel/traverse@^7.14.9", "@babel/traverse@^7.27.1", "@babel/traverse@^7.27.3", "@babel/traverse@^7.27.4":
-=======
-"@babel/traverse@^7.18.10", "@babel/traverse@^7.27.1", "@babel/traverse@^7.27.3", "@babel/traverse@^7.27.4":
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   version "7.27.4"
   resolved "https://registry.npmjs.org/@babel/traverse/-/traverse-7.27.4.tgz"
   integrity sha512-oNcu2QbHqts9BtOWJosOVJapWjBDSxGCpFvikNR5TGDYDQf3JwpIoMzIKrvfoti93cLfPJEG4tH9SPVeyCGgdA==
@@ -1197,6 +1189,30 @@
   resolved "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@fortawesome/fontawesome-common-types@6.7.2":
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.7.2.tgz#7123d74b0c1e726794aed1184795dbce12186470"
+  integrity sha512-Zs+YeHUC5fkt7Mg1l6XTniei3k4bwG/yo3iFUtZWd/pMx9g3fdvkSK9E0FOC+++phXOka78uJcYb8JaFkW52Xg==
+
+"@fortawesome/fontawesome-svg-core@^6.7.2":
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.7.2.tgz#0ac6013724d5cc327c1eb81335b91300a4fce2f2"
+  integrity sha512-yxtOBWDrdi5DD5o1pmVdq3WMCvnobT0LU6R8RyyVXPvFRd2o79/0NCuQoCjNTeZz9EzA9xS3JxNWfv54RIHFEA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.7.2"
+
+"@fortawesome/free-solid-svg-icons@^6.7.2":
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.7.2.tgz#fe25883b5eb8464a82918599950d283c465b57f6"
+  integrity sha512-GsBrnOzU8uj0LECDfD5zomZJIjrPhIlWU82AHwa2s40FKH+kcxQaBvBo3Z4TxyZHIyX8XTDxsyA33/Vx9eFuQA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.7.2"
+
+"@fortawesome/vue-fontawesome@^2.0.0":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-2.0.10.tgz#b10721425d7efdee6d83fba21c64cad86fa51904"
+  integrity sha512-OTETSXz+3ygD2OK2/vy82cmUBpuJqeOAg4gfnnv+f2Rir1tDIhQg026Q3NQxznq83ZLz8iNqGG9XJm26inpDeg==
+
 "@gar/promisify@^1.0.1":
   version "1.1.3"
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.3.tgz"
@@ -1204,31 +1220,19 @@
 
 "@intlify/shared@^9.0.0":
   version "9.14.4"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/@intlify/shared/-/shared-9.14.4.tgz#c54752b6f50fb7c205895db4a4ab52432efff3c1"
-=======
   resolved "https://registry.npmjs.org/@intlify/shared/-/shared-9.14.4.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-P9zv6i1WvMc9qDBWvIgKkymjY2ptIiQ065PjDv7z7fDqH3J/HBRBN5IoiR46r/ujRcU7hCuSIZWvCAFCyuOYZA==
 
 "@intlify/vue-i18n-extensions@^1.0.2":
   version "1.0.2"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/@intlify/vue-i18n-extensions/-/vue-i18n-extensions-1.0.2.tgz#ab7f8507f7d423c368e44fa21d6dece700261fca"
-=======
   resolved "https://registry.npmjs.org/@intlify/vue-i18n-extensions/-/vue-i18n-extensions-1.0.2.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-rnfA0ScyBXyp9xsSD4EAMGeOh1yv/AE7fhqdAdSOr5X8N39azz257umfRtzNT9sHXAKSSzpCVhIbMAkp5c/gjQ==
   dependencies:
     "@babel/parser" "^7.9.6"
 
 "@intlify/vue-i18n-loader@^1.1.0":
   version "1.1.0"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/@intlify/vue-i18n-loader/-/vue-i18n-loader-1.1.0.tgz#eecc6460823676f533784b3641665c5a609eccf0"
-=======
   resolved "https://registry.npmjs.org/@intlify/vue-i18n-loader/-/vue-i18n-loader-1.1.0.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-9LXiztMtYKTE8t/hRwwGUp+ofrwU0sxLQLzFEOZ38zvn0DonUIQmZUj1cfz5p1Lu8BllxKbCrn6HnsRJ+LYA6g==
   dependencies:
     "@intlify/shared" "^9.0.0"
@@ -1294,6 +1298,11 @@
   version "1.6.0"
   resolved "https://registry.npmjs.org/@jsonjoy.com/util/-/util-1.6.0.tgz"
   integrity sha512-sw/RMbehRhN68WRtcKCpQOPfnH6lLP4GJfqzi3iYej8tnzpZUDr6UkZYJjcjjC0FWEJOJbyM3PTIwxucUmDG2A==
+
+"@mdi/js@^7.4.47":
+  version "7.4.47"
+  resolved "https://registry.yarnpkg.com/@mdi/js/-/js-7.4.47.tgz#7d8a4edc9631bffeed80d1ec784f9beae559a76a"
+  integrity sha512-KPnNOtm5i2pMabqZxpUz7iQf+mfrYZyKCZ8QNz85czgEt7cuHcGorWfdzUMWYA0SD+a6Hn4FmJ+YhzzzjkTZrQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1571,7 +1580,7 @@
     rc9 "^2.1.1"
     std-env "^3.5.0"
 
-"@nuxt/utils@2.18.1", "@nuxt/utils@2.x":
+"@nuxt/utils@2.18.1":
   version "2.18.1"
   resolved "https://registry.npmjs.org/@nuxt/utils/-/utils-2.18.1.tgz"
   integrity sha512-aWeB8VMhtymo5zXUiQaohCu8IqJqENF9iCag3wyJpdhpNDVoghGUJAl0F6mQvNTJgQzseFtf4XKqTfvcgVzyGg==
@@ -1687,7 +1696,18 @@
     consola "^2.15.3"
     defu "^5.0.0"
 
-<<<<<<< HEAD
+"@nuxtjs/composition-api@^0.34.0":
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.34.0.tgz#4608b712164958c0efdbd3e8195137a2d6243391"
+  integrity sha512-2BWv4zmlFhu09eo8oeXk11jVdsRLh6vXwtaDADMaZ8Do8SoY2fEk3dmtAkr3aUQuSIzOD/jdWBnd0h99/YIrSA==
+  dependencies:
+    defu "^6.1.4"
+    estree-walker "^2.0.2"
+    fs-extra "^11.2.0"
+    magic-string "^0.30.9"
+    pathe "^1.1.2"
+    ufo "^1.5.3"
+
 "@nuxtjs/i18n@7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-7.0.0.tgz#a49596223bd36884ce643b4d3e36979d715d5455"
@@ -1705,38 +1725,6 @@
     lodash.merge "^4.6.2"
     ufo "^0.7.7"
     vue-i18n "^8.25.0"
-=======
-"@nuxtjs/composition-api@^0.34.0":
-  version "0.34.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.34.0.tgz#4608b712164958c0efdbd3e8195137a2d6243391"
-  integrity sha512-2BWv4zmlFhu09eo8oeXk11jVdsRLh6vXwtaDADMaZ8Do8SoY2fEk3dmtAkr3aUQuSIzOD/jdWBnd0h99/YIrSA==
-  dependencies:
-    defu "^6.1.4"
-    estree-walker "^2.0.2"
-    fs-extra "^11.2.0"
-    magic-string "^0.30.9"
-    pathe "^1.1.2"
-    ufo "^1.5.3"
-
-"@nuxtjs/i18n@^7.0.0":
-  version "7.3.1"
-  resolved "https://registry.npmjs.org/@nuxtjs/i18n/-/i18n-7.3.1.tgz"
-  integrity sha512-DZP6xR8zZA1ApcNjLnukH3BhMRCfi3r236epuXVuPWWOObPf5vkp+VamewnPiSU+zs0Age+PbaaIUryFv/6pDA==
-  dependencies:
-    "@babel/parser" "^7.18.10"
-    "@babel/traverse" "^7.18.10"
-    "@intlify/vue-i18n-extensions" "^1.0.2"
-    "@intlify/vue-i18n-loader" "^1.1.0"
-    "@nuxt/utils" "2.x"
-    cookie "^0.5.0"
-    devalue "^2.0.1"
-    is-https "^4.0.0"
-    js-cookie "^3.0.1"
-    klona "^2.0.5"
-    lodash.merge "^4.6.2"
-    ufo "^0.8.5"
-    vue-i18n "^8.27.2"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
 
 "@nuxtjs/proxy@^2.1.0":
   version "2.1.0"
@@ -2159,11 +2147,7 @@ acorn@^6.4.1:
   resolved "https://registry.npmjs.org/acorn/-/acorn-6.4.2.tgz"
   integrity sha512-XtGIhXwF8YM8bJhGxG5kXgjkEuNGLTkoYqVE+KMR+aspr4KGYmKYg7yUe3KghyQ9yheNwLnjmzh/7+gfDBmHCQ==
 
-<<<<<<< HEAD
-acorn@^8.0.4, acorn@^8.11.0, acorn@^8.14.0, acorn@^8.4.1:
-=======
 acorn@^8.0.4, acorn@^8.11.0, acorn@^8.14.0, acorn@^8.14.1, acorn@^8.4.1:
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   version "8.15.0"
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.15.0.tgz"
   integrity sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==
@@ -2291,11 +2275,7 @@ arg@^5.0.2:
 
 argparse@^1.0.7:
   version "1.0.10"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
-=======
   resolved "https://registry.npmjs.org/argparse/-/argparse-1.0.10.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   dependencies:
     sprintf-js "~1.0.2"
@@ -3161,17 +3141,10 @@ cookie@^0.3.1:
   resolved "https://registry.npmjs.org/cookie/-/cookie-0.3.1.tgz"
   integrity sha512-+IJOX0OqlHCszo2mBUq+SrEbCj6w7Kpffqx60zYbPTFaO4+yYgRjHwcZNpWvaTylDHaV7PPmBHzSecZiMhtPgw==
 
-<<<<<<< HEAD
 cookie@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.2.tgz#0e41f24de5ecf317947c82fc789e06a884824432"
   integrity sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==
-=======
-cookie@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.npmjs.org/cookie/-/cookie-0.5.0.tgz"
-  integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
 
 copy-concurrently@^1.0.0:
   version "1.0.5"
@@ -4028,11 +4001,7 @@ eslint-scope@^4.0.3:
 
 esprima@^4.0.0:
   version "4.0.1"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
-=======
   resolved "https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
 esrecurse@^4.1.0:
@@ -5176,11 +5145,7 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@~4.0.1:
 
 is-https@^4.0.0:
   version "4.0.0"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/is-https/-/is-https-4.0.0.tgz#9ee725a334fb517b988278d2674efc96e4f348ed"
-=======
   resolved "https://registry.npmjs.org/is-https/-/is-https-4.0.0.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-FeMLiqf8E5g6SdiVJsPcNZX8k4h2fBs1wp5Bb6uaNxn58ufK1axBqQZdmAQsqh0t9BuwFObybrdVJh6MKyPlyg==
 
 is-map@^2.0.3:
@@ -5364,20 +5329,14 @@ jiti@^1.21.0, jiti@^1.21.6:
   resolved "https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz"
   integrity sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==
 
-<<<<<<< HEAD
-js-cookie@^3.0.0:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.5.tgz#0b7e2fd0c01552c58ba86e0841f94dc2557dcdbc"
-=======
 jiti@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-2.4.2.tgz#d19b7732ebb6116b06e2038da74a55366faef560"
   integrity sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==
 
-js-cookie@^3.0.1:
+js-cookie@^3.0.0:
   version "3.0.5"
-  resolved "https://registry.npmjs.org/js-cookie/-/js-cookie-3.0.5.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.5.tgz#0b7e2fd0c01552c58ba86e0841f94dc2557dcdbc"
   integrity sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==
 
 js-tokens@^4.0.0:
@@ -5385,11 +5344,6 @@ js-tokens@^4.0.0:
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-<<<<<<< HEAD
-js-yaml@^3.13.1:
-  version "3.14.1"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
-=======
 js-tokens@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-9.0.1.tgz#2ec43964658435296f6761b34e10671c2d9527f4"
@@ -5398,7 +5352,6 @@ js-tokens@^9.0.1:
 js-yaml@^3.13.1:
   version "3.14.1"
   resolved "https://registry.npmjs.org/js-yaml/-/js-yaml-3.14.1.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==
   dependencies:
     argparse "^1.0.7"
@@ -5481,7 +5434,7 @@ kind-of@^6.0.2:
   resolved "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-klona@^2.0.4, klona@^2.0.5, klona@^2.0.6:
+klona@^2.0.4, klona@^2.0.6:
   version "2.0.6"
   resolved "https://registry.npmjs.org/klona/-/klona-2.0.6.tgz"
   integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
@@ -8268,11 +8221,7 @@ split-string@^3.0.1, split-string@^3.0.2:
 
 sprintf-js@~1.0.2:
   version "1.0.3"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
-=======
   resolved "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
 ssri@^6.0.1:
@@ -8816,21 +8765,12 @@ ua-parser-js@^1.0.38:
   resolved "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-1.0.40.tgz"
   integrity sha512-z6PJ8Lml+v3ichVojCiB8toQJBuwR42ySM4ezjXIqXK3M0HczmKQ3LF4rhU55PfD99KEEXQG6yb7iOMyvYuHew==
 
-<<<<<<< HEAD
 ufo@^0.7.7:
   version "0.7.11"
   resolved "https://registry.yarnpkg.com/ufo/-/ufo-0.7.11.tgz#17defad497981290383c5d26357773431fdbadcb"
   integrity sha512-IT3q0lPvtkqQ8toHQN/BkOi4VIqoqheqM1FnkNWT9y0G8B3xJhwnoKBu5OHx8zHDOvveQzfKuFowJ0VSARiIDg==
 
-ufo@^1.5.3:
-=======
-ufo@^0.8.5:
-  version "0.8.6"
-  resolved "https://registry.npmjs.org/ufo/-/ufo-0.8.6.tgz"
-  integrity sha512-fk6CmUgwKCfX79EzcDQQpSCMxrHstvbLswFChHS0Vump+kFkw7nJBfTZoC1j0bOGoY9I7R3n2DGek5ajbcYnOw==
-
 ufo@^1.5.3, ufo@^1.5.4, ufo@^1.6.1:
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   version "1.6.1"
   resolved "https://registry.npmjs.org/ufo/-/ufo-1.6.1.tgz"
   integrity sha512-9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA==
@@ -9092,15 +9032,9 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-<<<<<<< HEAD
 vue-i18n@^8.25.0:
   version "8.28.2"
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.28.2.tgz#913558066e274395c0a9f40b2f3393d5c2636840"
-=======
-vue-i18n@^8.27.2:
-  version "8.28.2"
-  resolved "https://registry.npmjs.org/vue-i18n/-/vue-i18n-8.28.2.tgz"
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
   integrity sha512-C5GZjs1tYlAqjwymaaCPDjCyGo10ajUphiwA922jKt9n7KPpqR7oM1PCwYzhB/E7+nT3wfdG3oRre5raIT1rKA==
 
 vue-loader@^15.11.1:

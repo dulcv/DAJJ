@@ -105,14 +105,8 @@
         "descripcion": "Designs financial sustainability strategies and budget control."
       }
     ]
-  }
-<<<<<<< HEAD
-},
-  "index": {
-=======
-}, 
+  },
  "index": {
->>>>>>> eff13a8b9d7103134c834d6eed0410e8302781a5
     "quienesSomos": {
       "titulo": "We Are CIMA",
       "descripcion": "At CIMA, we blend creativity and commitment to build sustainable solutions for society's most urgent challenges.",
@@ -173,4 +167,5 @@
       }
     ]
   }
+}
 }
