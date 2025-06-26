@@ -6,76 +6,139 @@
     </header>
 
     <!-- Contenido principal -->
-    <v-main>
-      <v-container>
-        <!-- Preguntas Frecuentes -->
-        <h2 class="mt-6">Preguntas Frecuentes</h2>
-        <v-expansion-panels multiple>
-          <v-expansion-panel v-for="(item, i) in preguntas" :key="i">
-            <v-expansion-panel-header>{{
-              item.pregunta
-            }}</v-expansion-panel-header>
-            <v-expansion-panel-content>{{
-              item.respuesta
-            }}</v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
+    <v-container class="my-8">
+      <v-row align="center">
+        <v-col cols="12" md="6">
+          <h1 class="mb-4" color="#A65224">DONATIVOS</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non, laboriosam magnam vel vitae officia,
+            explicabo earum cumque, voluptate tempora tempore veritatis iusto sed esse facilis quisquam porro quia quas.
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non, laboriosam magnam vel vitae officia,
+            explicabo earum cumque, voluptate tempora tempore veritatis iusto sed esse facilis quisquam porro quia quas.
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non, laboriosam magnam vel vitae officia,
+            explicabo earum cumque, voluptate tempora tempore veritatis iusto sed esse facilis quisquam porro quia quas.
+          </p>
 
+        </v-col>
+        <v-col cols="12" md="6">
+          <v-img src="@/assets/img/donacionImage.jpg" alt="Donacion" max-width="100%" style="border-radius:5%;"></v-img>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container>
+      <!-- Mensaje -->
+      <v-alert color="white" type="success" class="my-6 text-center" dense>
+        <div class="text-center tarjet">
+          <h3 class="font-weight-bold text-h4 mb-2">Tu ayuda transforma vidas</h3>
 
-        <!-- Formulario de Donación -->
-        <h2 id="donacion" class="text-center mt-10">¡Haz tu donación!</h2>
+          <lottie :options="defaultOptions" :height="250" :width="250" />
+          <p>Tu donación hace una gran diferencia.</p>
+          <p>Nos permite seguir ayudando a quienes más lo necesitan.</p>
+          <p><strong>¡Juntos podemos lograr grandes cambios!</strong></p>
 
-        <h3>1.Datos personales:</h3>
-        <v-form @submit.prevent="pagarConStripe">
-          <v-text-field v-model="nombre" label="Nombre completo" outlined dense class="mt-3"></v-text-field>
-          <div v-if="errores.nombre" class="campo-error">{{ errores.nombre }}</div>
-
-          <v-text-field v-model="correo" label="Correo electrónico" type="email" outlined dense></v-text-field>
-          <div v-if="errores.correo" class="campo-error">{{ errores.correo }}</div>
-
-          <v-text-field v-model="telefono" label="Teléfono" type="tel" outlined dense></v-text-field>
-          <div v-if="errores.telefono" class="campo-error">{{ errores.telefono }}</div>
-
-
-
-          <h3 class="mt-8">2. Seleccione un monto:</h3>
-          <v-row class="montos" dense>
-            <v-col v-for="(monto, i) in montos" :key="i" cols="12" sm="3">
-              <v-btn :color="montoSeleccionado === monto
-                ? 'green darken-2'
-                : 'green darken-4'
-                " block @click="
-                  montoSeleccionado = monto;
-                otro = '';
-                ">
-                {{ monto }}
-              </v-btn>
-            </v-col>
-
-            <v-col cols="12" sm="4">
-              <v-text-field v-model="otro" label="Otro monto" type="number" outlined dense
-                @input="montoSeleccionado = ''"></v-text-field>
-              <div v-if="errores.monto" class="campo-error">{{ errores.monto }}</div>
-            </v-col>
-          </v-row>
-
-          <v-text-field v-model="comentario" label="Comentario (opcional)" outlined dense></v-text-field>
-
-          <v-btn color="green darken-4" dark block class="mt-6" @click="pagarConStripe" :disabled="loading">
-            Donar ahora
+          <v-btn color="green darken-2" dark class="mt-4" @click="dialog = true">
+            Donar aquí
           </v-btn>
+        </div>
+      </v-alert>
+      <!-- Preguntas Frecuentes -->
+      <h2 class="mt-6">Preguntas Frecuentes</h2>
+      <v-expansion-panels multiple>
+        <v-expansion-panel v-for="(item, i) in preguntas" :key="i">
+          <v-expansion-panel-header>{{
+            item.pregunta
+          }}</v-expansion-panel-header>
+          <v-expansion-panel-content>{{
+            item.respuesta
+          }}</v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-container>
+    <div>
+      <!-- Diálogo con tarjeta -->
+      <v-dialog v-model="dialog" max-width="500">
+        <v-card>
+          <v-card-text>
+            <!-- Formulario de Donación -->
+            <v-card-title id="donacion" class="text-center">¡Haz tu donación!</v-card-title>
 
-          <v-alert type="info" v-if="mensaje" class="mt-4" dense border="left" colored-border elevation="2">
-            <v-icon left>mdi-shield-check</v-icon>
-            {{ mensaje }}
-          </v-alert>
-          <v-alert type="error" v-if="mensajeError" class="mt-4" dense border="left" colored-border elevation="2">
-            <v-icon left>mdi-alert-circle</v-icon>
-            {{ mensajeError }}
-          </v-alert>
-        </v-form>
-      </v-container>
-    </v-main>
+            <h3>1.Datos personales:</h3>
+            <v-form @submit.prevent="pagarConStripe">
+              <v-text-field v-model="nombre" label="Nombre completo" outlined dense class="mt-3"></v-text-field>
+              <div v-if="errores.nombre" class="campo-error">
+                {{ errores.nombre }}
+              </div>
+
+              <v-text-field v-model="correo" label="Correo electrónico" type="email" outlined dense></v-text-field>
+              <div v-if="errores.correo" class="campo-error">
+                {{ errores.correo }}
+              </div>
+
+                 <vue-phone-number-input
+                  ref="phoneInput"
+                  v-model="telefono"
+                  default-country="MX"
+                  placeholder="Ej. +1 416 555 1234"
+                />
+                  <div v-if="errores.telefono" class="campo-error alert">
+                {{ errores.telefono }}
+              </div>
+
+
+
+              <h3>2. Seleccione un monto:</h3>
+              <v-row class="montos" dense>
+                <v-col v-for="(monto, i) in montos" :key="i" cols="12" sm="3">
+                  <v-btn class="boton" :color="montoSeleccionado === monto ? 'green light-2' : '#035928'
+                    " block @click="
+                      montoSeleccionado = monto;
+                    otro = '';
+                    ">
+                    {{ monto }}
+                  </v-btn>
+                </v-col>
+
+                <v-col cols="12" sm="4">
+                  <v-text-field v-model="otro" label="Otro monto" type="number" outlined dense
+                    @input="montoSeleccionado = ''"></v-text-field>
+                  <div v-if="errores.monto" class="campo-error">
+                    {{ errores.monto }}
+                  </div>
+                </v-col>
+              </v-row>
+
+              <h3>3. Comentario</h3>
+              <v-text-field v-model="comentario" label="Opcional" outlined dense></v-text-field>
+
+              <v-btn color="green darken-4" dark block @click="pagarConStripe" :disabled="loading">
+                Donar
+              </v-btn>
+
+              <!-- Diálogo de agradecimiento -->
+              <v-dialog v-model="messageThanks" max-width="500">
+                <messageThanks @cerrar="messageThanks = false" />
+              </v-dialog>
+
+
+              <v-alert type="info" v-if="mensaje" class="mt-4" dense border="left" colored-border elevation="2">
+                <v-icon left>mdi-shield-check</v-icon>
+                {{ mensaje }}
+              </v-alert>
+              <v-alert type="error" v-if="mensajeError" class="mt-4" dense border="left" colored-border elevation="2">
+                <v-icon left>mdi-alert-circle</v-icon>
+                {{ mensajeError }}
+              </v-alert>
+            </v-form>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn text @click="dialog = false">Cancelar</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </div>
 
     <!-- <button id="botondonar" type="submit">Donar ahora</button> -->
 
@@ -90,9 +153,23 @@
 
 <script>
 import { loadStripe } from '@stripe/stripe-js';
+import Lottie from "vue-lottie";
+import animacion from "@/assets/gif/Animation - 1749592877393";
+import messageThanks from "@/components/messageThanks.vue";
+import VuePhoneNumberInput from "vue-phone-number-input";
+import "vue-phone-number-input/dist/vue-phone-number-input.css";
 export default {
-
-  name: 'DonacioneForm',
+  components: {
+    Lottie, //Para el gif
+    messageThanks, //Para el agradecimiento
+    VuePhoneNumberInput, //Para el telefono
+  },
+      computed: {
+  isValidPhone() {
+    return this.$refs.phoneInput ? this.$refs.phoneInput.isValid() : false;
+  }
+},
+  name: 'DonacionForm',
   data() {
     return {
       titulo: 'CIMA A.C.',
@@ -149,6 +226,15 @@ export default {
         telefono: '',
         monto: ''
       },
+      //Animacion
+      defaultOptions: {
+        animationData: animacion,
+        loop: false,
+        autoplay: true,
+      },
+      //Tarjeta
+      dialog: false,
+      messageThanks: false
     }
   },
 
@@ -176,13 +262,28 @@ export default {
         this.errores.correo = 'El correo electrónico no es válido.';
       }
 
-      if (!this.telefono) {
-        this.errores.telefono = 'Has olvidado añadir tu teléfono.';
-      } else if (!/^\d+$/.test(this.telefono)) {
-        this.errores.telefono = 'El teléfono solo debe contener números.';
-      } else if (this.telefono.length !== 10) {
-        this.errores.telefono = 'El teléfono debe tener exactamente 10 dígitos.';
-      }
+// Extrae solo los dígitos del número nacional
+let telefonoLimpio = '';
+if (
+  typeof this.telefono === 'object' &&
+  this.telefono &&
+  typeof this.telefono.nationalNumber === 'string' &&
+  this.telefono.nationalNumber.trim() !== ''
+) {
+  telefonoLimpio = this.telefono.nationalNumber.replace(/\D/g, '');
+} else if (typeof this.telefono === 'string') {
+  telefonoLimpio = this.telefono.replace(/\D/g, '');
+}
+
+if (!telefonoLimpio) {
+  this.errores.telefono = 'Has olvidado añadir tu teléfono.';
+  this.loading = false;
+  return;
+} else if (telefonoLimpio.length !== 10) {
+  this.errores.telefono = 'El teléfono debe tener exactamente 10 dígitos.';
+  this.loading = false;
+  return;
+}
 
       // Calcula el monto en centavos
       let monto = this.montoSeleccionado
@@ -195,15 +296,10 @@ export default {
         return;
       }
 
-      //Verifica si hay errores antes de continuar
-      if (
-        this.errores.nombre ||
-        this.errores.correo ||
-        this.errores.telefono ||
-        this.errores.monto
-      ) {
-        this.loading = false;
-        return;
+// Si hay algún error, no continúes
+if (Object.values(this.errores).some(e => e)) {
+  this.loading = false;
+  return;
       }
 
       try {
@@ -215,7 +311,7 @@ export default {
             amount: monto,
             nombre: this.nombre,
             correo: this.correo,
-            telefono: this.telefono,
+            telefono: telefonoLimpio,
             comentario: this.comentario
           }),
         });
@@ -248,7 +344,21 @@ export default {
       }
     }
   }
-}
+// created() {
+//   const params = new URLSearchParams(window.location.search);
+//   const success = params.get('success');
+
+//   if (success === 'true') {
+//     console.log('✅ Detectado success=true desde window.location');
+
+//     this.messageThanks = true;
+
+//     // Limpiar la URL (sin recargar)
+//     const newUrl = window.location.origin + this.$route.path;
+//     window.history.replaceState({}, document.title, newUrl);
+//   }
+// }
+ }
 
 </script>
 
@@ -268,27 +378,13 @@ header {
   text-align: center;
 }
 
-main {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
+
 
 h2 {
   color: black;
 }
 
-.faq {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid black;
-  border-radius: 8px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
-}
+
 
 details {
   margin-bottom: 10px;
@@ -318,6 +414,10 @@ input {
 
 input::placeholder {
   color: white;
+}
+
+p {
+  font-size: 18px;
 }
 
 .montos {
@@ -396,5 +496,15 @@ footer {
   margin-top: -10px;
   margin-bottom: 10px;
   padding: 4px 8px;
+}
+
+.tarjet {
+  color: #035928;
+  padding: 20px;
+  border: 3px solid #035928;
+}
+
+.boton {
+  color: white;
 }
 </style>

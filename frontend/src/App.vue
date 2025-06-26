@@ -1,17 +1,17 @@
 <template>
   <v-app>
-    <donacion />
+    <router-view /> 
   </v-app>
 </template>
 
 <script>
-import donacion from './components/donacion.vue'
+
 
 export default {
   name: 'App',
 
   components: {
-    donacion,
+
   },
 
   data: () => ({

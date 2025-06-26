@@ -53,8 +53,9 @@ exports.createCheckoutSession = async (req, res, next) => {
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: 'http://localhost:8080/success',
-      cancel_url: 'http://localhost:8080/cancel',
+      success_url: 'http://localhost:8081/donacion?success=true',
+      cancel_url: 'http://localhost:8081/cancel',
+      customer_email: correo, //Pasa directamente el correo del usuario
       //Guarda los datos del usuario en stripe
       metadata: {
         nombre,
