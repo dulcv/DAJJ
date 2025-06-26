@@ -1,6 +1,6 @@
-# DAJJv
+# DAJJv / donacion
 
-## Build Setup
+## Build Setup (Nuxt.js)
 
 ```bash
 # install dependencies
@@ -17,53 +17,50 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+O si usas npm:
+
+```bash
+npm install
+npm run serve      # Compiles and hot-reloads for development
+npm run build      # Compiles and minifies for production
+npm run lint       # Lints and fixes files
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+For detailed explanation on how things work, check out the [Nuxt.js documentation](https://nuxtjs.org).
+
+---
 
 ## Special Directories
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+Puedes crear los siguientes directorios extra, algunos de los cuales tienen comportamientos especiales. Solo `pages` es requerido; puedes eliminarlos si no los necesitas.
 
 ### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+Contiene tus recursos no compilados como archivos Stylus, Sass, imágenes o fuentes.  
+[Más información](https://nuxtjs.org/docs/2.x/directory-structure/assets).
 
 ### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+Contiene tus componentes Vue.js reutilizables.  
+[Más información](https://nuxtjs.org/docs/2.x/directory-structure/components).
 
 ### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
+Permite cambiar la apariencia de tu app Nuxt.  
+[Más información](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
 
 ### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+Contiene las vistas y rutas de tu aplicación.  
+[Más información](https://nuxtjs.org/docs/2.x/get-started/routing).
 
 ### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+Contiene plugins de JavaScript que se ejecutan antes de instanciar la app raíz.  
+[Más información](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
 
 ### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+Archivos estáticos mapeados directamente a `/`.  
+[Más información](https://nuxtjs.org/docs/2.x/directory-structure/static).
 
 ### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+Contiene los archivos de Vuex store.  
+[Más información](https://nuxtjs.org/docs/2.x/directory-structure/store).
