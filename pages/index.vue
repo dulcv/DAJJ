@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <!-- Carrusel principal -->
+    <!-- Todo tu contenido actual... -->
     <CarouselComponent />
 
     <!-- Sección HERO -->
@@ -9,16 +9,15 @@
         <v-row align="center" justify="center">
           <!-- Texto principal -->
           <v-col cols="12" md="6" class="hero-text">
-            <h1>Somos CIMA</h1>
+            <h1>{{ $t('index.quienesSomos.titulo') }}</h1>
             <p class="description">
-              En CIMA fusionamos creatividad y compromiso para construir
-              soluciones sostenibles a los desafíos más urgentes de nuestra
-              sociedad.
+              {{ $t('index.quienesSomos.descripcion') }}
             </p>
             <!-- Botón visible solo en escritorio -->
             <div class="actions d-none d-md-flex">
               <v-btn color="#035928" large rounded class="btn-primary" to="/nosotros">
-                Conoce más <v-icon right>mdi-arrow-right</v-icon>
+                {{ $t('index.quienesSomos.boton') }} 
+                <v-icon right>mdi-arrow-right</v-icon>
               </v-btn>
             </div>
           </v-col>
@@ -37,59 +36,70 @@
           <!-- Botón para móvil -->
           <div class="actions d-flex d-md-none" style="margin-top: 1.5rem; justify-content: flex-end">
             <v-btn color="#035928" large rounded class="btn-primary" to="/nosotros">
-              Conoce más <v-icon right>mdi-arrow-right</v-icon>
+              {{ $t('index.quienesSomos.boton') }} 
+              <v-icon right>mdi-arrow-right</v-icon>
             </v-btn>
           </div>
         </v-row>
       </v-container>
     </section>
 
+    <!-- Resto de tu contenido... -->
     <!-- Sección de Aliados Estratégicos -->
     <section class="partners-section">
       <v-container>
         <div class="section-header">
-          <h1>Nuestros Aliados</h1>
+          <h1>{{ $t('index.aliados.titulo') }}</h1>
           <v-divider class="custom-divider my-4"></v-divider>
           <p class="subtitle">
-            Colaboramos con organizaciones líderes para maximizar nuestro impacto
+            {{ $t('index.aliados.descripcion') }}
           </p>
         </div>
 
         <v-row justify="center" class="partners-grid">
           <v-col cols="12" sm="10" md="6" lg="4" v-for="(aliado, i) in aliados" :key="i">
             <v-hover v-slot="{ hover }">
-             <!----> <v-card :elevation="hover ? 10 : 2" class="partner-card" :class="{ hovered: hover }">
+              <v-card :elevation="hover ? 10 : 2" class="partner-card" :class="{ hovered: hover }">
                 <v-avatar size="160" class="mx-auto my-4 avatar-border">
                   <v-img :src="aliado.img" contain></v-img>
                 </v-avatar>
                 <v-card-text>
-                  <p class="partner-description">{{ aliado.texto }}</p>
+                  <p class="partner-description">
+                    {{ getPartnerText(i) }}
+                  </p>
                 </v-card-text>
               </v-card>
             </v-hover>
           </v-col>
         </v-row>
+
+        <!-- Botón CTA -->
+        <div class="text-center mt-8">
+          <v-btn color="#035928" large rounded class="btn-primary">
+            {{ $t('index.aliados.boton') }}
+          </v-btn>
+        </div>
       </v-container>
     </section>
 
-    <!-- Sección de Iniciativas -->
+    <!-- Resto de secciones... -->
     <section class="initiatives-section">
-      <v-container >
+      <v-container>
         <div class="section-header">
-          <h1>Últimas Iniciativas</h1>
+          <h1>{{ $t('index.iniciativas.titulo') }}</h1>
           <v-divider class="custom-divider"></v-divider>
         </div>
 
         <v-row>
-          <v-col cols="12" sm="6" md="4" v-for="(iniciativa, i) in iniciativas" :key="i">
+          <v-col cols="12" sm="6" md="4" v-for="(iniciativa, i) in iniciativasData" :key="i">
             <v-card class="modern-card" :to="iniciativa.link">
               <v-img :src="iniciativa.img" height="200px" class="card-img" />
               <v-card-text>
-                <h3>{{ iniciativa.titulo }}</h3>
+                <h3>{{ getInitiativeTitle(i) }}</h3>
               </v-card-text>
               <v-card-actions>
                 <v-btn outlined rounded>
-                  Ver más
+                  {{ $t('index.iniciativas.verMas') }}
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -98,14 +108,18 @@
       </v-container>
     </section>
 
-    <!-- Sección de Preguntas Frecuentes (FAQ) -->
+    <!-- FAQ Section -->
     <section class="faq-section">
       <v-container>
         <div class="text-center mb-8">
-          <h1>Preguntas Frecuentes</h1>
+          <h1>
+            {{ $t('cPreguntas.titulo') }}
+            <br>
+            <span style="color: #A65224;">{{ $t('cPreguntas.titulo2') }}</span>
+          </h1>
           <v-divider color="#A65224" class="divider my-4"></v-divider>
           <p class="section-subtitle">
-            Encuentra respuestas rápidas a las preguntas más comunes sobre nuestro trabajo
+            {{ $t('cPreguntas.descripcion') }}
           </p>
         </div>
 
@@ -114,7 +128,7 @@
           <v-col cols="12" md="6">
             <v-expansion-panels accordion flat>
               <v-expansion-panel
-                v-for="(item, index) in faqsLeft"
+                v-for="(item, index) in $t('cPreguntas.faqsLeft')"
                 :key="'left-' + index"
                 class="faq-card"
               >
@@ -123,6 +137,9 @@
                 </v-expansion-panel-header>
                 <v-expansion-panel-content class="answer">
                   <p>{{ item.respuesta }}</p>
+                  <v-btn text small class="more-btn">
+                    {{ $t('cPreguntas.masInformacion') }}
+                  </v-btn>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -132,7 +149,7 @@
           <v-col cols="12" md="6">
             <v-expansion-panels accordion flat>
               <v-expansion-panel
-                v-for="(item, index) in faqsRight"
+                v-for="(item, index) in $t('cPreguntas.faqsRight')"
                 :key="'right-' + index"
                 class="faq-card"
               >
@@ -141,6 +158,9 @@
                 </v-expansion-panel-header>
                 <v-expansion-panel-content class="answer">
                   <p>{{ item.respuesta }}</p>
+                  <v-btn text small class="more-btn">
+                    {{ $t('cPreguntas.masInformacion') }}
+                  </v-btn>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -156,88 +176,107 @@ import CarouselComponent from "~/components/CarouselComponent.vue";
 
 export default {
   components: { CarouselComponent },
+  
   data() {
     return {
+      // Solo mantenemos las imágenes y links, el texto viene de i18n
       aliados: [
-        {
-          img: "/img/conanp.png",
-          texto: "Colaboración con líderes tecnológicos",
-        },
-        {
-          img: "/img/BLACKS.jpg",
-          texto: "Aliados académicos para investigación",
-        },
-        {
-          img: "/img/Logotipo_principal_Atzitzintla.jpg.png",
-          texto: "Alianzas con el sector público",
-        },
-        {
-          img: "/img/uttecam.png",
-          texto: "Alianzas con el sector público",
-        },
-        {
-          img: "/img/logo-white.png",
-          texto: "Alianzas con el sector público",
-        },
+        { img: "/img/conanp.png" },
+        { img: "/img/BLACKS.jpg" },
+        { img: "/img/Logotipo_principal_Atzitzintla.jpg.png" },
+        { img: "/img/uttecam.png" },
+        { img: "/img/logo-white.png" },
       ],
-      iniciativas: [
-        {
-          img: "/img/crecer.jpg",
-          titulo: "Educación Digital",
-          link: "/iniciativas",
-        },
-        {
-          img: "/img/equipo.png",
-          titulo: "Sostenibilidad",
-          link: "/iniciativas",
-        },
-        {
-          img: "/img/jornada.jpg",
-          titulo: "Innovación Social",
-          link: "/iniciativas",
-        },
-      ],
-      faqs: [
-        {
-          pregunta: "¿Qué tipo de proyectos desarrolla CIMA A.C.?",
-          respuesta:
-            "Desarrollamos proyectos enfocados en la conservación del medio ambiente, educación, salud, desarrollo económico local y fortalecimiento comunitario.",
-        },
-        {
-          pregunta: "¿Quiénes forman parte del equipo de CIMA A.C.?",
-          respuesta:
-            "Nuestro equipo está compuesto por profesionales multidisciplinarios comprometidos con el desarrollo social.",
-        },
-        {
-          pregunta: "¿Cómo puedo participar como voluntario?",
-          respuesta:
-            "Puedes contactarnos a través de nuestro formulario de voluntariado o asistir a nuestras jornadas de reclutamiento.",
-        },
-        {
-          pregunta: "¿Reciben donaciones?",
-          respuesta:
-            "Sí, aceptamos donaciones tanto en especie como monetarias para apoyar nuestros proyectos.",
-        },
+      
+      iniciativasData: [
+        { img: "/img/crecer.jpg", link: "/iniciativas" },
+        { img: "/img/equipo.png", link: "/iniciativas" },
+        { img: "/img/jornada.jpg", link: "/iniciativas" },
       ],
     };
   },
-  computed: {
-    faqsLeft() {
-      return this.faqs.slice(0, Math.ceil(this.faqs.length / 2));
+
+  methods: {
+    syncLanguage() {
+      if (process.client) {
+        const saved = localStorage.getItem('cima-locale') || 'es'
+        const current = this.$i18n.locale
+        
+        if (current !== saved) {
+          console.log(`🔄 Index: Sincronizando de ${current} a ${saved}`)
+          this.$i18n.setLocale(saved)
+          
+          // Forzar re-renderizado
+          this.$forceUpdate()
+        }
+      }
     },
-    faqsRight() {
-      return this.faqs.slice(Math.ceil(this.faqs.length / 2));
+
+    getPartnerText(index) {
+      try {
+        const aliados = this.$t('index.aliados.lista')
+        return aliados[index] || 'Aliado estratégico'
+      } catch (error) {
+        console.error('Error obteniendo texto de aliado:', error)
+        return 'Aliado estratégico'
+      }
     },
+
+    getInitiativeTitle(index) {
+      try {
+        const iniciativas = this.$t('index.iniciativas.lista')
+        return iniciativas[index]?.titulo || 'Iniciativa'
+      } catch (error) {
+        console.error('Error obteniendo título de iniciativa:', error)
+        return 'Iniciativa'
+      }
+    },
+    handleLanguageChange() {
+      // Forzar actualización cuando cambie el idioma
+      this.$nextTick(() => {
+        this.$forceUpdate()
+      })
+    }
   },
+
+  mounted() {
+    // Sincronizar idioma al montar
+    this.syncLanguage()
+    
+    // Escuchar cambios de idioma
+    this.$nuxt.$on('languageChanged', this.handleLanguageChange)
+    
+    console.log('🌐 Index montado:', {
+      locale: this.$i18n.locale,
+      localStorage: localStorage.getItem('cima-locale'),
+      route: this.$route.path
+    })
+  },
+
+  beforeDestroy() {
+    this.$nuxt.$off('languageChanged', this.handleLanguageChange)
+  },
+
+  // Meta tags dinámicos para SEO
+  head() {
+    return {
+      title: this.$t('index.quienesSomos.titulo'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('index.quienesSomos.descripcion')
+        }
+      ]
+    }
+  }
 };
 </script>
 
+<!-- Todos tus estilos actuales... -->
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
-/* ================================
-   🎨 VARIABLES GLOBALES
-================================ */
 $primary: #035928;
 $secondary: #1ca63f;
 $accent: #a65224;
@@ -245,16 +284,10 @@ $light-bg: #ffffff;
 $text-dark: #2a2a2a;
 $text-muted: #555555;
 
-/* ================================
-   🔤 TIPOGRAFÍA GLOBAL
-================================ */
 * {
   font-family: "Poppins", sans-serif;
 }
 
-/* ================================
-   📐 ESPACIADO GLOBAL DE SECCIONES
-================================ */
 section {
   padding: 1rem 0;
 
@@ -267,9 +300,6 @@ section {
   }
 }
 
-/* ================================
-   🔘 BOTONES
-================================ */
 .btn-primary,
 .cta-btn {
   background-color: $primary !important;
@@ -284,30 +314,23 @@ section {
   }
 }
 
-/* Botón para sección Hero */
 .actions {
   margin-top: 2rem;
   display: flex;
   justify-content: flex-start;
 
   @media (max-width: 600px) {
-    justify-content: flex-end; // Alineado a la derecha en móvil
+    justify-content: flex-end;
     margin-top: 1.5rem;
   }
 }
 
-/* ================================
-   📦 CONTENEDOR
-================================ */
 .v-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 rem; // <-- si quieres padding lateral, corrige a "0 1rem" por ejemplo
+  padding: 0 1rem;
 }
 
-/* ================================
-   🟩 SECCIÓN HERO
-================================ */
 .hero-section {
   .hero-text {
     h1 {
@@ -386,9 +409,6 @@ section {
   }
 }
 
-/* ================================
-   🤝 SECCIÓN ALIADOS
-================================ */
 .partners-section {
   padding: 1rem;
   background: $light-bg;
@@ -429,9 +449,6 @@ section {
   }
 }
 
-/* ================================
-   🚀 SECCIÓN INICIATIVAS
-================================ */
 .initiatives-section {
   .modern-card {
     border-radius: 1rem;
@@ -476,9 +493,6 @@ section {
   }
 }
 
-/* ================================
-   ❓ SECCIÓN PREGUNTAS FRECUENTES
-================================ */
 .faq-section {
   background: white;
   border-radius: 1rem;
@@ -539,9 +553,6 @@ section {
   }
 }
 
-/* ================================
-   ✏️ ENCABEZADOS COMUNES
-================================ */
 .section-header {
   padding: 1rem;
   text-align: center;
