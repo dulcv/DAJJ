@@ -7,7 +7,14 @@
     "transparencia": "Transparency",
     "donar": "Donate"
   },
+
+  "footer": {
+    "derechos": "© 2025 CIMA A.C. · Atzitzintla, Puebla",
+    "siguenos": "Follow us on social media"
+  },
+
   "nosotros": {
+
   "mision": {
     "titulo": "Mission",
     "texto": "To contribute to the integral development of communities surrounding the Pico de Orizaba National Park by strengthening their social, economic, and environmental resilience."
@@ -30,6 +37,7 @@
     "transparencia": "Transparency",
     "inclusion": "Inclusion"
   },
+
     "ods": {
       "titulo": "2030 Agenda",
       "punto1": "SDG 3: Good Health and Well-being",
@@ -45,128 +53,171 @@
       "punto6": "SDG 13: Climate Action",
       "descripcion6": "Take urgent action to combat climate change and its impacts.",
       "punto7": "SDG 15: Life on Land",
-      "descripcion7": "Sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss.",
+      "descripcion7": "Sustainably manage forests, combat desertification, halt and reverse land degradation and halt biodiversity loss.",
       "punto8": "SDG 16: Peace, Justice and Strong Institutions",
-      "descripcion8": "Promote peaceful and inclusive societies for sustainable development.",
+      "descripcion8": "Promote just, peaceful and inclusive societies.",
       "punto9": "SDG 17: Partnerships for the Goals",
-      "descripcion9": "Strengthen the means of implementation and revitalize the global partnership for sustainable development."
-    },"miembros": {
-    "presidente": {
-      "titulo": "President",
-      "descripcion": "Responsible for the legal representation and strategic leadership of the organization."
+      "descripcion9": "Revitalize the Global Partnership for Sustainable Development and strengthen the means of implementation."
     },
-    "secretario": {
-      "titulo": "Secretary",
-      "descripcion": "In charge of documentation, meeting minutes, and institutional communications."
-    },
-    "tesorero": {
-      "titulo": "Treasurer",
-      "descripcion": "Manages financial resources and accountability."
-    },
-    "operaciones": {
-      "titulo": "Operations Director",
-      "descripcion": "Coordinates project execution and the fieldwork team."
-    },
-    "comunicacion": {
-      "titulo": "Communications Director",
-      "descripcion": "Manages institutional identity, social media, and media relations."
-    },
-    "finanzas": {
-      "titulo": "Finance Director",
-      "descripcion": "Designs financial sustainability strategies and budget control."
-    }
-  },
-  "equipo": {
-    "titulo": "Team",
-    "descripcion": "Our team is made up of people committed to community well-being, social justice, and environmental protection.",
-    "lista": [
-      {
+    "miembros": {
+      "presidente": {
         "titulo": "President",
-        "descripcion": "Responsible for the legal representation and strategic leadership of the organization."
+        "descripcion": "Responsible for legal representation and strategic leadership of the organization."
       },
-      {
+      "secretario": {
         "titulo": "Secretary",
-        "descripcion": "In charge of documentation, records, and institutional communications."
+        "descripcion": "In charge of documentation, minutes and institutional communications."
       },
-      {
+      "tesorero": {
         "titulo": "Treasurer",
         "descripcion": "Manages financial resources and accountability."
       },
-      {
+      "operaciones": {
         "titulo": "Operations Director",
-        "descripcion": "Coordinates project execution and fieldwork teams."
+        "descripcion": "Coordinates project execution and field work team."
       },
-      {
+      "comunicacion": {
         "titulo": "Communications Director",
-        "descripcion": "Manages institutional identity, social media, and media relations."
+        "descripcion": "Manages institutional identity, social networks and media relations."
       },
-      {
+      "finanzas": {
         "titulo": "Finance Director",
         "descripcion": "Designs financial sustainability strategies and budget control."
       }
-    ]
+    },
+    "equipo": {
+      "titulo": "Team",
+      "descripcion": "Our team is made up of people committed to community welfare, social justice and environmental protection.",
+      "lista": [
+        {
+          "titulo": "President",
+          "descripcion": "Responsible for legal representation and strategic leadership of the organization."
+        },
+        {
+          "titulo": "Secretary",
+          "descripcion": "In charge of documentation, minutes and institutional communications."
+        },
+        {
+          "titulo": "Treasurer",
+          "descripcion": "Manages financial resources and accountability."
+        },
+        {
+          "titulo": "Operations Director",
+          "descripcion": "Coordinates project execution and field work team."
+        },
+        {
+          "titulo": "Communications Director",
+          "descripcion": "Manages institutional identity, social networks and media relations."
+        },
+        {
+          "titulo": "Finance Director",
+          "descripcion": "Designs financial sustainability strategies and budget control."
+        }
+      ]
+    }
   },
- "index": {
+  "index": {
     "quienesSomos": {
-      "titulo": "We Are CIMA",
-      "descripcion": "At CIMA, we blend creativity and commitment to build sustainable solutions for society's most urgent challenges.",
-      "boton": "Learn More"
+      "titulo": "About CIMA",
+      "descripcion": "At CIMA we fuse creativity and commitment to build sustainable solutions to the most urgent challenges of our society.",
+      "boton": "Learn more"
     },
     "aliados": {
       "titulo": "Our Partners",
-      "descripcion": "We collaborate with leading organizations to maximize our impact",
+      "descripcion": "We collaborate with leading organizations to maximize our social and environmental impact",
       "lista": [
         "Collaboration with technology leaders",
         "Academic allies for research",
-         "Aliances with the public sector"
-        ],
-         "boton": "Want to be our partner?"
+        "Partnerships with the public sector"
+      ],
+      "boton": "Want to be our partner?"
     },
     "iniciativas": {
       "titulo": "Latest Initiatives",
-      "verMas": "See More",
       "lista": [
         {
           "titulo": "Digital Education",
-          "link": "/initiatives"
+          "link": "/iniciativas"
         },
         {
-          "titulo": "Sustainability",
-          "link": "/initiatives"
+          "titulo": "Environmental Sustainability",
+          "link": "/iniciativas"
         },
         {
           "titulo": "Social Innovation",
-          "link": "/initiatives"
+          "link": "/iniciativas"
         }
-      ]
+      ],
+      "verMas": "See more"
     }
   },
   "cPreguntas": {
     "titulo": "Frequently",
     "titulo2": "Asked Questions",
     "descripcion": "Find quick answers to the most common questions about our work",
-    "masInformacion": "More info",
+    "masInformacion": "More information",
     "faqsLeft": [
       {
-        "pregunta": "What types of projects does CIMA A.C. develop?",
-        "respuesta": "We develop projects focused on environmental conservation, education, health, local economic development, and community strengthening."
+        "pregunta": "What type of projects does CIMA A.C. develop?",
+        "respuesta": "We develop projects focused on environmental conservation, education, health, local economic development and community strengthening."
       },
       {
         "pregunta": "Who is part of the CIMA A.C. team?",
-        "respuesta": "Our team is made up of multidisciplinary professionals committed to social development."
+        "respuesta": "Our team is composed of multidisciplinary professionals committed to social development."
       }
     ],
     "faqsRight": [
       {
         "pregunta": "How can I participate as a volunteer?",
-        "respuesta": "You can contact us through our volunteer form or attend our recruitment events."
+        "respuesta": "You can contact us through our volunteer form or attend our recruitment sessions."
       },
       {
-        "pregunta": "Do you accept donations?",
-        "respuesta": "Yes, we accept donations both in-kind and monetary to support our projects."
+        "pregunta": "Do you receive donations?",
+        "respuesta": "Yes, we accept both in-kind and monetary donations to support our projects."
       }
     ]
+  },
+  "iniciativas": {
+    "titulo": "Our Initiatives",
+    "subtitulo": "Projects that transform communities and protect our natural environment",
+    "items": [
+      {
+        "titulo": "Reforestation",
+        "descripcionCorta": "Local ecosystem restoration",
+        "descripcionLarga": "Comprehensive reforestation program in Pico de Orizaba National Park, focused on native species and restoration of degraded ecosystems to combat climate change."
+      },
+      {
+        "titulo": "Vocational Guidance",
+        "descripcionCorta": "Guide for professional future",
+        "descripcionLarga": "Vocational guidance program aimed at young people from rural communities, providing tools for academic and professional decision-making aligned with their interests and local development."
+      },
+      {
+        "titulo": "Community Health",
+        "descripcionCorta": "Comprehensive medical care",
+        "descripcionLarga": "Community health campaigns that include medical consultations, vaccination campaigns, preventive health education and nutrition programs to improve families' quality of life."
+      },
+      {
+        "titulo": "Digital Education",
+        "descripcionCorta": "Technology for learning",
+        "descripcionLarga": "Implementation of digital literacy programs and access to educational technologies to reduce the digital divide in rural communities and improve educational opportunities."
+      },
+      {
+        "titulo": "Economic Development",
+        "descripcionCorta": "Sustainable local entrepreneurship",
+        "descripcionLarga": "Entrepreneurship training programs, microcredits and development of local productive chains to generate decent jobs and strengthen the community economy."
+      },
+      {
+        "titulo": "Environmental Conservation",
+        "descripcionCorta": "Biodiversity protection",
+        "descripcionLarga": "Local flora and fauna conservation initiatives, environmental education and promotion of sustainable practices for the protection of Pico de Orizaba National Park."
+      }
+    ],
+    "verMas": "See more",
+    "verMenos": "See less",
+    "cta": {
+      "titulo": "Want to participate?",
+      "descripcion": "Join our initiatives and be part of the change our communities need.",
+      "boton": "Contact us"
+    }
   }
   }
-}
-

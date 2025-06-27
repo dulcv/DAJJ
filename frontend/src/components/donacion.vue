@@ -22,7 +22,7 @@
 
         </v-col>
         <v-col cols="12" md="6">
-          <v-img src="@/assets/img/donacionImage.jpg" alt="Donacion" max-width="100%" style="border-radius:5%;"></v-img>
+          <v-img src="@/static/img/donacionImage.jpg" alt="Donacion" max-width="100%" style="border-radius:5%;"></v-img>
         </v-col>
       </v-row>
     </v-container>

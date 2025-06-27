@@ -26,7 +26,7 @@
           class="d-flex justify-center align-center text-center mb-4 mb-md-0 fade-in delay-3"
         >
           <div class="footer-text">
-            © 2025 CIMA A.C. · Atzitzintla, Puebla
+            {{ $t('footer.derechos') }}
           </div>
         </v-col>
 
@@ -36,7 +36,7 @@
           md="4"
           class="d-flex flex-column flex-md-row justify-center justify-md-end align-center gap-3 gap-md-6 fade-in delay-4"
         >
-          <span class="footer-text mb-2 mb-md-0">Síguenos en redes</span>
+          <span class="footer-text mb-2 mb-md-0">{{ $t('footer.siguenos') }}</span>
           <div class="d-flex gap-2">
             <v-btn
               icon
@@ -92,7 +92,6 @@
 
 /* Íconos sociales */
 .social-icon {
-
   color: white;
   width: 36px;
   height: 36px;
