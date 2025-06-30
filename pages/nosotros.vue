@@ -1,111 +1,122 @@
 <template>
   <div>
     <v-main class="pa-0">
-      <v-container>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <v-container class="py-16">
+          <div class="text-center">
+            <h1 class="display-2 font-weight-bold white--text mb-6">
+              {{ $t('nosotros.hero.titulo') }}
+            </h1>
+            <p class="headline white--text font-weight-light max-width-text mx-auto">
+              {{ $t('nosotros.hero.subtitulo') }}
+            </p>
+          </div>
+        </v-container>
+      </section>
+
+      <v-container class="section-spacing">
         <!-- Misión y Visión -->
-        <!-- Misión -->
-        <section class="mt-md-0 mt-0">
-          <v-container>
-            <v-row class="align-center my-3">
-              <!-- Imagen Misión: Primero en mobile, segundo en desktop -->
-              <v-col cols="12" md="6" class="order-1 order-md-1">
-                <v-hover v-slot="{ hover }">
-                  <transition name="fade-slide" mode="out-in">
-                    <v-img
-                      key="mision"
-                      src="/img/crecer.jpg"
-                      alt="Imagen Misión"
-                      height="300"
-                      contain
-                      class="rounded-lx shadow-lg transition-slow"
-                      :class="{ 'hover-scale': hover }"
-                    />
-                  </transition>
-                </v-hover>
-              </v-col>
+        <section class="mb-16">
+          <!-- Misión -->
+          <v-row class="align-center mb-12" no-gutters>
+            <v-col cols="12" md="6" class="pa-4">
+              <div class="d-flex align-center mb-4">
+                <v-icon color="green darken-2" size="40" class="mr-3">mdi-target</v-icon>
+                <h2 class="section-title">{{ $t('nosotros.mision.titulo') }}</h2>
+              </div>
+              <p class="text-body-1 text-justify line-height-relaxed">
+                {{ $t('nosotros.mision.texto') }}
+              </p>
+            </v-col>
+            <v-col cols="12" md="6" class="pa-4">
+              <v-hover v-slot="{ hover }">
+                <v-img
+                  src="/img/crecer.jpg"
+                  alt="Imagen Misión"
+                  height="400"
+                  class="rounded-xl elevation-8 image-hover"
+                  :class="{ 'image-scale': hover }"
+                />
+              </v-hover>
+            </v-col>
+          </v-row>
 
-              <!-- Título Misión -->
-              <v-col cols="12" md="6" class="order-2 order-md-1">
-                <h2 class="text-h5 font-weight-bold">
-                  {{ $t('nosotros.mision.titulo') }}
-                </h2>
-                <p class="mb-0" style="font-family: Poppins, sans-serif; text-align: justify; line-height: 1.8;">
-                  {{ $t('nosotros.mision.texto') }}
-                </p>
-              </v-col>
-            </v-row>
-          </v-container>
-        </section>
-
-        <!-- Visión -->
-        <section class="mt-md-2 mt-2">
-          <v-container>
-            <v-row class="align-center my-6">
-              <!-- Imagen Visión: Primero en mobile, segundo en desktop -->
-              <v-col cols="12" md="6" class="order-1 order-md-2">
-                <v-hover v-slot="{ hover }">
-                  <transition name="fade-slide" mode="out-in">
-                    <v-img
-                      key="vision"
-                      src="/img/participacion.jpg"
-                      alt="Imagen Visión"
-                      height="300"
-                      contain
-                      class="rounded-lx shadow-lg transition-slow"
-                      :class="{ 'hover-scale': hover }"
-                    />
-                  </transition>
-                </v-hover>
-              </v-col>
-
-              <!-- Título y descripción Visión -->
-              <v-col cols="12" md="6" class="order-2 order-md-1">
-                <h2 class="text-h5 font-weight-bold" :style="{ color: '#035928', fontFamily: 'Poppins, sans-serif' }">
-                  {{ $t('nosotros.vision.titulo') }}
-                </h2>
-                <div style="font-family: Poppins, sans-serif; text-align: justify; line-height: 1.8;">
-                  <p class="mb-2">{{ $t('nosotros.vision.descripcion') }}</p>
-
-                  <!-- CORREGIDO: Lista de puntos individuales -->
-                  <ul class="vision-points">
-                    <li>{{ $t('nosotros.vision.punto1') }}</li>
-                    <li>{{ $t('nosotros.vision.punto2') }}</li>
-                    <li>{{ $t('nosotros.vision.punto3') }}</li>
-                    <li>{{ $t('nosotros.vision.punto4') }}</li>
-                    <li>{{ $t('nosotros.vision.punto5') }}</li>
-                    <li>{{ $t('nosotros.vision.punto6') }}</li>
-                  </ul>
-                </div>
-              </v-col>
-            </v-row>
-          </v-container>
+          <!-- Visión -->
+          <v-row class="align-center mb-12" no-gutters>
+            <v-col cols="12" md="6" order="2" order-md="1" class="pa-4">
+              <v-hover v-slot="{ hover }">
+                <v-img
+                  src="/img/participacion.jpg"
+                  alt="Imagen Visión"
+                  height="400"
+                  class="rounded-xl elevation-8 image-hover"
+                  :class="{ 'image-scale': hover }"
+                />
+              </v-hover>
+            </v-col>
+            <v-col cols="12" md="6" order="1" order-md="2" class="pa-4">
+              <div class="d-flex align-center mb-4">
+                <v-icon color="green darken-2" size="40" class="mr-3">mdi-eye</v-icon>
+                <h2 class="section-title">{{ $t('nosotros.vision.titulo') }}</h2>
+              </div>
+              <p class="text-body-1 text-justify line-height-relaxed mb-4">
+                {{ $t('nosotros.vision.descripcion') }}
+              </p>
+              <ul class="vision-points">
+                <li>{{ $t('nosotros.vision.punto1') }}</li>
+                <li>{{ $t('nosotros.vision.punto2') }}</li>
+                <li>{{ $t('nosotros.vision.punto3') }}</li>
+                <li>{{ $t('nosotros.vision.punto4') }}</li>
+                <li>{{ $t('nosotros.vision.punto5') }}</li>
+                <li>{{ $t('nosotros.vision.punto6') }}</li>
+              </ul>
+            </v-col>
+          </v-row>
         </section>
 
         <!-- Valores -->
-        <v-row class="my-10">
-          <v-col cols="12">
-            <h2 class="text-center">{{ $t('nosotros.valores.titulo') }}</h2>
-          </v-col>
-          <v-col
-            v-for="(valor, i) in valores"
-            :key="i"
-            cols="12"
-            sm="6"
-            md="4"
-            class="text-center"
-          >
-            <v-card class="pa-7 rounded-xl pa-1 hover-zoom" style="border: 1px solid #6F9CA6;">
-              <v-icon :color="valor.color" size="100">{{ valor.icono }}</v-icon>
-              <p class="mt-2 text-h6 font-weight-bold" :style="{ color: valor.color }">
-                {{ $t(valor.texto) }}
-              </p>
-            </v-card>
-          </v-col>
-        </v-row>
+        <section class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="section-title mb-4">{{ $t('nosotros.valores.titulo') }}</h2>
+            <p class="text-h6 grey--text max-width-text mx-auto">
+              {{ $t('nosotros.valores.subtitulo') }}
+            </p>
+          </div>
+
+          <v-row>
+            <v-col
+              v-for="(valor, i) in valores"
+              :key="i"
+              cols="12"
+              sm="6"
+              md="4"
+              class="mb-4"
+            >
+              <v-card class="valor-card pa-6 text-center h-100" elevation="2">
+                <v-avatar size="80" :color="valor.color" class="mb-4">
+                  <v-icon size="40" color="white">{{ valor.icono }}</v-icon>
+                </v-avatar>
+                <h3 class="text-h6 font-weight-bold mb-3">
+                  {{ $t(valor.texto) }}
+                </h3>
+                <p class="text-body-2 grey--text">
+                  {{ $t(valor.descripcion) }}
+                </p>
+              </v-card>
+            </v-col>
+          </v-row>
+        </section>
 
         <!-- Agenda 2030 -->
-        <v-container class="my-12">
-          <h2 class="text-center">{{ $t('nosotros.ods.titulo') }}</h2>
+        <section class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="section-title mb-4">{{ $t('nosotros.ods.titulo') }}</h2>
+            <p class="text-h6 grey--text max-width-text mx-auto">
+              {{ $t('nosotros.ods.subtitulo') }}
+            </p>
+          </div>
+
           <v-row>
             <v-col
               v-for="(ods, i) in odsList"
@@ -113,101 +124,95 @@
               cols="12"
               sm="6"
               md="4"
-              class="d-flex flex-column"
+              class="mb-3"
             >
-              <v-card class="pa-3 hover-shadow" @click="toggleItem(i)">
-                <div class="d-flex align-center">
-                  <v-icon color="green" left>
-                    {{ activeIndex === i ? 'mdi-minus-circle-outline' : 'mdi-plus-circle-outline' }}
-                  </v-icon>
-                  <span :style="{ fontFamily: 'Poppins, sans-serif', marginLeft: '8px' }">
-                    {{ $t(ods.titulo) }}
-                  </span>
-                </div>
-
-                <v-expand-transition>
-                  <div
-                    v-if="activeIndex === i"
-                    class="mt-2"
-                    :style="{ fontFamily: 'Poppins, sans-serif', lineHeight: '1.8', textAlign: 'justify' }"
+              <v-card class="ods-card" elevation="2">
+                <v-card-text class="pa-0">
+                  <v-btn
+                    text
+                    block
+                    class="pa-6 text-left justify-space-between"
+                    @click="toggleItem(i)"
                   >
-                    {{ $t(ods.descripcion) }}
-                  </div>
-                </v-expand-transition>
+                    <div class="d-flex align-center">
+                      <v-chip
+                        small
+                        color="green lighten-4"
+                        text-color="green darken-2"
+                        class="mr-3"
+                      >
+                        {{ i + 1 }}
+                      </v-chip>
+                      <span class="font-weight-medium">{{ $t(ods.titulo) }}</span>
+                    </div>
+                    <v-icon color="green darken-2">
+                      {{ activeIndex === i ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
+                    </v-icon>
+                  </v-btn>
+
+                  <v-expand-transition>
+                    <div v-if="activeIndex === i" class="px-6 pb-6">
+                      <p class="text-body-2 grey--text text--darken-1 line-height-relaxed">
+                        {{ $t(ods.descripcion) }}
+                      </p>
+                    </div>
+                  </v-expand-transition>
+                </v-card-text>
               </v-card>
             </v-col>
           </v-row>
-        </v-container>
+        </section>
 
         <!-- Equipo -->
-        <v-container class="my-12 text-center">
-          <h2 class="text-center">{{ $t('nosotros.equipo.titulo') }}</h2>
-          <p class="text-body-1 mb-6" :style="{ textAlign: 'center', lineHeight: '2' }">
-            {{ $t('nosotros.equipo.descripcion') }}
-          </p>
-          <v-row class="my-20" style="row-gap: 25px;">
+        <section class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="section-title mb-4">{{ $t('nosotros.equipo.titulo') }}</h2>
+            <p class="text-h6 grey--text max-width-text mx-auto">
+              {{ $t('nosotros.equipo.descripcion') }}
+            </p>
+          </div>
+
+          <v-row>
             <v-col
               v-for="(miembro, index) in miembros"
               :key="index"
               cols="12"
               sm="6"
               md="4"
-              class="text-center px-10 hover-zoom"
+              class="mb-6"
             >
-              <v-img
-                :src="miembro.imagen"
-                height="300px"
-                class="rounded-lg elevation-2 pa-10"
-              />
-              <h3 class="mt-4 font-weight-bold text-h5" :style="{ color: '#A65224' }">
-                {{ $t(miembro.titulo) }}
-              </h3>
-              <p :style="{ lineHeight: '2' }" class="text-body-2">
-                {{ $t(miembro.descripcion) }}
-              </p>
+              <v-card class="team-card" elevation="2">
+                <div class="image-container">
+                  <v-img
+                    :src="miembro.imagen"
+                    height="250"
+                    class="team-image"
+                  >
+                    <template v-slot:placeholder>
+                      <v-skeleton-loader type="image"></v-skeleton-loader>
+                    </template>
+                  </v-img>
+                </div>
+                <v-card-text class="text-center pa-6">
+                  <h3 class="text-h6 font-weight-bold orange--text text--darken-2 mb-2">
+                    {{ $t(miembro.titulo) }}
+                  </h3>
+                  <v-chip
+                    small
+                    outlined
+                    color="green darken-2"
+                    class="mb-3"
+                  >
+                    {{ $t(miembro.rol) }}
+                  </v-chip>
+                  <p class="text-body-2 grey--text line-height-relaxed">
+                    {{ $t(miembro.descripcion) }}
+                  </p>
+                </v-card-text>
+              </v-card>
             </v-col>
           </v-row>
-        </v-container>
-
-        <!-- Debug Info (temporal) -->
-        <!--
-        <v-container v-if="showDebug" class="mt-8">
-          <v-card class="pa-4" color="info">
-            <v-card-title>
-              🐛 Debug i18n - Página Nosotros
-              <v-spacer></v-spacer>
-              <v-btn icon @click="showDebug = false">
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
-            </v-card-title>
-            <v-card-text>
-              <p><strong>Idioma actual:</strong> {{ $i18n.locale }}</p>
-              <p><strong>Misión título:</strong> "{{ $t('nosotros.mision.titulo') }}"</p>
-              <p><strong>Visión título:</strong> "{{ $t('nosotros.vision.titulo') }}"</p>
-              <p><strong>Primer valor:</strong> "{{ $t('nosotros.valores.innovacion') }}"</p>
-              <p><strong>Primer ODS:</strong> "{{ $t('nosotros.ods.punto1') }}"</p>
-            </v-card-text>
-          </v-card>
-        </v-container>
-        -->
-
-        <!-- Botón debug flotante -->
-        <!--
-        <v-fab-transition>
-          <v-btn
-            fab
-            fixed
-            bottom
-            right
-            small
-            color="info"
-            @click="showDebug = !showDebug"
-            style="z-index: 1000;"
-          >
-            <v-icon>mdi-bug</v-icon>
-          </v-btn>
-        </v-fab-transition>
-        -->
+        </section>
       </v-container>
     </v-main>
   </div>
@@ -218,18 +223,45 @@ export default {
   data() {
     return {
       activeIndex: null,
-      showDebug: false, // Cambiar a false cuando funcione
-
-      // Valores
+      // Valores con descripciones
       valores: [
-        { icono: 'mdi-lightbulb-on-outline', texto: 'nosotros.valores.innovacion', color: '#005977' },
-        { icono: 'mdi-hand-heart', texto: 'nosotros.valores.solidaridad', color: '#e3c77b' },
-        { icono: 'mdi-leaf', texto: 'nosotros.valores.sostenibilidad', color: 'green' },
-        { icono: 'mdi-account-group', texto: 'nosotros.valores.juventud', color: '#6F9CA6' },
-        { icono: 'mdi-shield-check', texto: 'nosotros.valores.transparencia', color: '#A65224' },
-        { icono: 'mdi-account-voice', texto: 'nosotros.valores.inclusion', color: '#ff7c00' }
+        { 
+          icono: 'mdi-lightbulb-on-outline', 
+          texto: 'nosotros.valores.innovacion', 
+          descripcion: 'nosotros.valores.innovacion.descripcion',
+          color: '#005977' 
+        },
+        { 
+          icono: 'mdi-hand-heart', 
+          texto: 'nosotros.valores.solidaridad', 
+          descripcion: 'nosotros.valores.solidaridad.descripcion',
+          color: '#e3c77b' 
+        },
+        { 
+          icono: 'mdi-leaf', 
+          texto: 'nosotros.valores.sostenibilidad', 
+          descripcion: 'nosotros.valores.sostenibilidad.descripcion',
+          color: 'green' 
+        },
+        { 
+          icono: 'mdi-account-group', 
+          texto: 'nosotros.valores.juventud', 
+          descripcion: 'nosotros.valores.juventud.descripcion',
+          color: '#6F9CA6' 
+        },
+        { 
+          icono: 'mdi-shield-check', 
+          texto: 'nosotros.valores.transparencia', 
+          descripcion: 'nosotros.valores.transparencia.descripcion',
+          color: '#A65224' 
+        },
+        { 
+          icono: 'mdi-account-voice', 
+          texto: 'nosotros.valores.inclusion', 
+          descripcion: 'nosotros.valores.inclusion.descripcion',
+          color: '#ff7c00' 
+        }
       ],
-
       // ODS
       odsList: [
         { titulo: 'nosotros.ods.punto1', descripcion: 'nosotros.ods.descripcion1' },
@@ -242,62 +274,52 @@ export default {
         { titulo: 'nosotros.ods.punto8', descripcion: 'nosotros.ods.descripcion8' },
         { titulo: 'nosotros.ods.punto9', descripcion: 'nosotros.ods.descripcion9' }
       ],
-
       // Miembros del equipo
       miembros: [
         {
           imagen: '/img/campañadental.jpg',
           titulo: 'nosotros.miembros.presidente.titulo',
+          rol: 'nosotros.miembros.presidente.rol',
           descripcion: 'nosotros.miembros.presidente.descripcion'
         },
         {
           imagen: '/img/campañadental.jpg',
           titulo: 'nosotros.miembros.secretario.titulo',
+          rol: 'nosotros.miembros.secretario.rol',
           descripcion: 'nosotros.miembros.secretario.descripcion'
         },
         {
           imagen: '/img/campañadental.jpg',
           titulo: 'nosotros.miembros.tesorero.titulo',
+          rol: 'nosotros.miembros.tesorero.rol',
           descripcion: 'nosotros.miembros.tesorero.descripcion'
         },
         {
           imagen: '/img/campañadental.jpg',
           titulo: 'nosotros.miembros.operaciones.titulo',
+          rol: 'nosotros.miembros.operaciones.rol',
           descripcion: 'nosotros.miembros.operaciones.descripcion'
         },
         {
           imagen: '/img/campañadental.jpg',
           titulo: 'nosotros.miembros.comunicacion.titulo',
+          rol: 'nosotros.miembros.comunicacion.rol',
           descripcion: 'nosotros.miembros.comunicacion.descripcion'
         },
         {
           imagen: '/img/campañadental.jpg',
           titulo: 'nosotros.miembros.finanzas.titulo',
+          rol: 'nosotros.miembros.finanzas.rol',
           descripcion: 'nosotros.miembros.finanzas.descripcion'
         }
       ]
     }
   },
-
   methods: {
     toggleItem(index) {
       this.activeIndex = this.activeIndex === index ? null : index
     }
   },
-
-  mounted() {
-    // Debug info cuando se monta el componente
-    console.log('🌐 Página Nosotros i18n info:', {
-      locale: this.$i18n.locale,
-      locales: this.$i18n.locales,
-      messages: Object.keys(this.$i18n.messages),
-      messagesAvailable: !!this.$i18n.messages[this.$i18n.locale],
-      misionTitulo: this.$t('nosotros.mision.titulo'),
-      visionTitulo: this.$t('nosotros.vision.titulo')
-    })
-  },
-
-  // Meta tags para SEO (sintaxis de Nuxt 2)
   head() {
     return {
       title: `${this.$t('nosotros.mision.titulo')} - CIMA A.C.`,
@@ -305,16 +327,6 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('nosotros.mision.texto')
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: `${this.$t('nosotros.mision.titulo')} - CIMA A.C.`
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
           content: this.$t('nosotros.mision.texto')
         }
       ]
@@ -324,102 +336,125 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  font-weight: bold;
-  margin-bottom: 1rem;
-  font-family: Poppins;
-  color: #035928;
-  font-size: 3rem;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
 }
 
-h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #035928;
-  line-height: 1.1;
-  margin-bottom: 1rem;
+/* Secciones */
+.section-spacing {
+  padding: 60px 0;
 }
 
-@media (max-width: 960px) {
-  h1 {
-    font-size: 2rem;
-  }
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2E7D32;
+  font-family: 'Poppins', sans-serif;
 }
 
-.vision-points {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
+.max-width-text {
+  max-width: 600px;
 }
 
-.vision-points li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+.line-height-relaxed {
+  line-height: 1.8;
 }
 
-.hover-zoom {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-zoom:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+/* Imágenes */
+.image-hover {
+  transition: transform 0.4s ease;
+  overflow: hidden;
 }
 
-.hover-shadow {
-  transition: box-shadow 0.3s ease;
-}
-.hover-shadow:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-/* Animación de entrada */
-.fade-slide-enter-active {
-  transition: all 0.6s ease;
-}
-.fade-slide-enter-from {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.fade-slide-enter-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hover */
-.transition-slow {
-  transition: transform 0.4s ease-in-out;
-}
-.hover-scale {
+.image-scale {
   transform: scale(1.05);
 }
 
-/* Redondeado y sombra */
-.rounded-circle {
-  border-radius: 999px;
+/* Cards de valores */
+.valor-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 16px;
+  height: 100%;
 }
-.shadow-lg {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+.valor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15) !important;
 }
 
+/* Cards de ODS */
+.ods-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
 
-h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    color: #035928;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+.ods-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
 
-    @media (max-width: 960px) {
-      font-size: 2rem;
-    }
+/* Cards del equipo */
+.team-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.team-image {
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image {
+  transform: scale(1.1);
+}
+
+/* Lista de visión */
+.vision-points {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vision-points li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.vision-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .section-title {
+    font-size: 2rem;
   }
-
+  
+  .hero-section {
+    min-height: 300px;
+    padding: 40px 0;
+  }
+}
 </style>
-
-
-

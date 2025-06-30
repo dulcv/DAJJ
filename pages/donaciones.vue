@@ -1,154 +1,266 @@
 <template>
-
   <div id="app">
-    <header>
-      <h1>{{ titulo }}</h1>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <v-container class="py-16">
+        <v-row align="center">
+          <v-col cols="12" md="6">
+            <h1 class="display-1 font-weight-bold white--text mb-4">
+              {{ $t('donaciones.titulo') }}
+            </h1>
+            <p class="headline white--text mb-4 font-weight-light">
+              {{ $t('donaciones.subtitulo') }}
+            </p>
+            <p class="title white--text mb-6 font-weight-light">
+              {{ $t('donaciones.descripcion') }}
+            </p>
+            
+            <!-- iconos que indican que el sitio web es seguro-->
+            <div class="d-flex flex-wrap mb-6">
+              <v-chip color="white" text-color="green darken-2" small class="mr-3 mb-2">
+                <v-icon left small>mdi-shield-check</v-icon>
+                {{ $t('donaciones.seguridad.seguro') }}
+              </v-chip>
+              <!-- <v-chip color="white" text-color="green darken-2" small class="mr-3 mb-2">
+                <v-icon left small>mdi-check-circle</v-icon>
+                {{ $t('donaciones.seguridad.deducible') }}
+              </v-chip> -->
+              <v-chip color="white" text-color="green darken-2" small class="mr-3 mb-2">
+                <v-icon left small>mdi-heart</v-icon>
+                {{ $t('donaciones.seguridad.impacto') }}
+              </v-chip>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-img 
+              src="/img/participacion.jpg" 
+              alt="Donación" 
+              class="rounded-xl elevation-8"
+              height="400"
+            />
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
 
-    <!-- Contenido principal -->
-    <v-container class="my-8">
-      <v-row align="center">
-        <v-col cols="12" md="6">
-          <h1 class="mb-4" color="#A65224">DONATIVOS</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non, laboriosam magnam vel vitae officia,
-            explicabo earum cumque, voluptate tempora tempore veritatis iusto sed esse facilis quisquam porro quia quas.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non, laboriosam magnam vel vitae officia,
-            explicabo earum cumque, voluptate tempora tempore veritatis iusto sed esse facilis quisquam porro quia quas.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non, laboriosam magnam vel vitae officia,
-            explicabo earum cumque, voluptate tempora tempore veritatis iusto sed esse facilis quisquam porro quia quas.
-          </p>
-
-        </v-col>
-        <v-col cols="12" md="6">
-          <v-img src="@/assets/img/donacionImage.jpg" alt="Donacion" max-width="100%" style="border-radius:5%;"></v-img>
-        </v-col>
-      </v-row>
+    <!-- CTA Section -->
+    <v-container class="my-12">
+      <v-card class="cta-card pa-8 text-center" elevation="8">
+        <v-avatar size="80" color="green darken-2" class="mb-6">
+          <v-icon size="40" color="white">mdi-gift</v-icon>
+        </v-avatar>
+        
+        <h2 class="text-h4 font-weight-bold green--text text--darken-2 mb-4">
+          {{ $t('donaciones.cta.titulo') }}
+        </h2>
+        
+        <lottie :options="defaultOptions" :height="200" :width="200" class="mx-auto mb-4" />
+        
+        <p class="text-h6 mb-2">{{ $t('donaciones.cta.mensaje1') }}</p>
+        <p class="text-h6 mb-2">{{ $t('donaciones.cta.mensaje2') }}</p>
+        <p class="text-h5 font-weight-bold green--text text--darken-2 mb-6">
+          {{ $t('donaciones.cta.mensaje3') }}
+        </p>
+        
+        <v-btn 
+          color="green darken-2" 
+          dark 
+          large 
+          class="px-8"
+          @click="dialog = true"
+        >
+          <v-icon left>mdi-heart</v-icon>
+          {{ $t('donaciones.cta.boton') }}
+        </v-btn>
+      </v-card>
     </v-container>
-    <v-container>
-      <!-- Mensaje -->
-      <v-alert color="white" type="success" class="my-6 text-center" dense>
-        <div class="text-center tarjet">
-          <h3 class="font-weight-bold text-h4 mb-2">Tu ayuda transforma vidas</h3>
 
-          <lottie :options="defaultOptions" :height="250" :width="250" />
-          <p>Tu donación hace una gran diferencia.</p>
-          <p>Nos permite seguir ayudando a quienes más lo necesitan.</p>
-          <p><strong>¡Juntos podemos lograr grandes cambios!</strong></p>
+    <!-- FAQ Section -->
+    <v-container class="my-12">
+      <div class="text-center mb-8">
+        <h2 class="text-h4 font-weight-bold green--text text--darken-2 mb-4">
+          {{ $t('donaciones.faq.titulo') }}
+        </h2>
+        <p class="text-h6 grey--text">
+          {{ $t('donaciones.faq.subtitulo') }}
+        </p>
+      </div>
 
-          <v-btn color="green darken-2" dark class="mt-4" @click="dialog = true">
-            Donar aquí
-          </v-btn>
-        </div>
-      </v-alert>
-      <!-- Preguntas Frecuentes -->
-      <h2 class="mt-6">Preguntas Frecuentes</h2>
-      <v-expansion-panels multiple>
-        <v-expansion-panel v-for="(item, i) in preguntas" :key="i">
-          <v-expansion-panel-header>{{
-            item.pregunta
-          }}</v-expansion-panel-header>
-          <v-expansion-panel-content>{{
-            item.respuesta
-          }}</v-expansion-panel-content>
+      <v-expansion-panels multiple class="faq-panels">
+        <v-expansion-panel 
+          v-for="(item, i) in faqItems" 
+          :key="i"
+          class="mb-2"
+        >
+          <v-expansion-panel-header class="text-h6 font-weight-medium">
+            {{ $t(`donaciones.faq.preguntas.${item}.pregunta`) }}
+          </v-expansion-panel-header>
+          <v-expansion-panel-content class="text-body-1 grey--text text--darken-1">
+            {{ $t(`donaciones.faq.preguntas.${item}.respuesta`) }}
+          </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
     </v-container>
-    <div>
-      <!-- Diálogo con tarjeta -->
-      <v-dialog v-model="dialog" max-width="500">
-        <v-card>
-          <v-card-text>
-            <!-- Formulario de Donación -->
-            <v-card-title id="donacion" class="text-center">¡Haz tu donación!</v-card-title>
 
-            <h3>1.Datos personales:</h3>
-            <v-form @submit.prevent="pagarConStripe">
-              <v-text-field v-model="nombre" label="Nombre completo" outlined dense class="mt-3"></v-text-field>
-              <div v-if="errores.nombre" class="campo-error">
-                {{ errores.nombre }}
-              </div>
+    <!-- Modal de Donación -->
+    <v-dialog v-model="dialog" max-width="600" persistent>
+      <v-card class="donation-modal">
+        <v-card-title class="text-center pa-6 green lighten-5">
+          <div class="w-100 text-center">
+            <v-icon color="green darken-2" size="40" class="mb-2">mdi-heart</v-icon>
+            <h2 class="text-h5 green--text text--darken-2">
+              {{ $t('donaciones.formulario.titulo') }}
+            </h2>
+          </div>
+        </v-card-title>
 
-              <v-text-field v-model="correo" label="Correo electrónico" type="email" outlined dense></v-text-field>
-              <div v-if="errores.correo" class="campo-error">
-                {{ errores.correo }}
-              </div>
+        <v-card-text class="pa-6">
+          <v-form @submit.prevent="pagarConStripe">
+            <!-- Datos personales -->
+            <div class="mb-6">
+              <h3 class="text-h6 font-weight-medium mb-4 d-flex align-center">
+                <v-icon color="green darken-2" class="mr-2">mdi-account</v-icon>
+                {{ $t('donaciones.formulario.datos_personales') }}
+              </h3>
+              
+              <v-text-field 
+                v-model="nombre" 
+                :label="$t('donaciones.formulario.nombre')"
+                outlined 
+                dense 
+                class="mb-2"
+                :error-messages="errores.nombre"
+              />
 
-                 <vue-phone-number-input
-                  ref="phoneInput"
-                  v-model="telefono"
-                  default-country="MX"
-                  placeholder="Ej. +1 416 555 1234"
-                />
-                  <div v-if="errores.telefono" class="campo-error alert">
+              <v-text-field 
+                v-model="correo" 
+                :label="$t('donaciones.formulario.correo')"
+                type="email" 
+                outlined 
+                dense 
+                class="mb-2"
+                :error-messages="errores.correo"
+              />
+
+              <vue-phone-number-input
+                ref="phoneInput"
+                v-model="telefono"
+                default-country="MX"
+                :placeholder="$t('donaciones.formulario.telefono')"
+                class="mb-2"
+              />
+              <div v-if="errores.telefono" class="campo-error">
                 {{ errores.telefono }}
               </div>
+            </div>
 
-
-
-              <h3>2. Seleccione un monto:</h3>
-              <v-row class="montos" dense>
-                <v-col v-for="(monto, i) in montos" :key="i" cols="12" sm="3">
-                  <v-btn class="boton" :color="montoSeleccionado === monto ? 'green light-2' : '#035928'
-                    " block @click="
-                      montoSeleccionado = monto;
-                    otro = '';
-                    ">
+            <!-- Selección de monto -->
+            <div class="mb-6">
+              <h3 class="text-h6 font-weight-medium mb-4 d-flex align-center">
+                <v-icon color="green darken-2" class="mr-2">mdi-credit-card</v-icon>
+                {{ $t('donaciones.formulario.monto') }}
+              </h3>
+              
+              <v-row dense class="mb-4">
+                <v-col v-for="(monto, i) in montos" :key="i" cols="6" sm="3">
+                  <v-btn 
+                    block
+                    :color="montoSeleccionado === monto ? 'green darken-2' : 'grey lighten-2'"
+                    :dark="montoSeleccionado === monto"
+                    @click="montoSeleccionado = monto; otro = ''"
+                    class="amount-btn"
+                  >
                     {{ monto }}
                   </v-btn>
                 </v-col>
-
-                <v-col cols="12" sm="4">
-                  <v-text-field v-model="otro" label="Otro monto" type="number" outlined dense
-                    @input="montoSeleccionado = ''"></v-text-field>
-                  <div v-if="errores.monto" class="campo-error">
-                    {{ errores.monto }}
-                  </div>
-                </v-col>
               </v-row>
 
-              <h3>3. Comentario</h3>
-              <v-text-field v-model="comentario" label="Opcional" outlined dense></v-text-field>
+              <v-text-field 
+                v-model="otro" 
+                :label="$t('donaciones.formulario.otro_monto')"
+                type="number" 
+                outlined 
+                dense
+                @input="montoSeleccionado = ''"
+                :error-messages="errores.monto"
+              />
+            </div>
 
-              <v-btn color="green darken-4" dark block @click="pagarConStripe" :disabled="loading">
-                Donar
-              </v-btn>
+            <!-- Comentario -->
+            <div class="mb-6">
+              <h3 class="text-h6 font-weight-medium mb-4">
+                {{ $t('donaciones.formulario.comentario') }}
+              </h3>
+              <v-textarea 
+                v-model="comentario" 
+                :placeholder="$t('donaciones.formulario.comentario_placeholder')"
+                outlined 
+                dense
+                rows="3"
+              />
+            </div>
 
-              <!-- Diálogo de agradecimiento -->
-              <v-dialog v-model="messageThanks" max-width="500">
-                <messageThanks @cerrar="messageThanks = false" />
-              </v-dialog>
+            <!-- Mensaje de seguridad -->
+            <v-alert 
+              type="info" 
+              outlined
+              class="mb-4"
+              border="left"
+            >
+              <div class="d-flex align-center">
+                <v-icon color="blue" class="mr-2">mdi-lock</v-icon>
+                <div>
+                  <div class="font-weight-medium">{{ $t('donaciones.formulario.seguridad_mensaje') }}</div>
+                  <div class="text-caption">{{ $t('donaciones.formulario.seguridad_descripcion') }}</div>
+                </div>
+              </div>
+            </v-alert>
 
+            <!-- Mensajes de error/éxito -->
+            <v-alert 
+              v-if="mensajeError" 
+              type="error" 
+              class="mb-4" 
+              dense 
+              border="left"
+            >
+              <v-icon left>mdi-alert-circle</v-icon>
+              {{ mensajeError }}
+            </v-alert>
+          </v-form>
+        </v-card-text>
 
-              <v-alert type="info" v-if="mensaje" class="mt-4" dense border="left" colored-border elevation="2">
-                <v-icon left>mdi-shield-check</v-icon>
-                {{ mensaje }}
-              </v-alert>
-              <v-alert type="error" v-if="mensajeError" class="mt-4" dense border="left" colored-border elevation="2">
-                <v-icon left>mdi-alert-circle</v-icon>
-                {{ mensajeError }}
-              </v-alert>
-            </v-form>
-          </v-card-text>
+        <v-card-actions class="pa-6 pt-0">
+          <v-btn 
+            text 
+            large
+            @click="dialog = false"
+            class="flex-grow-1"
+          >
+            {{ $t('donaciones.formulario.cancelar') }}
+          </v-btn>
+          <v-btn 
+            color="green darken-2" 
+            dark 
+            large
+            @click="pagarConStripe" 
+            :loading="loading"
+            class="flex-grow-1"
+          >
+            <v-icon left>mdi-heart</v-icon>
+            {{ $t('donaciones.formulario.donar') }}
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn text @click="dialog = false">Cancelar</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </div>
+    <!-- Diálogo de agradecimiento -->
+    <v-dialog v-model="messageThanks" max-width="500">
+      <messageThanks @cerrar="messageThanks = false" />
+    </v-dialog>
 
-    <!-- <button id="botondonar" type="submit">Donar ahora</button> -->
-
-    <footer>
-      <p>CIMA A.C.</p>
-    </footer>
 
   </div>
-
-
 </template>
 
 <script>
@@ -158,56 +270,25 @@ import animacion from "@/assets/gif/Animation - 1749592877393";
 import messageThanks from "@/components/messageThanks.vue";
 import VuePhoneNumberInput from "vue-phone-number-input";
 import "vue-phone-number-input/dist/vue-phone-number-input.css";
+
 export default {
   components: {
-    Lottie, //Para el gif
-    messageThanks, //Para el agradecimiento
-    VuePhoneNumberInput, //Para el telefono
+    Lottie,
+    messageThanks,
+    VuePhoneNumberInput,
   },
-      computed: {
-  isValidPhone() {
-    return this.$refs.phoneInput ? this.$refs.phoneInput.isValid() : false;
-  }
-},
+  computed: {
+    isValidPhone() {
+      return this.$refs.phoneInput ? this.$refs.phoneInput.isValid() : false;
+    }
+  },
   name: 'DonacionForm',
   data() {
     return {
       titulo: 'CIMA A.C.',
-      preguntas: [
-        {
-          pregunta: '¿Cómo se usa mi donativo?',
-          respuesta: '...'
-        },
-        {
-          pregunta: '¿En qué proyectos impacta mi donación?',
-          respuesta: '...'
-        },
-        {
-          pregunta: '¿Es seguro donar en línea?',
-          respuesta: '...'
-        },
-        {
-          pregunta: '¿Mis datos personales y bancarios están protegidos?',
-          respuesta: '...'
-        },
-        {
-          pregunta: '¿Puedo obtener deducción fiscal por mi donación?',
-          respuesta: '...'
-        },
-        {
-          pregunta: '¿Cuánto tiempo tarda en llegar mi recibo?',
-          respuesta: '...'
-        },
-        {
-          pregunta: '¿Qué beneficios obtengo como donante?',
-          respuesta: '...'
-        },
-        {
-          pregunta: '¿Puedo contactar a alguien si tengo dudas sobre mi donación?',
-          respuesta: '...'
-        }
-      ],
-      //Campos del formulario
+      faqItems: ['uso', 'proyectos', 'seguridad', 'datos', 'fiscal', 'recibo', 'beneficios', 'contacto'],
+      
+      // Campos del formulario
       nombre: '',
       correo: '',
       telefono: '',
@@ -215,10 +296,12 @@ export default {
       montoSeleccionado: '',
       otro: '',
       comentario: '',
-      //Mensajes y estados
-      mensaje: 'Tus datos están protegidos.',
+      
+      // Mensajes y estados
+      mensaje: '',
       mensajeError: '',
       loading: false,
+      
       // Errores por campo
       errores: {
         nombre: '',
@@ -226,84 +309,80 @@ export default {
         telefono: '',
         monto: ''
       },
-      //Animacion
+      
+      // Animación
       defaultOptions: {
         animationData: animacion,
         loop: false,
         autoplay: true,
       },
-      //Tarjeta
+      
+      // Modales
       dialog: false,
       messageThanks: false
     }
   },
-
   methods: {
-    // enviarDonacion() {
-    //     // Aquí puedes manejar el envío de la donación
-    //     this.mensaje = '¡Gracias por tu donación!';
-
-    // Método principal para procesar la donación
     async pagarConStripe() {
       this.loading = true
       this.mensajeError = '';
       this.errores = { nombre: '', correo: '', telefono: '', monto: '' };
 
-      //Validaciones
+      // Validaciones
       if (!this.nombre) {
-        this.errores.nombre = 'Has olvidado añadir tu nombre.';
+        this.errores.nombre = this.$t('donaciones.errores.nombre_requerido');
       } else if (this.nombre.length < 4) {
-        this.errores.nombre = 'El nombre debe tener al menos 4 caracteres.';
+        this.errores.nombre = this.$t('donaciones.errores.nombre_corto');
       }
 
       if (!this.correo) {
-        this.errores.correo = 'Has olvidado de introducir tu correo electrónico.';
+        this.errores.correo = this.$t('donaciones.errores.correo_requerido');
       } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(this.correo)) {
-        this.errores.correo = 'El correo electrónico no es válido.';
+        this.errores.correo = this.$t('donaciones.errores.correo_invalido');
       }
 
-// Extrae solo los dígitos del número nacional
-let telefonoLimpio = '';
-if (
-  typeof this.telefono === 'object' &&
-  this.telefono &&
-  typeof this.telefono.nationalNumber === 'string' &&
-  this.telefono.nationalNumber.trim() !== ''
-) {
-  telefonoLimpio = this.telefono.nationalNumber.replace(/\D/g, '');
-} else if (typeof this.telefono === 'string') {
-  telefonoLimpio = this.telefono.replace(/\D/g, '');
-}
+      // Validación de teléfono
+      let telefonoLimpio = '';
+      if (
+        typeof this.telefono === 'object' &&
+        this.telefono &&
+        typeof this.telefono.nationalNumber === 'string' &&
+        this.telefono.nationalNumber.trim() !== ''
+      ) {
+        telefonoLimpio = this.telefono.nationalNumber.replace(/\D/g, '');
+      } else if (typeof this.telefono === 'string') {
+        telefonoLimpio = this.telefono.replace(/\D/g, '');
+      }
 
-if (!telefonoLimpio) {
-  this.errores.telefono = 'Has olvidado añadir tu teléfono.';
-  this.loading = false;
-  return;
-} else if (telefonoLimpio.length !== 10) {
-  this.errores.telefono = 'El teléfono debe tener exactamente 10 dígitos.';
-  this.loading = false;
-  return;
-}
+      if (!telefonoLimpio) {
+        this.errores.telefono = this.$t('donaciones.errores.telefono_requerido');
+        this.loading = false;
+        return;
+      } else if (telefonoLimpio.length !== 10) {
+        this.errores.telefono = this.$t('donaciones.errores.telefono_invalido');
+        this.loading = false;
+        return;
+      }
 
-      // Calcula el monto en centavos
+      // Validación de monto
       let monto = this.montoSeleccionado
         ? parseInt(this.montoSeleccionado.replace('$', '')) * 100
         : parseInt(this.otro) * 100;
 
       if (!monto || monto <= 0) {
-        this.errores.monto = 'Por favor, selecciona o ingresa un monto válido.';
+        this.errores.monto = this.$t('donaciones.errores.monto_requerido');
         this.loading = false;
         return;
       }
 
-// Si hay algún error, no continúes
-if (Object.values(this.errores).some(e => e)) {
-  this.loading = false;
-  return;
+      // Si hay errores, no continuar
+      if (Object.values(this.errores).some(e => e)) {
+        this.loading = false;
+        return;
       }
 
       try {
-        // Llama a tu backend para crear la sesión
+        // Llamada al backend
         const response = await fetch('http://localhost:3000/api/payments/create-checkout-session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -316,21 +395,19 @@ if (Object.values(this.errores).some(e => e)) {
           }),
         });
 
-        // Espera la respuesta del backend con el ID de la sesión de Stripe
         const data = await response.json();
 
-        // Si el backend responde con error, muestra el mensaje
         if (!response.ok) {
           this.mensajeError = data.error || 'Ocurrió un error al procesar el pago.';
           this.loading = false
           return;
         }
 
-        // Redirige a Stripe Checkout
+        // Redirigir a Stripe
         const stripe = await loadStripe(process.env.VUE_APP_STRIPE_PUBLIC_KEY);
         stripe.redirectToCheckout({ sessionId: data.id });
 
-        //Limpia los campos después de redirigir
+        // Limpiar campos
         this.nombre = '';
         this.correo = '';
         this.telefono = '';
@@ -343,168 +420,84 @@ if (Object.values(this.errores).some(e => e)) {
         this.loading = false;
       }
     }
+  },
+  head() {
+    return {
+      title: `${this.$t('donaciones.titulo')} - CIMA A.C.`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('donaciones.subtitulo')
+        }
+      ]
+    }
   }
-// created() {
-//   const params = new URLSearchParams(window.location.search);
-//   const success = params.get('success');
-
-//   if (success === 'true') {
-//     console.log('✅ Detectado success=true desde window.location');
-
-//     this.messageThanks = true;
-
-//     // Limpiar la URL (sin recargar)
-//     const newUrl = window.location.origin + this.$route.path;
-//     window.history.replaceState({}, document.title, newUrl);
-//   }
-// }
- }
-
+}
 </script>
 
 <style scoped>
-body {
-  font-family: 'Poppins';
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-
-}
-
-header {
-  background: #035928;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-
-
-h2 {
-  color: black;
-}
-
-
-
-details {
-  margin-bottom: 10px;
-}
-
-#donacion {
-  text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-top: 10px;
-}
-
-input {
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #d9d9d9;
-  width: 50%;
-}
-
-input::placeholder {
-  color: white;
-}
-
-p {
-  font-size: 18px;
-}
-
-.montos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.montos input[type="radio"] {
-  display: none;
-  /* Oculta el círculo */
-}
-
-.montos label {
-  flex: 1 1 150px;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #6f9ca6;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #035928;
-  color: white;
-}
-
-.montos input {
-  margin-right: 5px;
-}
-
-#botondonar {
-  display: block;
-  margin: 30px auto 10px auto;
-  padding: 12px 30px;
-  background: #035928;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 50%;
-}
-
-.mensaje-confirmacion {
-  text-align: center;
-  font-size: 14px;
-  color: #555;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%);
+  min-height: 500px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
 }
 
-footer {
-  background: #f0f0f0;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  color: #555;
+/* CTA Card */
+.cta-card {
+  background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+  border: 2px solid #4CAF50;
+  border-radius: 20px;
 }
 
-.montos label.seleccionado {
-  background: #1CA63F;
-  color: #fff;
-  border: 2px solid #1b7f3a;
-  font-weight: bold;
-  box-shadow: 0 0 8px #1b7f3a;
-  transition: background 0.2s, color 0.2s, border 0.2s;
+/* FAQ Panels */
+.faq-panels .v-expansion-panel {
+  border-radius: 12px !important;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
 }
 
+.faq-panels .v-expansion-panel::before {
+  box-shadow: none;
+}
+
+/* Modal de donación */
+.donation-modal {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.amount-btn {
+  height: 48px !important;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Campo de error */
 .campo-error {
   color: #d32f2f;
   background: #ffd6d6;
   border-radius: 4px;
-  font-size: 0.95em;
-  margin-top: -10px;
-  margin-bottom: 10px;
+  font-size: 0.875em;
+  margin-top: 4px;
+  margin-bottom: 8px;
   padding: 4px 8px;
 }
 
-.tarjet {
-  color: #035928;
-  padding: 20px;
-  border: 3px solid #035928;
+/* Footer */
+.footer-section {
+  background: #f5f5f5;
+  padding: 20px 0;
+  margin-top: 60px;
+  border-top: 1px solid #e0e0e0;
 }
 
-.boton {
-  color: white;
+/* Responsive */
+@media (max-width: 960px) {
+  .hero-section {
+    min-height: 400px;
+  }
 }
 </style>

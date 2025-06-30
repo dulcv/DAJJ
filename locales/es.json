@@ -13,6 +13,10 @@
   },
 
   "nosotros": {
+     "hero":{
+      "titulo":"Conoce Nuestra Historia",
+      "subtitulo":"Construyendo un futuro mejor a través de la innovación, solidaridad y compromiso social"
+    },
     "mision": {
       "titulo": "Misión",
       "texto": "Contribuir al desarrollo integral de comunidades aledañas al Parque Nacional Pico de Orizaba, fortaleciendo su resiliencia social, económica y ambiental."
@@ -60,26 +64,32 @@
     "miembros": {
       "presidente": {
         "titulo": "Presidente",
+        "rol":"Liderazgo Ejecutivo",
         "descripcion": "Responsable de la representación legal y liderazgo estratégico de la organización."
       },
       "secretario": {
         "titulo": "Secretario",
+        "rol":"Administración",
         "descripcion": "Encargado de la documentación, actas y comunicaciones institucionales."
       },
       "tesorero": {
         "titulo": "Tesorero",
+            "rol":"Finanzas",
         "descripcion": "Administra los recursos financieros y la rendición de cuentas."
       },
       "operaciones": {
         "titulo": "Director de Operaciones",
+        "rol":"Operaciones",
         "descripcion": "Coordina la ejecución de proyectos y el equipo de trabajo en campo."
       },
       "comunicacion": {
         "titulo": "Director de Comunicación",
+            "rol":"Comunicación",
         "descripcion": "Gestiona la identidad institucional, redes sociales y vínculos con medios."
       },
       "finanzas": {
         "titulo": "Director de Finanzas",
+            "rol":"Finanzas",
         "descripcion": "Diseña estrategias de sostenibilidad financiera y control presupuestal."
       }
     },
@@ -217,5 +227,86 @@
       "descripcion": "Únete a nuestras iniciativas y sé parte del cambio que nuestras comunidades necesitan.",
       "boton": "Contáctanos"
     }
-  }
+  },
+ 
+  "donaciones": {
+    "titulo": "Haz la Diferencia con tu Donación",
+    "subtitulo": "Tu generosidad nos permite continuar transformando vidas y construyendo un futuro mejor para las comunidades que más lo necesitan. Cada donación cuenta y genera un impacto real.",
+    "descripcion": "Únete a nuestra misión de crear cambios positivos y duraderos. Juntos podemos lograr grandes transformaciones en educación, salud, sostenibilidad y desarrollo comunitario.",
+    "seguridad": {
+      "seguro": "100% Seguro",
+      "deducible": "Deducible de Impuestos",
+      "impacto": "Impacto Inmediato"
+    },
+    "cta": {
+      "titulo": "Tu Ayuda Transforma Vidas",
+      "mensaje1": "Tu donación hace una gran diferencia.",
+      "mensaje2": "Nos permite seguir ayudando a quienes más lo necesitan.",
+      "mensaje3": "¡Juntos podemos lograr grandes cambios!",
+      "boton": "Donar Ahora"
+    },
+    "formulario": {
+      "titulo": "¡Haz tu Donación!",
+      "datos_personales": "1. Datos Personales",
+      "nombre": "Nombre Completo",
+      "correo": "Correo Electrónico",
+      "telefono": "Teléfono",
+      "monto": "2. Selecciona un Monto",
+      "otro_monto": "Otro Monto",
+      "comentario": "3. Comentario",
+      "comentario_placeholder": "Mensaje opcional...",
+      "seguridad_mensaje": "Tus datos están protegidos",
+      "seguridad_descripcion": "Utilizamos encriptación de nivel bancario para proteger tu información.",
+      "cancelar": "Cancelar",
+      "donar": "Donar"
+    },
+    "faq": {
+      "titulo": "Preguntas Frecuentes",
+      "subtitulo": "Resolvemos las dudas más comunes sobre el proceso de donación",
+      "preguntas": {
+        "uso": {
+          "pregunta": "¿Cómo se usa mi donativo?",
+          "respuesta": "Tu donación se destina directamente a nuestros programas de desarrollo comunitario, educación, salud y sostenibilidad ambiental. Mantenemos total transparencia en el uso de los fondos."
+        },
+        "proyectos": {
+          "pregunta": "¿En qué proyectos impacta mi donación?",
+          "respuesta": "Tu contribución apoya programas educativos, campañas de salud comunitaria, proyectos de sostenibilidad ambiental y empoderamiento juvenil en comunidades vulnerables."
+        },
+        "seguridad": {
+          "pregunta": "¿Es seguro donar en línea?",
+          "respuesta": "Sí, utilizamos Stripe, una plataforma de pagos segura con encriptación de nivel bancario. Tus datos están completamente protegidos."
+        },
+        "datos": {
+          "pregunta": "¿Mis datos personales están protegidos?",
+          "respuesta": "Absolutamente. Cumplimos con todas las normativas de protección de datos y nunca compartimos tu información personal con terceros."
+        },
+        "fiscal": {
+          "pregunta": "¿Puedo obtener deducción fiscal?",
+          "respuesta": "Sí, como organización registrada, puedes deducir tu donación de impuestos. Te enviaremos el recibo fiscal correspondiente."
+        },
+        "recibo": {
+          "pregunta": "¿Cuánto tarda en llegar mi recibo?",
+          "respuesta": "Recibirás tu recibo fiscal por correo electrónico dentro de las siguientes 24-48 horas después de tu donación."
+        },
+        "beneficios": {
+          "pregunta": "¿Qué beneficios obtengo como donante?",
+          "respuesta": "Recibirás actualizaciones regulares sobre el impacto de tu donación, invitaciones a eventos especiales y reconocimiento en nuestros informes anuales."
+        },
+        "contacto": {
+          "pregunta": "¿Puedo contactar si tengo dudas?",
+          "respuesta": "Por supuesto. Puedes contactarnos por correo, teléfono o redes sociales. Nuestro equipo estará encantado de resolver todas tus dudas."
+        }
+      }
+    },
+    "errores": {
+      "nombre_requerido": "Has olvidado añadir tu nombre.",
+      "nombre_corto": "El nombre debe tener al menos 4 caracteres.",
+      "correo_requerido": "Has olvidado introducir tu correo electrónico.",
+      "correo_invalido": "El correo electrónico no es válido.",
+      "telefono_requerido": "Has olvidado añadir tu teléfono.",
+      "telefono_invalido": "El teléfono debe tener exactamente 10 dígitos.",
+      "monto_requerido": "Por favor, selecciona o ingresa un monto válido."
+    }
+}
+  
 }

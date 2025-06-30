@@ -14,6 +14,10 @@
   },
 
   "nosotros": {
+    "hero":{
+      "titulo":"Learn About Our History",
+      "subtitulo":"Building a better future through innovation, solidarity, and social commitment"
+    },
 
   "mision": {
     "titulo": "Mission",
@@ -62,26 +66,32 @@
     "miembros": {
       "presidente": {
         "titulo": "President",
+        "rol":"Executive Leadership",
         "descripcion": "Responsible for legal representation and strategic leadership of the organization."
       },
       "secretario": {
         "titulo": "Secretary",
+       "rol":"Administration",
         "descripcion": "In charge of documentation, minutes and institutional communications."
       },
       "tesorero": {
         "titulo": "Treasurer",
+        "rol":"Finance",
         "descripcion": "Manages financial resources and accountability."
       },
       "operaciones": {
         "titulo": "Operations Director",
+"rol":"Operations",
         "descripcion": "Coordinates project execution and field work team."
       },
       "comunicacion": {
         "titulo": "Communications Director",
+         "rol":"Communication",
         "descripcion": "Manages institutional identity, social networks and media relations."
       },
       "finanzas": {
         "titulo": "Finance Director",
+        "rol":"Finance",
         "descripcion": "Designs financial sustainability strategies and budget control."
       }
     },
@@ -219,5 +229,84 @@
       "descripcion": "Join our initiatives and be part of the change our communities need.",
       "boton": "Contact us"
     }
+  },
+  "donaciones": {
+    "titulo": "Make a Difference with Your Donation",
+    "subtitulo": "Your generosity allows us to continue transforming lives and building a better future for the communities that need it most. Every donation counts and generates real impact.",
+    "descripcion": "Join our mission to create positive and lasting changes. Together we can achieve great transformations in education, health, sustainability and community development.",
+    "seguridad": {
+      "seguro": "100% Secure",
+      "deducible": "Tax Deductible",
+      "impacto": "Immediate Impact"
+    },
+    "cta": {
+      "titulo": "Your Help Transforms Lives",
+      "mensaje1": "Your donation makes a big difference.",
+      "mensaje2": "It allows us to continue helping those who need it most.",
+      "mensaje3": "Together we can achieve great changes!",
+      "boton": "Donate Now"
+    },
+    "formulario": {
+      "titulo": "Make Your Donation!",
+      "datos_personales": "1. Personal Information",
+      "nombre": "Full Name",
+      "correo": "Email Address",
+      "telefono": "Phone Number",
+      "monto": "2. Select an Amount",
+      "otro_monto": "Other Amount",
+      "comentario": "3. Comment",
+      "comentario_placeholder": "Optional message...",
+      "seguridad_mensaje": "Your data is protected",
+      "seguridad_descripcion": "We use bank-level encryption to protect your information.",
+      "cancelar": "Cancel",
+      "donar": "Donate"
+    },
+    "faq": {
+      "titulo": "Frequently Asked Questions",
+      "subtitulo": "We resolve the most common questions about the donation process",
+      "preguntas": {
+        "uso": {
+          "pregunta": "How is my donation used?",
+          "respuesta": "Your donation goes directly to our community development, education, health and environmental sustainability programs. We maintain complete transparency in the use of funds."
+        },
+        "proyectos": {
+          "pregunta": "What projects does my donation impact?",
+          "respuesta": "Your contribution supports educational programs, community health campaigns, environmental sustainability projects and youth empowerment in vulnerable communities."
+        },
+        "seguridad": {
+          "pregunta": "Is it safe to donate online?",
+          "respuesta": "Yes, we use Stripe, a secure payment platform with bank-level encryption. Your data is completely protected."
+        },
+        "datos": {
+          "pregunta": "Is my personal data protected?",
+          "respuesta": "Absolutely. We comply with all data protection regulations and never share your personal information with third parties."
+        },
+        "fiscal": {
+          "pregunta": "Can I get a tax deduction?",
+          "respuesta": "Yes, as a registered organization, you can deduct your donation from taxes. We will send you the corresponding tax receipt."
+        },
+        "recibo": {
+          "pregunta": "How long does it take to receive my receipt?",
+          "respuesta": "You will receive your tax receipt by email within 24-48 hours after your donation."
+        },
+        "beneficios": {
+          "pregunta": "What benefits do I get as a donor?",
+          "respuesta": "You will receive regular updates on the impact of your donation, invitations to special events and recognition in our annual reports."
+        },
+        "contacto": {
+          "pregunta": "Can I contact someone if I have questions?",
+          "respuesta": "Of course. You can contact us by email, phone or social media. Our team will be happy to resolve all your questions."
+        }
+      }
+    },
+    "errores": {
+      "nombre_requerido": "You forgot to add your name.",
+      "nombre_corto": "Name must be at least 4 characters long.",
+      "correo_requerido": "You forgot to enter your email address.",
+      "correo_invalido": "The email address is not valid.",
+      "telefono_requerido": "You forgot to add your phone number.",
+      "telefono_invalido": "Phone number must be exactly 10 digits.",
+      "monto_requerido": "Please select or enter a valid amount."
+    }
   }
-  }
+}
