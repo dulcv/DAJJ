@@ -3,9 +3,9 @@
     <v-container>
       <!-- Encabezado -->
       <div class="section-header">
-        <h1>{{ $t('iniciativas.titulo') }}</h1>
-        <p class="description">{{ $t('iniciativas.subtitulo') }}</p>
+        <h1 class="title-main">{{ $t('iniciativas.titulo') }}</h1>
         <v-divider class="custom-divider my-4"></v-divider>
+        <p class="description-main">{{ $t('iniciativas.subtitulo') }}</p>
       </div>
 
       <v-row>
@@ -102,31 +102,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
+// Variables
 $primary: #035928;
 $accent: #a65224;
 $text-muted: #555555;
 
-* {
-  font-family: "Poppins", sans-serif;
-}
-.section-header{
-   .description {
-      font-size: 1.5rem;
-      color: $text-muted;
-      margin: 1.5rem 0;
-      text-align: justify;
-    }
-}
 
+// Sección de iniciativas
 .initiatives-section {
   .custom-divider {
     background-color: $accent !important;
-    height: 4px;
-    width: 800px;
+    height: 0.25rem;
+    width: 50rem;
     margin: 2rem auto;
-    border-radius: 2px;
+    border-radius: 0.125rem;
     opacity: 0.9;
   }
 
@@ -135,11 +125,11 @@ $text-muted: #555555;
     overflow: hidden;
     height: 100%;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05);
 
     &:hover {
       transform: translateY(-0.5rem);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
     }
 
     .card-img {
@@ -150,7 +140,6 @@ $text-muted: #555555;
       transform: scale(1.05);
     }
 
-
     h3 {
       font-size: 1.1rem;
       font-weight: 600;
@@ -159,13 +148,14 @@ $text-muted: #555555;
       text-align: justify;
     }
 
-
     .v-btn {
       background-color: $primary !important;
       color: white !important;
-      font-weight: 600;
+      display: block;
+      margin-left: auto;
       margin-right: 1rem;
-      transition: all 0.3s ease;
+      position: relative;
+      top: -15px;
 
       &:hover {
         background-color: darken($primary, 5%) !important;

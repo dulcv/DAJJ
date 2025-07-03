@@ -17,7 +17,7 @@
     <strong>Juntos podemos lograr grandes cambios.</strong>
   </p>
 
-<button @click="mostrarModal = true" id="abrir-modal">Donar aquí</button>
+<button  rounded @click="mostrarModal = true" id="abrir-modal">Donar aquí</button>
 
 </div>
             <h2>Preguntas Frecuentes</h2>
@@ -34,7 +34,7 @@
  <!-- Modal -->
       <div v-if="mostrarModal" class="modal-overlay">
         <div class="modal">
-          <button class="cerrar" @click="mostrarModal = false">X</button>
+          <button rouded class="cerrar" @click="mostrarModal = false">X</button>
           <h3>1. Datos personales:</h3>
           <form @submit.prevent="enviarDonacion">
             <label>Nombre completo</label>
@@ -61,7 +61,7 @@
             <label for="mensaje">Comentario (opcional)</label>
             <input type="text" id="mensaje" name="mensaje" placeholder="Escribe algun mensaje..." v-model="comentario" />
 
-            <button id="botondonar" type="submit">Donar ahora</button>
+            <button id="botondonar" rounded type="submit">Donar ahora</button>
 
             <div class="mensaje-confirmacion" v-if="mensaje">
               <i class="fa fa-shield-alt"></i> {{ mensaje }}
@@ -228,14 +228,13 @@ input::placeholder {
 }
 #botondonar {
   display: block;
-  margin: 30px auto 10px auto;
-  padding: 12px 30px;
-  background: #035928;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #035928!important;
+  color: white !important;
+  top: -10px;
+  position: relative;
 }
 .mensaje-confirmacion {
   text-align: center;

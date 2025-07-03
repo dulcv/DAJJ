@@ -22,9 +22,12 @@
         <nuxt-link
           v-for="item in navItems"
           :key="item.key"
-          :to="item.link"
+          :to="
+item.link
+
+"
           class="custom-nav-link btn-nav"
-          :class="{ 'active-link': $route.path.endsWith(item.link) }"
+          :class="{ 'active-link': isActive(item) }"
         >
           {{ $t(`nav.${item.key}`) }}
         </nuxt-link>
@@ -37,29 +40,31 @@
         elevation="1"
         @click="donate"
       >
-        {{ $t('nav.donar') }}
+        {{ $t("nav.donar") }}
       </v-btn>
 
-      <!-- Selector de idioma SÚPER SIMPLE -->
-      <div class="language-selector ml-2">
-        <v-btn
-          small
-          :color="currentLang === 'es' ? '#035928' : 'grey'"
-          :outlined="currentLang !== 'es'"
-          @click="changeLanguage('es')"
-          class="mr-1"
-        >
-          ES
-        </v-btn>
-        <v-btn
-          small
-          :color="currentLang === 'en' ? '' : 'grey'"
-          :outlined="currentLang !== 'en'"
-          @click="changeLanguage('en')"
-        >
-          EN
-        </v-btn>
-      </div>
+      <!-- Selector de idioma CON BANDERAS -->
+      <v-menu offset-y class="ml-2 d-none d-md-flex">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <v-icon>mdi-translate</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item @click="changeLanguage('es')">
+            <v-list-item-avatar>
+              <v-img src="/flags/mexico.png" />
+            </v-list-item-avatar>
+            <v-list-item-title>Español</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="changeLanguage('en')">
+            <v-list-item-avatar>
+              <v-img src="/flags/estados-unidos.png" />
+            </v-list-item-avatar>
+            <v-list-item-title>English</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <!-- Ícono decorativo -->
       <v-btn icon>
@@ -73,9 +78,12 @@
         <!-- Enlaces -->
         <v-list-item v-for="item in navItems" :key="item.key" class="pa-0">
           <nuxt-link
-            :to="item.link"
+            :to="
+item.link
+
+"
             class="custom-nav-link btn-nav px-4 py-2 d-inline-block w-100"
-            :class="{ 'active-link': $route.path === item.link }"
+            :class="{ 'active-link': isActive(item) }"
             @click.native="drawer = false"
           >
             {{ $t(`nav.${item.key}`) }}
@@ -87,7 +95,7 @@
         <!-- Botón Donar -->
         <v-list-item>
           <v-btn block color="#035928" class="white--text" @click="donate">
-            {{ $t('nav.donar') }}
+            {{ $t("nav.donar") }}
           </v-btn>
         </v-list-item>
       </v-list>
@@ -101,7 +109,7 @@ export default {
     return {
       drawer: false,
       showDebug: false,
-      currentLang: 'es',
+      currentLang: "es",
       navItems: [
         { key: "inicio", link: "/" },
         { key: "nosotros", link: "/nosotros" },
@@ -114,78 +122,93 @@ export default {
 
   methods: {
     changeLanguage(locale) {
-      console.log(`🔄 Cambiando idioma a: ${locale}`)
+      console.log(`🔄 Cambiando idioma a: ${locale}`);
 
       // 1. Cambiar idioma en i18n
-      this.$i18n.setLocale(locale)
+      this.$i18n.setLocale(locale);
 
       // 2. Guardar en localStorage y variable global
       if (process.client) {
-        localStorage.setItem('cima-locale', locale)
-        window.CIMA_LANGUAGE = locale
+        localStorage.setItem("cima-locale", locale);
+        window.CIMA_LANGUAGE = locale;
       }
 
       // 3. Usar la función global si existe
       if (this.$language) {
-        this.$language.set(locale)
+        this.$language.set(locale);
       }
 
       // 4. Navegar a la ruta correcta según el idioma
-      const currentRoute = this.$route.path
-      let newPath = currentRoute
+      const currentRoute = this.$route.path;
+      let newPath = currentRoute;
 
-      if (locale === 'es') {
+      if (locale === "es") {
         // Para español, remover el prefijo /en si existe
-        newPath = currentRoute.replace('/en', '') || '/'
-      } else if (locale === 'en') {
+        newPath = currentRoute.replace("/en", "") || "/";
+      } else if (locale === "en") {
         // Para inglés, agregar el prefijo /en si no existe
-        if (!currentRoute.startsWith('/en')) {
-          newPath = currentRoute === '/' ? '/en' : `/en${currentRoute}`
+        if (!currentRoute.startsWith("/en")) {
+          newPath = currentRoute === "/" ? "/en" : `/en${currentRoute}`;
         }
       }
 
       // 5. Navegar solo si la ruta cambió
       if (newPath !== currentRoute) {
-        this.$router.push(newPath)
+        this.$router.push(newPath);
       }
 
       // 6. Actualizar variables locales
-      this.currentLang = locale
+      this.currentLang = locale;
 
       // 7. Cerrar drawer
-      this.drawer = false
+      this.drawer = false;
 
-      console.log(`✅ Idioma cambiado: ${locale}, Ruta: ${newPath}`)
+      console.log(`✅ Idioma cambiado: ${locale}, Ruta: ${newPath}`);
     },
 
     donate() {
       this.$router.push("/donaciones");
-    }
+    },
+
+    isActive(item) {
+      const path = this.$route.path;
+      const link =
+item.link
+
+;
+
+      if (link === "/") {
+        // Marcar como activo si estás en / o /en
+        return path === "/" || path === "/en";
+      }
+
+      return path.endsWith(link) || path.endsWith("/en" + link);
+    },
   },
 
   mounted() {
     // Aplicar idioma guardado
     if (this.$language) {
-      this.$language.apply()
-      this.currentLang = this.$language.get()
+      this.$language.apply();
+      this.currentLang = this.$language.get();
     }
 
-    console.log('🌐 Navbar montado:', {
+    console.log("🌐 Navbar montado:", {
       i18n: this.$i18n.locale,
-    })
+    });
   },
 
   // Actualizar cuando cambie la ruta
   watch: {
-    '$route'() {
+    $route() {
       this.$nextTick(() => {
         if (this.$language) {
-          this.$language.apply()
-          this.currentLang = this.$language.get()
+          this.$language.apply();
+          this.currentLang = this.$language.get();
         }
-      })
-    }
-  }
+      });
+    },
+  },
 };
 </script>
 
@@ -208,7 +231,6 @@ export default {
   font-size: 2rem;
 }
 
-
 .custom-nav-link {
   position: relative;
   text-decoration: none;
@@ -220,13 +242,13 @@ export default {
 }
 
 .custom-nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0.2rem;
   left: 0;
   width: 0%;
   height: 3px;
-  background-color: #A65224;
+  background-color: #a65224;
   transition: width 0.3s ease;
 }
 
@@ -243,7 +265,7 @@ export default {
 }
 .language-selector .v-btn {
   color: white !important;
-  border-color:#035928!important;
+  border-color: #035928 !important;
 }
 
 /* Botón activo  */
@@ -262,9 +284,9 @@ export default {
 
 /* Hover */
 .language-selector .v-btn:hover {
-  background-color:#035928!important;
+  background-color: #035928 !important;
   color: white !important;
-  border-color:#035928 !important;
+  border-color: #035928 !important;
 }
-
 </style>
+} 

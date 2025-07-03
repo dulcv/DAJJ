@@ -30,7 +30,8 @@ export default {
   },
 
   css: [
-    'vue-phone-number-input/dist/vue-phone-number-input.css'
+    'vue-phone-number-input/dist/vue-phone-number-input.css',
+    '@/assets/styles/main.scss'
   ],
 
   plugins: [

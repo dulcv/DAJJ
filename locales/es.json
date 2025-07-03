@@ -128,7 +128,7 @@
     "quienesSomos": {
       "titulo": "Sobre CIMA",
       "descripcion": "En CIMA fusionamos creatividad y compromiso para construir soluciones sostenibles a los desafíos más urgentes de nuestra sociedad.",
-      "boton": "Conoce más"
+      "boton": "Contáctanos"
     },
     "aliados": {
       "titulo": "Nuestros Aliados",
@@ -228,7 +228,7 @@
       "boton": "Contáctanos"
     }
   },
- 
+
   "donaciones": {
     "titulo": "Haz la Diferencia con tu Donación",
     "subtitulo": "Tu generosidad nos permite continuar transformando vidas y construyendo un futuro mejor para las comunidades que más lo necesitan. Cada donación cuenta y genera un impacto real.",
@@ -308,5 +308,5 @@
       "monto_requerido": "Por favor, selecciona o ingresa un monto válido."
     }
 }
-  
+
 }
