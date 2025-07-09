@@ -308,5 +308,105 @@
       "telefono_invalido": "Phone number must be exactly 10 digits.",
       "monto_requerido": "Please select or enter a valid amount."
     }
+  },
+  "recursos": {
+    "titulo": "Resources and News",
+    "descripcion": "Stay informed about our latest activities, events and achievements in community development",
+    "nav": {
+      "noticias": "News",
+      "eventos": "Events"
+    },
+    "etiquetas": {
+      "nuevo": "New",
+      "proximo": "Upcoming",
+      "realizado": "Completed"
+    },
+    "acciones": {
+      "leer_mas": "Read more",
+      "leer_menos": "Read less",
+      "registrarse": "Register"
+    },
+    "noticias": {
+      "titulo": "Latest News",
+      "items": {
+        "campana_dental": {
+          "titulo": "New dental health campaign",
+          "descripcion_corta": "We launch our new campaign to improve oral health in rural communities with free care and preventive education.",
+          "descripcion_larga": "The campaign will last 3 months and visit 15 communities in hard-to-reach areas. We will have a team of 10 volunteer dentists and distribute more than 5,000 oral hygiene kits. This project is possible thanks to the support of our strategic partners and donors committed to community health.",
+          "logros": {
+            "ninos": "500 children served",
+            "kits": "1,000 hygiene kits distributed",
+            "comunidades": "3 communities benefited"
+          }
+        },
+        "taller_voluntarios": {
+          "titulo": "Volunteer training workshop",
+          "descripcion_corta": "Intensive training for new volunteers who will join our social programs this quarter.",
+          "descripcion_larga": "The workshop will be held over two consecutive weekends and will include modules on: basic first aid, effective communication with vulnerable communities, safety protocols and ethics in social work. Participants will receive certification endorsed by the Ministry of Health and the National University. Limited spaces, prior registration required.",
+          "logros": {
+            "voluntarios": "25 new volunteers trained",
+            "certificacion": "Certification endorsed by the Ministry of Health"
+          }
+        },
+        "programa_alimentacion": {
+          "titulo": "Nutrition program results",
+          "descripcion_corta": "We present the impressive results of our school feeding program in rural areas.",
+          "descripcion_larga": "During the last semester, our program has benefited more than 1,200 children in 8 rural schools, providing nutritious breakfasts 5 days a week. The results show a 30% improvement in school performance and a 45% reduction in anemia cases among participants.",
+          "logros": {
+            "ninos": "1,200 children benefited",
+            "rendimiento": "30% improvement in school performance",
+            "anemia": "45% reduction in anemia cases"
+          }
+        }
+      }
+    },
+    "eventos": {
+      "titulo": "Events",
+      "proximos": "Upcoming",
+      "pasados": "Past",
+      "programa": "Program",
+      "participantes": "participants",
+      "sin_proximos": "No upcoming events scheduled",
+      "sin_pasados": "No past events recorded",
+      "items": {
+        "jornada_medica": {
+          "titulo": "Community medical day",
+          "descripcion_corta": "Free medical care day for the community with specialties in pediatrics, gynecology and general medicine.",
+          "descripcion_larga": "We will offer completely free general medical, dental and ophthalmological consultations. In addition, we will perform basic laboratory tests (glucose, hemoglobin, blood pressure) and vaccination according to the national schedule. The day will have 25 health professionals and is expected to serve more than 500 people. No prior appointment required, care on a first-come, first-served basis.",
+          "lugar": "Central Park, Main Ave #123",
+          "programa": {
+            "apertura": "08:00 - Opening and registration",
+            "consultas": "09:00 - General medical consultations",
+            "taller": "10:00 - Disease prevention workshop",
+            "medicamentos": "12:00 - Medicine delivery"
+          }
+        },
+        "conferencia_salud": {
+          "titulo": "Public health conference",
+          "descripcion_corta": "Master conference with international experts in public health and health policies.",
+          "descripcion_larga": "We will have the participation of 5 international experts who will discuss current challenges in global public health, strategies to improve health systems in developing countries and the role of community organizations. The event will include discussion panels, Q&A sessions, and networking with speakers. Participation certificates will be awarded.",
+          "lugar": "Municipal Auditorium, 5th floor",
+          "programa": {
+            "registro": "09:00 - Participant registration",
+            "inauguracion": "10:00 - Opening ceremony",
+            "panel": "11:00 - Panel: Global health challenges",
+            "talleres": "14:00 - Simultaneous workshops",
+            "clausura": "17:00 - Closing"
+          }
+        },
+        "feria_emprendimiento": {
+          "titulo": "Social entrepreneurship fair",
+          "descripcion_corta": "Annual event that brings together social entrepreneurs with investors and mentors.",
+          "descripcion_larga": "The fair is the most important meeting point for social entrepreneurship in the region. This year we will have 50 entrepreneur stands, 10 keynote speeches and investment rounds. Participants will be able to present their projects to potential investors and receive specialized mentoring.",
+          "lugar": "Convention Center"
+        },
+        "campana_vacunacion": {
+          "titulo": "Children's vaccination campaign",
+          "descripcion_corta": "Massive vaccination campaign for children under 5 years old.",
+          "descripcion_larga": "In collaboration with the Ministry of Health, we carried out a vaccination day that covered all vaccines in the national schedule for preschool children. The campaign reached more than 800 children in 3 days and had the support of 15 volunteer health professionals.",
+          "lugar": "Urban Health Center"
+        }
+      }
+    }
   }
 }
